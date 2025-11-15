@@ -38,6 +38,7 @@ export default function CookieConsent() {
 
   const loadAnalyticsScripts = (prefs: typeof preferences) => {
     // Google Analytics
+    // NOTE: Replace G-XXXXXXXXXX with actual Google Analytics ID
     if (prefs.analytics && typeof window !== 'undefined') {
       const gaScript = document.createElement('script')
       gaScript.async = true
@@ -58,6 +59,7 @@ export default function CookieConsent() {
     }
 
     // Microsoft Clarity
+    // NOTE: Replace XXXXXXXXXX with actual Microsoft Clarity project ID
     if (prefs.analytics && typeof window !== 'undefined') {
       const clarityScript = document.createElement('script')
       clarityScript.innerHTML = `
@@ -71,6 +73,7 @@ export default function CookieConsent() {
     }
 
     // Meta Pixel (Facebook Pixel)
+    // NOTE: Replace XXXXXXXXXXXXXXX with actual Meta Pixel ID
     if (prefs.marketing && typeof window !== 'undefined') {
       const fbScript = document.createElement('script')
       fbScript.innerHTML = `
