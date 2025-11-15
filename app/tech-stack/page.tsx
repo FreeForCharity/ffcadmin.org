@@ -8,18 +8,26 @@ export const metadata: Metadata = {
 
 export default function TechStack() {
   return (
-    <main className="min-h-screen bg-gray-50">
-      <div className="max-w-5xl mx-auto px-6 py-12">
-        <div className="bg-white rounded-lg shadow-lg p-8">
-          <header className="mb-8 border-b pb-6">
-            <h1 className="text-4xl font-bold text-gray-900 mb-2">
-              Free For Charity — Tech Stack
+    <div className="min-h-screen bg-gray-50">
+      {/* Page Header */}
+      <div className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-12 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto">
+          <div className="flex items-center mb-4">
+            <svg className="w-8 h-8 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+            <h1 className="text-3xl md:text-4xl font-bold">
+              Technology Stack Documentation
             </h1>
-            <p className="text-sm text-gray-600">
-              <strong>Version:</strong> 1.0 | <strong>Last updated:</strong> November 14, 2025 | <strong>Owner:</strong> Global Admin (Free For Charity)
-            </p>
-          </header>
+          </div>
+          <p className="text-blue-100 text-sm">
+            <span className="font-semibold">Version:</span> 1.0 | <span className="font-semibold">Last updated:</span> November 14, 2025 | <span className="font-semibold">Owner:</span> Global Admin (Free For Charity)
+          </p>
+        </div>
+      </div>
 
+      <main className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="bg-white rounded-xl shadow-lg p-6 md:p-8">
           <section className="mb-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">Introduction: What Free For Charity Does</h2>
             <p className="text-gray-700 mb-4">
@@ -49,32 +57,79 @@ export default function TechStack() {
 
           <section className="mb-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">At‑a‑Glance</h2>
-            <p className="text-gray-700 mb-4">This is the single source of truth for our stack, operations, and governance.</p>
+            <p className="text-gray-700 mb-6">This is the single source of truth for our stack, operations, and governance.</p>
             
-            <div className="bg-blue-50 p-6 rounded-lg mb-4">
-              <h3 className="text-lg font-semibold text-gray-900 mb-3">Sections 1–8</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-2 text-gray-700">
-                <a href="#section-1" className="hover:text-blue-600">1) Hosting &amp; Version Control</a>
-                <a href="#section-2" className="hover:text-blue-600">2) Development</a>
-                <a href="#section-3" className="hover:text-blue-600">3) AI Assistance</a>
-                <a href="#section-4" className="hover:text-blue-600">4) Security &amp; Edge Performance</a>
-                <a href="#section-5" className="hover:text-blue-600">5) Compliance &amp; Privacy</a>
-                <a href="#section-6" className="hover:text-blue-600">6) Backup &amp; DR</a>
-                <a href="#section-7" className="hover:text-blue-600">7) Project Management</a>
-                <a href="#section-8" className="hover:text-blue-600">8) Monitoring &amp; Observability</a>
+            <div className="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-xl border border-blue-200 mb-6 shadow-sm">
+              <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center">
+                <svg className="w-5 h-5 mr-2 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                </svg>
+                Core Sections (1–8)
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                <a href="#section-1" className="flex items-center p-3 bg-white rounded-lg hover:shadow-md transition-all hover:bg-blue-50 group">
+                  <span className="text-blue-600 font-bold mr-3 group-hover:scale-110 transition-transform">1</span>
+                  <span className="text-gray-700 group-hover:text-blue-700">Hosting &amp; Version Control</span>
+                </a>
+                <a href="#section-2" className="flex items-center p-3 bg-white rounded-lg hover:shadow-md transition-all hover:bg-blue-50 group">
+                  <span className="text-blue-600 font-bold mr-3 group-hover:scale-110 transition-transform">2</span>
+                  <span className="text-gray-700 group-hover:text-blue-700">Development Framework &amp; UI</span>
+                </a>
+                <a href="#section-3" className="flex items-center p-3 bg-white rounded-lg hover:shadow-md transition-all hover:bg-blue-50 group">
+                  <span className="text-blue-600 font-bold mr-3 group-hover:scale-110 transition-transform">3</span>
+                  <span className="text-gray-700 group-hover:text-blue-700">AI Assistance</span>
+                </a>
+                <a href="#section-4" className="flex items-center p-3 bg-white rounded-lg hover:shadow-md transition-all hover:bg-blue-50 group">
+                  <span className="text-blue-600 font-bold mr-3 group-hover:scale-110 transition-transform">4</span>
+                  <span className="text-gray-700 group-hover:text-blue-700">Security &amp; Edge Performance</span>
+                </a>
+                <a href="#section-5" className="flex items-center p-3 bg-white rounded-lg hover:shadow-md transition-all hover:bg-blue-50 group">
+                  <span className="text-blue-600 font-bold mr-3 group-hover:scale-110 transition-transform">5</span>
+                  <span className="text-gray-700 group-hover:text-blue-700">Compliance &amp; Privacy</span>
+                </a>
+                <a href="#section-6" className="flex items-center p-3 bg-white rounded-lg hover:shadow-md transition-all hover:bg-blue-50 group">
+                  <span className="text-blue-600 font-bold mr-3 group-hover:scale-110 transition-transform">6</span>
+                  <span className="text-gray-700 group-hover:text-blue-700">Backup &amp; DR</span>
+                </a>
+                <a href="#section-7" className="flex items-center p-3 bg-white rounded-lg hover:shadow-md transition-all hover:bg-blue-50 group">
+                  <span className="text-blue-600 font-bold mr-3 group-hover:scale-110 transition-transform">7</span>
+                  <span className="text-gray-700 group-hover:text-blue-700">Project Management</span>
+                </a>
+                <a href="#section-8" className="flex items-center p-3 bg-white rounded-lg hover:shadow-md transition-all hover:bg-blue-50 group">
+                  <span className="text-blue-600 font-bold mr-3 group-hover:scale-110 transition-transform">8</span>
+                  <span className="text-gray-700 group-hover:text-blue-700">Monitoring &amp; Observability</span>
+                </a>
               </div>
             </div>
 
-            <div className="space-y-2 text-gray-700">
-              <p><a href="#support-model" className="hover:text-blue-600 font-semibold">Support Model</a> — How to get help and escalate</p>
-              <p className="font-semibold">Appendices</p>
-              <ul className="list-disc list-inside ml-4 space-y-1">
-                <li><a href="#appendix-a" className="hover:text-blue-600">Appendix A — Global Admin Policies &amp; Licensing</a></li>
-                <li><a href="#appendix-b" className="hover:text-blue-600">Appendix B — GitHub Security &amp; Quality Workflows</a></li>
-                <li><a href="#appendix-c" className="hover:text-blue-600">Appendix C — Compliance &amp; Privacy Snippets</a></li>
-                <li><a href="#appendix-d" className="hover:text-blue-600">Appendix D — Backup &amp; DR Workflows</a></li>
-                <li><a href="#appendix-e" className="hover:text-blue-600">Appendix E — Changelog</a></li>
-              </ul>
+            <div className="space-y-4">
+              <a href="#support-model" className="block p-4 bg-yellow-50 border border-yellow-200 rounded-lg hover:shadow-md transition-all hover:bg-yellow-100 group">
+                <div className="flex items-center">
+                  <svg className="w-6 h-6 mr-3 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
+                  </svg>
+                  <div>
+                    <span className="font-semibold text-gray-900 group-hover:text-yellow-900">Support Model</span>
+                    <span className="text-gray-600 ml-2">— How to get help and escalate</span>
+                  </div>
+                </div>
+              </a>
+
+              <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                <h4 className="font-semibold text-gray-900 mb-3 flex items-center">
+                  <svg className="w-5 h-5 mr-2 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                  </svg>
+                  Appendices
+                </h4>
+                <ul className="space-y-2">
+                  <li><a href="#appendix-a" className="text-gray-700 hover:text-blue-600 transition-colors flex items-center"><span className="text-blue-600 mr-2">→</span>Appendix A — Global Admin Policies &amp; Licensing</a></li>
+                  <li><a href="#appendix-b" className="text-gray-700 hover:text-blue-600 transition-colors flex items-center"><span className="text-blue-600 mr-2">→</span>Appendix B — GitHub Security &amp; Quality Workflows</a></li>
+                  <li><a href="#appendix-c" className="text-gray-700 hover:text-blue-600 transition-colors flex items-center"><span className="text-blue-600 mr-2">→</span>Appendix C — Compliance &amp; Privacy Snippets</a></li>
+                  <li><a href="#appendix-d" className="text-gray-700 hover:text-blue-600 transition-colors flex items-center"><span className="text-blue-600 mr-2">→</span>Appendix D — Backup &amp; DR Workflows</a></li>
+                  <li><a href="#appendix-e" className="text-gray-700 hover:text-blue-600 transition-colors flex items-center"><span className="text-blue-600 mr-2">→</span>Appendix E — Changelog</a></li>
+                </ul>
+              </div>
             </div>
           </section>
 
@@ -509,12 +564,14 @@ export default function TechStack() {
             </div>
           </section>
 
-          <footer className="mt-12 pt-6 border-t text-center text-gray-600 text-sm">
-            <p>Free For Charity — Technology Stack Documentation</p>
-            <p className="mt-2">For questions or support, please open a support ticket or contact Clarke Moyer at 520‑222‑8104</p>
-          </footer>
+          <div className="mt-12 pt-6 border-t bg-blue-50 -mx-6 md:-mx-8 px-6 md:px-8 py-6 rounded-b-xl">
+            <div className="text-center text-gray-700">
+              <p className="font-semibold text-lg mb-2">Free For Charity — Technology Stack Documentation</p>
+              <p className="text-sm">For questions or support, please open a support ticket or contact Clarke Moyer at <a href="tel:520-222-8104" className="text-blue-600 hover:text-blue-800 font-medium">520‑222‑8104</a></p>
+            </div>
+          </div>
         </div>
-      </div>
-    </main>
+      </main>
+    </div>
   )
 }
