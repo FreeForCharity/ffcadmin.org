@@ -16,8 +16,9 @@ jobs:
   check-and-sign:
     runs-on: ubuntu-latest
     # Only run for bot commits
-    if: github.actor == 'copilot-swe-agent[bot]' || github.actor == 'github-actions[bot]'
-    
+    if: |
+      github.actor == 'copilot-swe-agent[bot]' ||
+      github.actor == 'github-actions[bot]'
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -59,22 +60,28 @@ jobs:
           fi
 
       - name: Sign last commit
-        if: steps.gpg_check.outputs.configured == 'true' && steps.check_signature.outputs.signed == 'false'
+        if: |
+          steps.gpg_check.outputs.configured == 'true' &&
+          steps.check_signature.outputs.signed == 'false'
         run: |
           # Amend the last commit with a signature
           git commit --amend --no-edit -S
-          
+
           echo "✅ Signed commit: $(git log -1 --pretty=format:'%h - %s')"
 
       - name: Push signed commit
-        if: steps.gpg_check.outputs.configured == 'true' && steps.check_signature.outputs.signed == 'false'
+        if: |
+          steps.gpg_check.outputs.configured == 'true' &&
+          steps.check_signature.outputs.signed == 'false'
         run: |
           git push --force-with-lease
           echo "✅ Pushed signed commit to ${{ github.ref }}"
 
       - name: Warning if no GPG key
-        if: steps.gpg_check.outputs.configured == 'false' && steps.check_signature.outputs.signed == 'false'
+        if: |
+          steps.gpg_check.outputs.configured == 'false' &&
+          steps.check_signature.outputs.signed == 'false'
         run: |
-          echo "::warning::No GPG key configured. Commits will remain unsigned."
-          echo "::warning::To enable automatic signing, add GPG_PRIVATE_KEY to repository secrets."
+          echo "::warning::No GPG key configured. Commits unsigned."
+          echo "::warning::Add GPG_PRIVATE_KEY to repository secrets."
           echo "::warning::See GPG_SIGNING.md for instructions."
