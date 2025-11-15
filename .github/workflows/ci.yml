@@ -1,0 +1,81 @@
+name: CI - Build and Test
+
+on:
+  pull_request:
+    branches: [ main ]
+  push:
+    branches: [ main ]
+
+jobs:
+  test:
+    name: Run Tests
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 9.0.0
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Run linter
+        run: pnpm run lint
+
+      - name: Build project
+        run: pnpm run build
+
+      - name: Run tests
+        run: pnpm test
+
+  build-check:
+    name: Verify Build Output
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 9.0.0
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build Next.js site
+        run: pnpm run build
+
+      - name: Verify output directory exists
+        run: |
+          if [ ! -d "out" ]; then
+            echo "Error: out directory not found"
+            exit 1
+          fi
+          echo "✓ Build output directory exists"
+
+      - name: Verify critical files exist
+        run: |
+          required_files=("out/index.html" "out/.nojekyll" "out/404.html")
+          for file in "${required_files[@]}"; do
+            if [ ! -f "$file" ]; then
+              echo "Error: Required file $file not found"
+              exit 1
+            fi
+            echo "✓ Found $file"
+          done
