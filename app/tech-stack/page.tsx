@@ -1,3 +1,11 @@
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Technology Stack | Free For Charity',
+  description: 'Complete technology stack documentation for Free For Charity - nonprofit technology initiative delivering free, secure, and scalable websites for charities.',
+  keywords: 'nonprofit technology, charity websites, GitHub Pages, Next.js, React, Cloudflare, technology stack',
+}
+
 export default function TechStack() {
   return (
     <main className="min-h-screen bg-gray-50">
