@@ -6,6 +6,14 @@ const config: Config = {
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
+  safelist: [
+    'hidden',
+    'block',
+    'flex',
+    'md:flex',
+    'md:hidden',
+    'md:block',
+  ],
   theme: {
     extend: {},
   },
