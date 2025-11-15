@@ -50,18 +50,41 @@ The site uses standard Tailwind CSS breakpoints:
 ### Issue: Desktop navigation visible on mobile
 **Symptoms**: You see "Home Tech Stack GitHub" links on mobile instead of hamburger menu
 
+**Important Note**: If you see this issue even in incognito/private browsing mode, it means the CSS file is not loading correctly from GitHub Pages, not a browser cache issue.
+
 **Possible causes**:
-1. **Browser cache**: The CSS file isn't loading due to cached version
-2. **CSS not loading**: Check browser console for 404 errors
-3. **Wrong viewport**: Browser is rendering at desktop width
+1. **CSS not loading**: CSS file returning 404 or not loading from GitHub Pages
+2. **Browser cache**: Old version of CSS file cached (but incognito mode would bypass this)
+3. **Wrong viewport**: Browser is rendering at desktop width (check if zoom is set correctly)
 
 **Solutions**:
-1. **Hard refresh** the page:
-   - **Desktop - Chrome/Edge**: `Ctrl+Shift+R` (Windows) or `Cmd+Shift+R` (Mac)
-   - **Desktop - Safari**: `Cmd+Option+R`
-   - **Desktop - Firefox**: `Ctrl+F5` (Windows) or `Cmd+Shift+R` (Mac)
-   - **iPhone/iPad**: Long press the refresh button in Safari → tap "Request Desktop Website" → reload
-   - **Android - Chrome**: Tap the three dots menu → Settings → Privacy and security → Clear browsing data → select "Cached images and files" → Clear data
+
+1. **Clear cache for THIS SITE ONLY** (recommended to avoid losing other site data):
+   
+   **Desktop - Chrome/Edge:**
+   - Method 1: Open DevTools (`F12`) → Right-click refresh button → "Empty Cache and Hard Reload"
+   - Method 2: Go to `chrome://settings/siteData` → Search "freeforcharity.github.io" → Remove
+   
+   **Desktop - Safari:**
+   - `Cmd+Option+E` to empty caches (requires Develop menu enabled)
+   - Or: Safari → Clear History → "the last hour" only
+   
+   **Desktop - Firefox:**
+   - `Ctrl+Shift+Delete` → Time range: "Last Hour" → Check only "Cache" → Clear Now
+   
+   **iPhone/iPad - Safari (site-specific):**
+   - Settings → Safari → Advanced → Website Data
+   - Search "freeforcharity.github.io" → Swipe left → Delete
+   - (Or Settings → Safari → Clear History and Website Data to clear all)
+   
+   **Android - Chrome (site-specific):**
+   - Chrome menu (⋮) → Settings → Privacy and security → Site settings
+   - View permissions → Search "freeforcharity.github.io" → Clear & reset
+   - (Or Chrome → History → Clear browsing data → "Last hour" → Cached images only)
+   
+   **Android - Samsung Internet:**
+   - Menu → Settings → Privacy and security → Delete browsing data
+   - Time range: "Last hour" → Check only "Cache" → Delete
 
 2. **Check CSS loading**:
    - Open browser DevTools (F12)
@@ -76,13 +99,13 @@ The site uses standard Tailwind CSS breakpoints:
    - Select a mobile device (iPhone, Pixel, etc.)
    - Refresh page
 
-4. **Clear browser cache**:
+Note: If clearing cache for this site only (methods above) doesn't work, you can try these broader cache clearing methods, but they will affect all websites:
    - **Desktop - Chrome**: Settings → Privacy → Clear browsing data → Cached images and files
-   - **Desktop - Safari**: Develop → Empty Caches (or Safari → Clear History)
+   - **Desktop - Safari**: Safari → Clear History → "all history" (clears all sites)
    - **Desktop - Firefox**: Options → Privacy → Clear Data → Cached Web Content
-   - **iPhone/iPad - Safari**: Settings → Safari → Clear History and Website Data
-   - **Android - Chrome**: Chrome menu (three dots) → History → Clear browsing data → Cached images and files
-   - **Android - Samsung Internet**: Menu → Settings → Privacy and security → Delete browsing data → Cache
+   - **iPhone/iPad - Safari**: Settings → Safari → Clear History and Website Data (clears all sites)
+   - **Android - Chrome**: Chrome menu → History → Clear browsing data → Cached images and files (all sites)
+   - **Android - Samsung Internet**: Menu → Settings → Privacy → Delete browsing data → Cache (all sites)
 
 ### Issue: Styles not applied (plain HTML)
 **Symptoms**: Page shows plain text without colors, no blue header, no styling

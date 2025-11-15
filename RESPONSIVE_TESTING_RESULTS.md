@@ -115,14 +115,19 @@ This ensures:
 **What it looks like**: 
 On mobile, you see "Home Tech Stack GitHub" links in the header instead of a hamburger menu.
 
+**Important**: If this happens even in incognito/private mode, the CSS file is not loading from GitHub Pages correctly.
+
 **Root cause**: CSS file not loading (showing unstyled HTML)
 
 **Solutions**:
-1. **Hard refresh**: 
+1. **Clear cache for this site ONLY** (recommended):
+   - See site-specific cache clearing instructions in RESPONSIVE_DESIGN.md
+   - This avoids clearing cache for all websites
+2. **Hard refresh**: 
    - Desktop: `Ctrl+Shift+R` (Windows) or `Cmd+Shift+R` (Mac)
-   - iPhone/iPad: Long press refresh button → "Request Desktop Website" → reload
-   - Android Chrome: Menu → Settings → Privacy → Clear browsing data → Cached images and files
-2. **Clear cache**: See detailed instructions below for each platform
+   - Desktop with DevTools: Open DevTools (F12) → Right-click refresh → "Empty Cache and Hard Reload"
+   - iPhone/iPad: Settings → Safari → Advanced → Website Data → Delete site
+   - Android: Chrome → Settings → Site settings → Clear site data
 3. **Check DevTools**: F12 → Network tab → Look for CSS 404 errors (desktop only)
 4. **Wait**: If just deployed, wait 1-2 minutes for CDN propagation
 

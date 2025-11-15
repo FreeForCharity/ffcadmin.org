@@ -28,17 +28,36 @@ The site is optimized for all device sizes:
 ### Troubleshooting
 If the site appears unstyled or shows desktop navigation on mobile:
 
-**Desktop:**
-1. **Hard refresh**: `Ctrl+Shift+R` (Windows) or `Cmd+Shift+R` (Mac)
-2. **Clear cache**: Browser settings → Clear browsing data
+**Important:** Incognito/private browsing mode does NOT fix responsive design issues. If you see desktop navigation on mobile even in incognito mode, the CSS file may not be loading correctly from GitHub Pages.
 
-**iPhone/iPad:**
-1. Long press refresh button in Safari → "Request Desktop Website" → reload
-2. Settings → Safari → Clear History and Website Data
+#### Clear Cache for This Site Only
 
-**Android:**
-1. Chrome menu (⋮) → Settings → Privacy → Clear browsing data → Cached images and files
-2. Restart browser
+**Desktop - Chrome/Edge:**
+1. Open DevTools: `F12` or `Ctrl+Shift+I` (Windows) / `Cmd+Option+I` (Mac)
+2. Right-click the refresh button → "Empty Cache and Hard Reload"
+3. Or: Go to `chrome://settings/siteData` → Search for "freeforcharity.github.io" → Remove
+
+**Desktop - Safari:**
+1. `Cmd+Option+E` (Develop menu must be enabled in Preferences)
+2. Or: Safari menu → Clear History → Select "the last hour" → Clear History
+
+**Desktop - Firefox:**
+1. `Ctrl+Shift+Delete` (Windows) / `Cmd+Shift+Delete` (Mac)
+2. Time range: "Last Hour" → Select only "Cache" → Clear Now
+
+**iPhone/iPad - Safari:**
+1. Settings → Safari → Advanced → Website Data
+2. Search for "freeforcharity.github.io" → Swipe left → Delete
+3. Or: Settings → Safari → Clear History and Website Data (clears all sites)
+
+**Android - Chrome:**
+1. Chrome menu (⋮) → Settings → Privacy and security → Site settings
+2. Search for "freeforcharity.github.io" → Clear & reset
+3. Or: Chrome menu → History → Clear browsing data → "Last hour" → Cached images and files
+
+**Android - Samsung Internet:**
+1. Menu → Settings → Privacy and security → Delete browsing data
+2. Select "Last hour" → Check only "Cache" → Delete
 
 See [RESPONSIVE_DESIGN.md](./RESPONSIVE_DESIGN.md) for detailed troubleshooting
 
