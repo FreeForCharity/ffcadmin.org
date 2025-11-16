@@ -230,7 +230,7 @@ All assets are correctly referenced from root:
 
 #### iPhone/iPad
 1. To clear cache: Settings → Safari → Clear History and Website Data
-2. Or site-specific: Settings → Safari → Advanced → Website Data → Search "freeforcharity.github.io" → Delete
+2. Or site-specific: Settings → Safari → Advanced → Website Data → Search "ffcadmin.org" (or "freeforcharity.github.io" for backup) → Delete
 3. Try private browsing mode
 4. Restart Safari app
 5. Note: "Request Desktop Website" only changes layout view, it does not clear cache

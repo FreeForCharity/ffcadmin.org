@@ -12,10 +12,11 @@ This repository contains the administrative webpage for Free For Charity. The si
 - Manage charity operations
 
 ## Deployment
-**Status:** ✅ Deployed to GitHub Pages  
-**URL:** https://freeforcharity.github.io/
+**Status:** ✅ Deployed to GitHub Pages with Custom Domain  
+**Primary URL:** https://ffcadmin.org  
+**Backup URL:** https://freeforcharity.github.io/ (GitHub Pages default, for testing)
 
-The site is deployed and accessible via GitHub Pages using a custom domain configuration (root domain, not subpath). The site is fully responsive and works on mobile, tablet, and desktop devices.
+The site is deployed and accessible via a custom domain (ffcadmin.org) with GitHub Pages. The site is fully responsive and works on mobile, tablet, and desktop devices.
 
 ## Responsive Design
 **Status:** ✅ **Fully Responsive**
@@ -128,7 +129,7 @@ If the site appears unstyled or shows desktop navigation on mobile:
 **Desktop - Chrome/Edge:**
 1. Open DevTools: `F12` or `Ctrl+Shift+I` (Windows) / `Cmd+Option+I` (Mac)
 2. Right-click the refresh button → "Empty Cache and Hard Reload"
-3. Or: Go to `chrome://settings/siteData` → Search for "freeforcharity.github.io" → Remove
+3. Or: Go to `chrome://settings/siteData` → Search for "ffcadmin.org" (or "freeforcharity.github.io" for backup URL) → Remove
 
 **Desktop - Safari:**
 1. `Cmd+Option+E` (Develop menu must be enabled in Preferences)
@@ -140,12 +141,12 @@ If the site appears unstyled or shows desktop navigation on mobile:
 
 **iPhone/iPad - Safari:**
 1. Settings → Safari → Advanced → Website Data
-2. Search for "freeforcharity.github.io" → Swipe left → Delete
+2. Search for "ffcadmin.org" (or "freeforcharity.github.io" for backup) → Swipe left → Delete
 3. Or: Settings → Safari → Clear History and Website Data (clears all sites)
 
 **Android - Chrome:**
 1. Chrome menu (⋮) → Settings → Privacy and security → Site settings
-2. Search for "freeforcharity.github.io" → Clear & reset
+2. Search for "ffcadmin.org" (or "freeforcharity.github.io" for backup) → Clear & reset
 3. Or: Chrome menu → History → Clear browsing data → "Last hour" → Cached images and files
 
 **Android - Samsung Internet:**
@@ -175,7 +176,8 @@ This indicates the CSS file is not loading. Check these items in order:
 
 2. **Check GitHub Pages is active**:
    - Repository → Settings → Pages
-   - Should show "Your site is live at https://freeforcharity.github.io/"
+   - Should show "Your site is live at https://ffcadmin.org"
+   - Backup/testing URL: https://freeforcharity.github.io/
    - Note the last deployment time
 
 3. **Verify CSS file exists**:

@@ -63,7 +63,7 @@ The site uses standard Tailwind CSS breakpoints:
    
    **Desktop - Chrome/Edge:**
    - Method 1: Open DevTools (`F12`) → Right-click refresh button → "Empty Cache and Hard Reload"
-   - Method 2: Go to `chrome://settings/siteData` → Search "freeforcharity.github.io" → Remove
+   - Method 2: Go to `chrome://settings/siteData` → Search "ffcadmin.org" (primary) or "freeforcharity.github.io" (backup) → Remove
    
    **Desktop - Safari:**
    - `Cmd+Option+E` to empty caches (requires Develop menu enabled)
@@ -74,12 +74,12 @@ The site uses standard Tailwind CSS breakpoints:
    
    **iPhone/iPad - Safari (site-specific):**
    - Settings → Safari → Advanced → Website Data
-   - Search "freeforcharity.github.io" → Swipe left → Delete
+   - Search "ffcadmin.org" (primary) or "freeforcharity.github.io" (backup) → Swipe left → Delete
    - (Or Settings → Safari → Clear History and Website Data to clear all)
    
    **Android - Chrome (site-specific):**
    - Chrome menu (⋮) → Settings → Privacy and security → Site settings
-   - View permissions → Search "freeforcharity.github.io" → Clear & reset
+   - View permissions → Search "ffcadmin.org" (primary) or "freeforcharity.github.io" (backup) → Clear & reset
    - (Or Chrome → History → Clear browsing data → "Last hour" → Cached images only)
    
    **Android - Samsung Internet:**
