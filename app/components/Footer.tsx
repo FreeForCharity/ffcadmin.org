@@ -167,7 +167,7 @@ export default function Footer() {
         <div className="pt-8 border-t border-gray-800">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-sm text-gray-500">
-              All Rights Are Reserved by Free For Charity a US 501c3 Non Profit
+              All Rights Are Reserved by Free For Charity, a US 501(c)(3) Non Profit
             </p>
             <div className="flex items-center space-x-4">
               <a 
