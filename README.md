@@ -204,6 +204,26 @@ This indicates the CSS file is not loading. Check these items in order:
 ### Testing Results
 For detailed responsive design testing results, see [RESPONSIVE_TESTING_RESULTS.md](./RESPONSIVE_TESTING_RESULTS.md)
 
+## Analytics
+
+This site uses **Microsoft Clarity** for user behavior analytics to help improve the user experience.
+
+### Microsoft Clarity Setup
+
+Microsoft Clarity is integrated into all pages through the root layout (`app/layout.tsx`). To configure your Clarity project:
+
+1. Sign up for a free Microsoft Clarity account at [https://clarity.microsoft.com/](https://clarity.microsoft.com/)
+2. Create a new project and obtain your Clarity Project ID
+3. Set the `NEXT_PUBLIC_CLARITY_PROJECT_ID` environment variable in your deployment environment or create a `.env.local` file with your Clarity Project ID:
+   ```
+   NEXT_PUBLIC_CLARITY_PROJECT_ID=your_project_id_here
+   ```
+4. Rebuild and deploy the site
+
+The Clarity tracking script is loaded using Next.js's `Script` component with the `afterInteractive` strategy to ensure it doesn't block page rendering.
+
+**Note:** As documented in the [Technology Stack](./app/tech-stack/page.tsx), this site prioritizes privacy and compliance. In production deployments, analytics should be consent-gated according to CCPA/CPRA and GDPR requirements using Cloudflare Zaraz or similar consent management solutions.
+
 ## Testing
 
 This project includes comprehensive tests for the CI/CD pipeline and build output.
