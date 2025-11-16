@@ -1,8 +1,23 @@
 'use client'
 
 import Link from 'next/link'
+import { useEffect } from 'react'
 
 export default function Footer() {
+  useEffect(() => {
+    // Load GuideStar widget script
+    const script = document.createElement('script')
+    script.src = 'https://widgets.guidestar.org/gximage2widget.js'
+    script.async = true
+    document.body.appendChild(script)
+
+    return () => {
+      // Cleanup script on component unmount
+      if (document.body.contains(script)) {
+        document.body.removeChild(script)
+      }
+    }
+  }, [])
   return (
     <footer className="bg-black text-white mt-auto">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -12,9 +27,36 @@ export default function Footer() {
           <div>
             <h3 className="text-white text-lg font-bold mb-4">Endorsements</h3>
             <div className="space-y-4">
-              <div className="text-sm text-gray-400">
-                <p className="mb-2">GuideStar Platinum Transparency 2024</p>
-                <p className="text-xs">Free For Charity EIN: 46-2471893</p>
+              <div className="text-sm">
+                {/* GuideStar/Candid Widget */}
+                <div 
+                  id="candid-seal"
+                  data-seal-type="PLATINUM" 
+                  data-theme="dark"
+                  style={{ width: '150px' }}
+                >
+                  <a 
+                    href="https://www.guidestar.org/profile/shared/bbbe173a-87b9-4af9-a8a2-cae255a95742"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
+                    <img 
+                      src="https://widgets.guidestar.org/TransparencySeal/7626173/2024/platinum.svg"
+                      alt="GuideStar Platinum Transparency 2024"
+                      style={{ width: '100%' }}
+                    />
+                  </a>
+                </div>
+                <p className="text-xs text-gray-400 mt-2">Free For Charity EIN: 46-2471893</p>
+                <a 
+                  href="https://www.guidestar.org/profile/shared/bbbe173a-87b9-4af9-a8a2-cae255a95742"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-400 hover:text-blue-300 transition-colors text-xs mt-2 inline-block"
+                >
+                  View Full GuideStar Profile →
+                </a>
               </div>
             </div>
           </div>
