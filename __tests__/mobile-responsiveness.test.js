@@ -67,15 +67,15 @@ describe('Mobile Responsiveness', () => {
     });
 
     it('should include md:flex utility class', () => {
-      expect(cssContent).toContain('.md\\:flex{display:flex}');
+      expect(cssContent).toMatch(/\.md\\:flex\s*\{\s*display\s*:\s*flex\s*\}/);
     });
 
     it('should include md:hidden utility class', () => {
-      expect(cssContent).toContain('.md\\:hidden{display:none}');
+      expect(cssContent).toMatch(/\.md\\:hidden\s*\{\s*display\s*:\s*none\s*\}/);
     });
 
     it('should include sm:block utility class', () => {
-      expect(cssContent).toContain('.sm\\:block{display:block}');
+      expect(cssContent).toMatch(/\.sm\\:block\s*\{\s*display\s*:\s*block\s*\}/);
     });
   });
 

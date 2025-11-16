@@ -50,7 +50,7 @@ The site uses standard Tailwind CSS breakpoints:
 ### Issue: Desktop navigation visible on mobile
 **Symptoms**: You see "Home Tech Stack GitHub" links on mobile instead of hamburger menu
 
-**Important Note**: If you see this issue even in incognito/private browsing mode, it means the CSS file is not loading correctly from GitHub Pages, not a browser cache issue.
+**Important Note**: Before troubleshooting, open the site in an incognito/private browsing window. If you see this issue even in incognito mode, it means the CSS file is not loading correctly from GitHub Pages, not a browser cache issue.
 
 **Possible causes**:
 1. **CSS not loading**: CSS file returning 404 or not loading from GitHub Pages

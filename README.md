@@ -14,7 +14,7 @@ This repository contains the administrative webpage for Free For Charity. The si
 ## Deployment
 **Status:** ✅ Deployed to GitHub Pages with Custom Domain  
 **Primary URL:** https://ffcadmin.org  
-**Backup URL:** https://freeforcharity.github.io/ffcadmin.org/ (GitHub Pages default, for testing)
+**Backup URL:** https://freeforcharity.github.io/ffcadmin.org/ (GitHub Pages default path—for testing when custom domain is unavailable)
 
 The site is deployed and accessible via a custom domain (ffcadmin.org) with GitHub Pages. The site is fully responsive and works on mobile, tablet, and desktop devices.
 
@@ -122,7 +122,7 @@ Next.js adds cache headers to static assets:
 ### Troubleshooting
 If the site appears unstyled or shows desktop navigation on mobile:
 
-**Important:** Incognito/private browsing mode does NOT fix responsive design issues. If you see desktop navigation on mobile even in incognito mode, the CSS file may not be loading correctly from GitHub Pages.
+**Important:** Incognito/private browsing mode does NOT fix responsive design issues. If you see desktop navigation on mobile even in incognito mode, the CSS file is not loading correctly from GitHub Pages.
 
 #### Clear Cache for This Site Only
 
