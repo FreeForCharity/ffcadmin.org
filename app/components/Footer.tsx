@@ -142,7 +142,7 @@ export default function Footer() {
                   </svg>
                   <div>
                     <p className="font-semibold text-white">Main Address</p>
-                    <p className="text-gray-400">4030 Wake Forrest Road Suite 349</p>
+                    <p className="text-gray-400">4030 Wake Forest Road Suite 349</p>
                     <p className="text-gray-400">Raleigh North Carolina 27609</p>
                   </div>
                 </div>
