@@ -145,7 +145,7 @@ On mobile, you see "Home Tech Stack GitHub" links in the header instead of a ham
 1. Open DevTools (F12)
 2. Go to Network tab
 3. Refresh page
-4. Look for `/ffcadmin.org/_next/static/css/[hash].css`
+4. Look for `/_next/static/css/[hash].css`
 5. Status should be `200 OK` not `404 Not Found`
 
 **If 404**:
@@ -202,15 +202,15 @@ Status: ✅ PASS
 ✅ Output: Static export (`output: 'export'`)
 ✅ Images: Unoptimized (`images.unoptimized: true`)
 ✅ Trailing slash: Enabled (`trailingSlash: true`)
-✅ Base path: `/ffcadmin.org`
+✅ Custom domain: Root domain configuration (no basePath)
 ✅ `.nojekyll`: Present in output directory
 ✅ Deploy method: GitHub Actions
 
 ### Asset Paths
-All assets are correctly referenced with base path:
-- CSS: `/ffcadmin.org/_next/static/css/[hash].css`
-- JS: `/ffcadmin.org/_next/static/chunks/[hash].js`
-- Images: `/ffcadmin.org/_next/static/media/[hash].[ext]`
+All assets are correctly referenced from root:
+- CSS: `/_next/static/css/[hash].css`
+- JS: `/_next/static/chunks/[hash].js`
+- Images: `/_next/static/media/[hash].[ext]`
 
 ## Recommendations
 

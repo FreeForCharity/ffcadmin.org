@@ -103,8 +103,8 @@ describe('Mobile Responsiveness', () => {
       expect(fs.existsSync(nojekyllPath)).toBe(true);
     });
 
-    it('should reference CSS with correct basePath', () => {
-      expect(htmlContent).toMatch(/href="\/ffcadmin\.org\/_next\/static\/css\//);
+    it('should reference CSS from root path (custom domain)', () => {
+      expect(htmlContent).toMatch(/href="\/_next\/static\/css\//);
     });
   });
 });

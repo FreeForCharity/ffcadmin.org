@@ -13,7 +13,6 @@ const nextConfig = {
     unoptimized: true,        // Required for static export
   },
   trailingSlash: true,        // Ensures URLs work properly on GitHub Pages
-  basePath: '/ffcadmin.org',  // Required for repository-based GitHub Pages
 }
 ```
 
@@ -32,10 +31,13 @@ const nextConfig = {
    - Ensures `/tech-stack/` works correctly on GitHub Pages
    - Prevents 404 errors when navigating directly to routes
 
-4. **`basePath: '/ffcadmin.org'`**: Sets the base path for the application
-   - Required for repository-based GitHub Pages deployment
-   - The site will be accessible at `https://freeforcharity.github.io/ffcadmin.org/`
-   - All routes and assets will be prefixed with `/ffcadmin.org`
+### Custom Domain Configuration
+
+The site is configured to use a **custom domain (root domain)** instead of a repository-based path:
+- No `basePath` is set in the configuration
+- The site is accessible at `https://freeforcharity.github.io/` (root domain)
+- All routes and assets are served from the root path (e.g., `/_next/static/...`)
+- Custom domain is configured in GitHub Pages settings
 
 ## GitHub Pages Requirements
 

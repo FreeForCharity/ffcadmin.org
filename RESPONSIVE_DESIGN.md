@@ -90,7 +90,7 @@ The site uses standard Tailwind CSS breakpoints:
    - Open browser DevTools (F12)
    - Go to Network tab
    - Refresh page
-   - Look for CSS file loading (should be `/ffcadmin.org/_next/static/css/...`)
+   - Look for CSS file loading (should be `/_next/static/css/...`)
    - Should show status 200 (OK), not 404 (Not Found)
 
 3. **Verify viewport**:
@@ -178,8 +178,8 @@ The mobile menu uses React state to toggle visibility:
 ## GitHub Pages Configuration
 The site is configured for GitHub Pages with:
 - Static HTML export (`output: 'export'`)
-- Base path: `/ffcadmin.org`
+- Custom domain (root domain configuration, no basePath)
 - `.nojekyll` file to prevent Jekyll processing
 - Trailing slashes for proper routing
 
-All assets are served from `/ffcadmin.org/_next/static/` path.
+All assets are served from `/_next/static/` path.

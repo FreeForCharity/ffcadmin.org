@@ -13,9 +13,9 @@ This repository contains the administrative webpage for Free For Charity. The si
 
 ## Deployment
 **Status:** ✅ Deployed to GitHub Pages  
-**URL:** https://freeforcharity.github.io/ffcadmin.org/
+**URL:** https://freeforcharity.github.io/
 
-The site is deployed and accessible via GitHub Pages. The site is fully responsive and works on mobile, tablet, and desktop devices.
+The site is deployed and accessible via GitHub Pages using a custom domain configuration (root domain, not subpath). The site is fully responsive and works on mobile, tablet, and desktop devices.
 
 ## Responsive Design
 **Status:** ✅ **Fully Responsive**
@@ -182,12 +182,12 @@ This indicates the CSS file is not loading. Check these items in order:
    - Open browser DevTools (F12)
    - Go to Network tab
    - Refresh page
-   - Look for CSS file: `/ffcadmin.org/_next/static/css/[hash].css`
+   - Look for CSS file: `/_next/static/css/[hash].css`
    - Should return status `200 OK` not `404 Not Found`
 
 4. **If CSS returns 404**:
    - Check that `.nojekyll` file exists in the `out/` directory (prevents Jekyll from ignoring `_next/`)
-   - Verify `basePath: '/ffcadmin.org'` in `next.config.js`
+   - Verify custom domain configuration in GitHub Pages settings
    - Re-run GitHub Actions workflow
 
 5. **If CSS returns 200 but styles don't apply**:
