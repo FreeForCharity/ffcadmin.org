@@ -55,3 +55,13 @@ The test suite covers:
 - Configuration validation (package.json, lock files)
 
 For detailed test case documentation, see [TEST_CASES.md](./TEST_CASES.md).
+
+## Code Quality and Standards
+
+This project follows industry-standard practices for code quality, style guides, and automated checks. For a comprehensive overview of:
+- Current linting and formatting configurations
+- Type checking and security scanning
+- Testing strategies and coverage
+- Recommendations for enhancements
+
+See [CODE_QUALITY.md](./CODE_QUALITY.md) for complete documentation.
