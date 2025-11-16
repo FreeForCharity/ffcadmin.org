@@ -6,8 +6,8 @@ export default function Footer() {
   return (
     <footer className="bg-black text-white mt-auto">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        {/* Top Section with 4 columns */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+        {/* Top Section with 5 columns */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-8">
           {/* Endorsements */}
           <div>
             <h3 className="text-white text-lg font-bold mb-4">Endorsements</h3>
@@ -27,46 +27,6 @@ export default function Footer() {
                 <Link href="/" className="text-gray-400 hover:text-white transition-colors">
                   Home
                 </Link>
-              </li>
-              <li>
-                <a 
-                  href="https://freeforcharity.org/about-us" 
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-white transition-colors"
-                >
-                  About Us
-                </a>
-              </li>
-              <li>
-                <a 
-                  href="https://freeforcharity.org/donate" 
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-white transition-colors"
-                >
-                  Donate
-                </a>
-              </li>
-              <li>
-                <a 
-                  href="https://freeforcharity.org/volunteer" 
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-white transition-colors"
-                >
-                  Volunteer
-                </a>
-              </li>
-              <li>
-                <a 
-                  href="https://freeforcharity.org/help-for-charities" 
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-white transition-colors"
-                >
-                  Help For Charities
-                </a>
               </li>
               <li>
                 <Link href="/tech-stack" className="text-gray-400 hover:text-white transition-colors">
@@ -129,6 +89,13 @@ export default function Footer() {
                   Security Acknowledgement
                 </a>
               </li>
+            </ul>
+          </div>
+
+          {/* Admin Documentation */}
+          <div>
+            <h3 className="text-white text-lg font-bold mb-4">Admin Documentation</h3>
+            <ul className="space-y-2 text-sm">
               <li>
                 <Link href="/documentation" className="text-gray-400 hover:text-white transition-colors">
                   Documentation
