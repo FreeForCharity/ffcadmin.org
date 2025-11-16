@@ -28,12 +28,12 @@ export default function Footer() {
             <h3 className="text-white text-lg font-bold mb-4">Endorsements</h3>
             <div className="space-y-4">
               <div className="text-sm">
-                {/* GuideStar/Candid Widget */}
+                {/* GuideStar/Candid Widget - Image serves as fallback until widget script executes */}
                 <div 
                   id="candid-seal"
                   data-seal-type="PLATINUM" 
                   data-theme="dark"
-                  style={{ width: '150px' }}
+                  className="w-[150px]"
                 >
                   <a 
                     href="https://www.guidestar.org/profile/shared/bbbe173a-87b9-4af9-a8a2-cae255a95742"
@@ -44,7 +44,7 @@ export default function Footer() {
                     <img 
                       src="https://widgets.guidestar.org/TransparencySeal/7626173/2024/platinum.svg"
                       alt="GuideStar Platinum Transparency 2024"
-                      style={{ width: '100%' }}
+                      className="w-full"
                     />
                   </a>
                 </div>
