@@ -7,6 +7,7 @@ export default function Footer() {
   return (
     <>
       <Script
+        id="guidestar-widget"
         src="https://widgets.guidestar.org/gximage2widget.js"
         strategy="afterInteractive"
       />
