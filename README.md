@@ -251,32 +251,46 @@ For detailed responsive design testing results, see [RESPONSIVE_TESTING_RESULTS.
 
 ## Analytics
 
-This site uses **Google Tag Manager (GTM)** and **Microsoft Clarity** for user behavior analytics to help improve the user experience.
+This site uses **Google Tag Manager (GTM)** to manage analytics and tracking tools, including **Microsoft Clarity** for user behavior analytics to help improve the user experience.
 
 ### Google Tag Manager Setup
 
-Google Tag Manager (GTM-WMZH965Q) is integrated into all pages through the root layout (`app/layout.tsx`). The GTM implementation follows Google's official guidelines:
+Google Tag Manager is configured with container ID **GTM-WMZH965Q** and is loaded on all pages via `app/layout.tsx`. GTM manages the following tools:
+- **Microsoft Clarity**: User behavior analytics and session recordings
+- Additional tracking tools can be configured within the GTM container
 
-- **Head Script**: Placed in the `<head>` section as high as possible using Next.js's `Script` component with `strategy="afterInteractive"` for optimal loading performance
-- **Body Noscript**: Fallback iframe placed immediately after the opening `<body>` tag for users with JavaScript disabled
+### Analytics Configuration
 
-GTM provides a centralized way to manage tracking tags, analytics, and marketing tools without modifying code.
+**Microsoft Clarity** and other analytics tools are managed entirely through Google Tag Manager:
 
-### Microsoft Clarity Setup
-
-Microsoft Clarity is integrated into all pages through the root layout (`app/layout.tsx`). To configure your Clarity project:
-
-1. Sign up for a free Microsoft Clarity account at [https://clarity.microsoft.com/](https://clarity.microsoft.com/)
-2. Create a new project and obtain your Clarity Project ID
-3. Set the `NEXT_PUBLIC_CLARITY_PROJECT_ID` environment variable in your deployment environment or create a `.env.local` file with your Clarity Project ID:
+1. **GTM Container**: `GTM-WMZH965Q` is hardcoded in `app/layout.tsx`
+2. **Clarity Configuration**: Set up within GTM dashboard at [https://tagmanager.google.com/](https://tagmanager.google.com/)
+3. **Consent Management**: The cookie consent banner (`app/components/CookieConsent.tsx`) pushes consent events to GTM's dataLayer:
+   ```javascript
+   window.dataLayer.push({
+     event: 'consent_update',
+     analytics_consent: 'granted',  // or 'denied'
+     marketing_consent: 'granted'   // or 'denied'
+   })
    ```
-   NEXT_PUBLIC_CLARITY_PROJECT_ID=your_project_id_here
-   ```
-4. Rebuild and deploy the site
+4. **GTM Triggers**: Configure tags in GTM to fire based on consent_update events
 
-The Clarity tracking script is loaded using Next.js's `Script` component with the `afterInteractive` strategy to ensure it doesn't block page rendering.
+### Adding Microsoft Clarity to GTM
 
-**Note:** As documented in the [Technology Stack](./app/tech-stack/page.tsx), this site prioritizes privacy and compliance. In production deployments, analytics should be consent-gated according to CCPA/CPRA and GDPR requirements using Cloudflare Zaraz or similar consent management solutions.
+To configure Clarity in Google Tag Manager:
+
+1. Sign up for Microsoft Clarity at [https://clarity.microsoft.com/](https://clarity.microsoft.com/)
+2. Create a project and obtain your Clarity Project ID
+3. In GTM, create a new Custom HTML tag with the Clarity tracking code
+4. Set the tag to fire on consent_update events when analytics_consent = 'granted'
+5. Publish the GTM container
+
+**Privacy & Compliance:** This implementation is privacy-compliant and follows GDPR/CCPA requirements:
+- All analytics tools load only after explicit user consent
+- The cookie consent banner is displayed on first visit
+- Users can customize their cookie preferences at any time
+- Analytics cookies are deleted if consent is withdrawn
+- Consent state is communicated to GTM via dataLayer events
 
 ## Testing
 

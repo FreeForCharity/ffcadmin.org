@@ -4,8 +4,20 @@ import { useState, useEffect, useRef } from 'react'
 
 // Environment variables for tracking IDs (replace with actual values)
 const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || 'G-XXXXXXXXXX'
-const CLARITY_PROJECT_ID = process.env.NEXT_PUBLIC_CLARITY_PROJECT_ID || 'XXXXXXXXXX'
 const META_PIXEL_ID = process.env.NEXT_PUBLIC_META_PIXEL_ID || 'XXXXXXXXXXXXXXX'
+
+// Define type for GTM dataLayer events
+interface DataLayerEvent {
+  event: string;
+  [key: string]: any;
+}
+
+// Extend Window interface to include dataLayer
+declare global {
+  interface Window {
+    dataLayer: DataLayerEvent[];
+  }
+}
 
 export default function CookieConsent() {
   const [showBanner, setShowBanner] = useState(false)
@@ -120,10 +132,21 @@ export default function CookieConsent() {
       }
     }
     
+    // Push consent update to GTM dataLayer
+    if (typeof window !== 'undefined') {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: 'consent_update',
+        analytics_consent: prefs.analytics ? 'granted' : 'denied',
+        marketing_consent: prefs.marketing ? 'granted' : 'denied'
+      })
+    }
+    
     // Load scripts based on consent independently
     if (prefs.analytics) {
       loadGoogleAnalytics()
-      loadMicrosoftClarity()
+      // Microsoft Clarity is now managed via Google Tag Manager
+      // No direct Clarity initialization needed
     }
     if (prefs.marketing) {
       loadMetaPixel()
@@ -152,19 +175,7 @@ export default function CookieConsent() {
     }
   }
 
-  const loadMicrosoftClarity = () => {
-    if (typeof window !== 'undefined' && !document.querySelector('script[src*="clarity.ms"]')) {
-      const clarityScript = document.createElement('script')
-      clarityScript.textContent = `
-        (function(c,l,a,r,i,t,y){
-          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-        })(window, document, "clarity", "script", "${CLARITY_PROJECT_ID}");
-      `
-      document.head.appendChild(clarityScript)
-    }
-  }
+
 
   const loadMetaPixel = () => {
     if (typeof window !== 'undefined' && !document.querySelector('script[src*="fbevents.js"]')) {
