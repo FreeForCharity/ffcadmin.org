@@ -1,12 +1,17 @@
 'use client'
 
 import { useState, useEffect, useRef } from 'react'
-import Clarity from '@microsoft/clarity'
 
 // Environment variables for tracking IDs (replace with actual values)
 const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || 'G-XXXXXXXXXX'
-const CLARITY_PROJECT_ID = process.env.NEXT_PUBLIC_CLARITY_PROJECT_ID || 'XXXXXXXXXX'
 const META_PIXEL_ID = process.env.NEXT_PUBLIC_META_PIXEL_ID || 'XXXXXXXXXXXXXXX'
+
+// Extend Window interface to include dataLayer
+declare global {
+  interface Window {
+    dataLayer: any[];
+  }
+}
 
 export default function CookieConsent() {
   const [showBanner, setShowBanner] = useState(false)
@@ -121,10 +126,20 @@ export default function CookieConsent() {
       }
     }
     
+    // Push consent update to GTM dataLayer
+    if (typeof window !== 'undefined' && window.dataLayer) {
+      window.dataLayer.push({
+        event: 'consent_update',
+        analytics_consent: prefs.analytics ? 'granted' : 'denied',
+        marketing_consent: prefs.marketing ? 'granted' : 'denied'
+      })
+    }
+    
     // Load scripts based on consent independently
     if (prefs.analytics) {
       loadGoogleAnalytics()
-      loadMicrosoftClarity()
+      // Microsoft Clarity is now managed via Google Tag Manager
+      // No direct Clarity initialization needed
     }
     if (prefs.marketing) {
       loadMetaPixel()
@@ -153,20 +168,7 @@ export default function CookieConsent() {
     }
   }
 
-  const loadMicrosoftClarity = () => {
-    if (typeof window !== 'undefined') {
-      // Check if Clarity is already initialized by verifying the script element doesn't exist
-      // The @microsoft/clarity package's init() method creates a <script> element with id="clarity-script"
-      // See: node_modules/@microsoft/clarity/src/utils.js line 13
-      if (!document.getElementById('clarity-script')) {
-        try {
-          Clarity.init(CLARITY_PROJECT_ID)
-        } catch (error) {
-          console.warn('Failed to initialize Microsoft Clarity:', error)
-        }
-      }
-    }
-  }
+
 
   const loadMetaPixel = () => {
     if (typeof window !== 'undefined' && !document.querySelector('script[src*="fbevents.js"]')) {

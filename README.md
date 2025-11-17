@@ -251,32 +251,46 @@ For detailed responsive design testing results, see [RESPONSIVE_TESTING_RESULTS.
 
 ## Analytics
 
-This site uses **Microsoft Clarity** for user behavior analytics to help improve the user experience.
+This site uses **Google Tag Manager (GTM)** to manage analytics and tracking tools, including **Microsoft Clarity** for user behavior analytics.
 
-### Microsoft Clarity Setup
+### Google Tag Manager Setup
 
-Microsoft Clarity is integrated using the official [`@microsoft/clarity`](https://www.npmjs.com/package/@microsoft/clarity) NPM package and only loads after the user consents to analytics cookies. To configure your Clarity project:
+Google Tag Manager is configured with container ID **GTM-WMZH965Q** and is loaded on all pages via `app/layout.tsx`. GTM manages the following tools:
+- **Microsoft Clarity**: User behavior analytics and session recordings
+- Additional tracking tools can be configured within the GTM container
 
-1. Sign up for a free Microsoft Clarity account at [https://clarity.microsoft.com/](https://clarity.microsoft.com/)
-2. Create a new project and obtain your Clarity Project ID (found in your project's Settings > Overview)
-3. **For local development**: Create a `.env.local` file (copy from `.env.example`) and add your Clarity Project ID:
+### Analytics Configuration
+
+**Microsoft Clarity** and other analytics tools are managed entirely through Google Tag Manager:
+
+1. **GTM Container**: `GTM-WMZH965Q` is hardcoded in `app/layout.tsx`
+2. **Clarity Configuration**: Set up within GTM dashboard at [https://tagmanager.google.com/](https://tagmanager.google.com/)
+3. **Consent Management**: The cookie consent banner (`app/components/CookieConsent.tsx`) pushes consent events to GTM's dataLayer:
+   ```javascript
+   window.dataLayer.push({
+     event: 'consent_update',
+     analytics_consent: 'granted' | 'denied',
+     marketing_consent: 'granted' | 'denied'
+   })
    ```
-   NEXT_PUBLIC_CLARITY_PROJECT_ID=your_project_id_here
-   ```
-4. **For GitHub Pages deployment**: Add the `NEXT_PUBLIC_CLARITY_PROJECT_ID` as a repository secret:
-   - Go to your repository's Settings > Secrets and variables > Actions
-   - Click "New repository secret"
-   - Name: `NEXT_PUBLIC_CLARITY_PROJECT_ID`
-   - Value: Your Clarity project ID
-5. Rebuild and deploy the site
+4. **GTM Triggers**: Configure tags in GTM to fire based on consent_update events
 
-The Clarity tracking script is loaded using the `@microsoft/clarity` NPM package's `Clarity.init()` method, which is called only after the user accepts analytics cookies in the cookie consent banner.
+### Adding Microsoft Clarity to GTM
+
+To configure Clarity in Google Tag Manager:
+
+1. Sign up for Microsoft Clarity at [https://clarity.microsoft.com/](https://clarity.microsoft.com/)
+2. Create a project and obtain your Clarity Project ID
+3. In GTM, create a new Custom HTML tag with the Clarity tracking code
+4. Set the tag to fire on consent_update events when analytics_consent = 'granted'
+5. Publish the GTM container
 
 **Privacy & Compliance:** This implementation is privacy-compliant and follows GDPR/CCPA requirements:
-- Clarity only loads after explicit user consent
+- All analytics tools load only after explicit user consent
 - The cookie consent banner is displayed on first visit
 - Users can customize their cookie preferences at any time
 - Analytics cookies are deleted if consent is withdrawn
+- Consent state is communicated to GTM via dataLayer events
 
 ## Testing
 
