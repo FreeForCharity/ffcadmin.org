@@ -58,9 +58,7 @@ jobs:
               // Find workflow by name
               const workflow = workflows.data.workflows.find(w => w.name === workflowName)
               if (!workflow) {
-                console.log(`⚠ Workflow '${workflowName}' not found`)
-                allCompleted = false
-                continue
+                throw new Error(`Workflow '${workflowName}' not found`)
               }
               
               // Get latest run for this workflow on this commit
@@ -68,15 +66,12 @@ jobs:
                 owner,
                 repo,
                 workflow_id: workflow.id,
-                branch: 'main',
-                event: 'push'
+                branch: 'main'
               })
               const run = runs.data.workflow_runs.find(r => r.head_sha === sha)
               
               if (!run) {
-                console.log(`⚠ No run found for workflow '${workflowName}' on commit ${sha}`)
-                allCompleted = false
-                continue
+                throw new Error(`❌ Required workflow '${workflowName}' has no run for commit ${sha}. This may indicate a misconfiguration or a CI failure. Deployment aborted.`)
               }
               
               console.log(`Workflow '${workflowName}': status=${run.status}, conclusion=${run.conclusion}`)
@@ -98,15 +93,15 @@ jobs:
               console.log(`✓ Workflow '${workflowName}' completed successfully`)
             }
 
-            if (!allCompleted) {
-              console.log('⏸ Not all workflows have completed. Skipping deployment for now.')
-              core.setOutput('should_deploy', 'false')
-              return
-            }
-
             if (!allSucceeded) {
               console.log('❌ Some workflows failed. Aborting deployment.')
               core.setFailed('One or more required workflows failed')
+              return
+            }
+
+            if (!allCompleted) {
+              console.log('⏸ Not all workflows have completed. Skipping deployment for now.')
+              core.setOutput('should_deploy', 'false')
               return
             }
 
