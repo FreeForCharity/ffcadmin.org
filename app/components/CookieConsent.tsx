@@ -155,8 +155,9 @@ export default function CookieConsent() {
 
   const loadMicrosoftClarity = () => {
     if (typeof window !== 'undefined') {
-      // Check if Clarity is already initialized by checking for the script element
-      // The NPM package creates a script element with id 'clarity-script'
+      // Check if Clarity is already initialized by verifying the script element doesn't exist
+      // The @microsoft/clarity package's init() method creates a <script> element with id="clarity-script"
+      // See: node_modules/@microsoft/clarity/src/utils.js line 13
       if (!document.getElementById('clarity-script')) {
         try {
           Clarity.init(CLARITY_PROJECT_ID)
