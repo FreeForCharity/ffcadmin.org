@@ -32,6 +32,7 @@ export default function Footer() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-gray-400 hover:text-white transition-colors"
+                    aria-label="View GuideStar Platinum Transparency certification"
                   >
                     <img 
                       src="https://widgets.guidestar.org/TransparencySeal/7626173/2024/platinum.svg"
