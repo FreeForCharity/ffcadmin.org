@@ -49,7 +49,7 @@ describe('Workflow Dependencies Tests', () => {
       expect(deployWorkflow.jobs).toHaveProperty('check-workflows')
       const checkWorkflowsJob = deployWorkflow.jobs['check-workflows']
       expect(checkWorkflowsJob.outputs).toHaveProperty('should_deploy')
-      
+
       const checkStep = checkWorkflowsJob.steps.find(
         (step) => step.id === 'check' || step.name.includes('workflows status')
       )

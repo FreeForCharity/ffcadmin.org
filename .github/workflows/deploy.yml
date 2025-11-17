@@ -51,9 +51,11 @@ jobs:
             let allCompleted = true
             let allSucceeded = true
 
+            // Get all workflows once to avoid multiple API calls
+            const workflows = await github.rest.actions.listRepoWorkflows({ owner, repo })
+
             for (const workflowName of workflowsToCheck) {
-              // Get workflow id by name
-              const workflows = await github.rest.actions.listRepoWorkflows({ owner, repo })
+              // Find workflow by name
               const workflow = workflows.data.workflows.find(w => w.name === workflowName)
               if (!workflow) {
                 console.log(`⚠ Workflow '${workflowName}' not found`)
