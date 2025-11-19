@@ -171,7 +171,7 @@ pnpm exec husky init
 ```json
 {
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": ["eslint --fix", "prettier --write"],
+    "*.{js,jsx,ts,tsx}": ["prettier --write", "eslint --fix"],
     "*.{json,md,css}": ["prettier --write"]
   }
 }
@@ -216,7 +216,7 @@ pnpm exec lint-staged
 ```json
 {
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": ["eslint --fix", "prettier --write"],
+    "*.{js,jsx,ts,tsx}": ["prettier --write", "eslint --fix"],
     "*.{json,md,css}": ["prettier --write"]
   }
 }

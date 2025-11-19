@@ -293,7 +293,7 @@ Husky and lint-staged are now fully configured and active.
 ```json
 {
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": ["eslint --fix", "prettier --write"],
+    "*.{js,jsx,ts,tsx}": ["prettier --write", "eslint --fix"],
     "*.{json,md,css}": ["prettier --write"]
   }
 }
@@ -320,8 +320,8 @@ When you commit, the pre-commit hook automatically runs:
 
 ```bash
 git commit -m "Your message"
-# ✓ Runs Prettier on staged files
-# ✓ Runs ESLint on staged files
+# ✓ Runs Prettier on staged files (formatting first)
+# ✓ Runs ESLint on staged files (linting second)
 # ✓ Applies fixes automatically
 # ✓ Commits only if all checks pass
 ```
@@ -637,7 +637,7 @@ Create `lighthouserc.json`:
 | ------------------ | ---------------------------- | ----------------------------------- | --------------------- |
 | Linting            | ESLint + Prettier            | ESLint + Prettier                   | ✅ Implemented        |
 | Type Checking      | TypeScript strict mode       | TypeScript strict + explicit checks | ⚠️ Add explicit check |
-| Testing            | Jest + RTL (76 tests)        | Jest + RTL + Coverage thresholds    | ⚠️ Add thresholds     |
+| Testing            | Jest + RTL (62 tests)        | Jest + RTL + Coverage thresholds    | ⚠️ Add thresholds     |
 | Security           | CodeQL scanning              | CodeQL + Dependency scanning        | ✅ Good               |
 | CI/CD              | Format + Lint + Build + Test | Format + Lint + Build + Test        | ✅ Implemented        |
 | Git Hooks          | Husky + lint-staged          | Pre-commit hooks                    | ✅ Implemented        |
