@@ -105,6 +105,9 @@ export default function TrainingPlan() {
 
           <div className="overflow-x-auto">
             <table className="min-w-full divide-y divide-gray-300 border border-gray-300">
+              <caption className="sr-only">
+                Licensing costs and operational notes for Free For Charity products
+              </caption>
               <thead className="bg-gray-50">
                 <tr>
                   <th className="px-4 py-3 text-left text-sm font-semibold text-gray-900 border-r border-gray-300">
@@ -619,18 +622,18 @@ export default function TrainingPlan() {
                   Execute the "Issue-to-PR" workflow using GitHub Copilot.
                 </p>
                 <p className="text-gray-900 font-semibold mb-2">Doctrine:</p>
-                <ul className="space-y-2 mb-4">
+                <ul className="list-disc list-inside space-y-2 mb-4">
                   <li className="text-gray-700">
-                    • Global Admin writes a structured, detailed Issue defining a feature or fix.
+                    Global Admin writes a structured, detailed Issue defining a feature or fix.
                   </li>
                   <li className="text-gray-700">
-                    • Copilot Workspace/CLI is used to read the Issue context.
+                    Copilot Workspace/CLI is used to read the Issue context.
                   </li>
                   <li className="text-gray-700">
-                    • Copilot generates the code changes automatically.
+                    Copilot generates the code changes automatically.
                   </li>
                   <li className="text-gray-700">
-                    • Copilot opens the Pull Request (PR) referencing the Issue.
+                    Copilot opens the Pull Request (PR) referencing the Issue.
                   </li>
                 </ul>
                 <p className="text-gray-900 font-semibold mb-2">Directives:</p>
