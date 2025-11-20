@@ -77,9 +77,9 @@ jobs:
           echo "=== Link Validation Results ==="
 
           # Count different status codes
-          TOTAL_LINKS=$(cat link-report.json | jq '.links | length')
-          PASSED_LINKS=$(cat link-report.json | jq '[.links[] | select(.state == "OK")] | length')
-          BROKEN_LINKS=$(cat link-report.json | jq '[.links[] | select(.status >= 400 and .status < 600)] | length')
+          TOTAL_LINKS=$(jq '.links | length' link-report.json)
+          PASSED_LINKS=$(jq '[.links[] | select(.state == "OK")] | length' link-report.json)
+          BROKEN_LINKS=$(jq '[.links[] | select(.status >= 400 and .status < 600)] | length' link-report.json)
 
           echo "Total links scanned: $TOTAL_LINKS"
           echo "Passed links: $PASSED_LINKS"
@@ -89,7 +89,7 @@ jobs:
           if [ "$BROKEN_LINKS" -gt 0 ]; then
             echo ""
             echo "❌ Broken links found:"
-            cat link-report.json | jq -r '.links[] | select(.status >= 400 and .status < 600) | "  [\(.status)] \(.url)"'
+            jq -r '.links[] | select(.status >= 400 and .status < 600) | "  [\(.status)] \(.url)"' link-report.json
             exit 1
           fi
 
