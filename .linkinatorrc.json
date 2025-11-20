@@ -11,9 +11,10 @@
     "https://policies.google.com/*",
     "https://privacy.microsoft.com/*",
     "https://www.facebook.com/*",
+    "https://facebook.com/*",
     "https://tools.google.com/*",
     "https://www.cloudflare.com/*",
     "https://www.lastpass.com/*",
-    "https://github.com/FreeForCharity/ffcadmin.org/blob/*"
+    "https://github.com/FreeForCharity/ffcadmin.org*"
   ]
 }
