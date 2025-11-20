@@ -110,19 +110,34 @@ export default function TrainingPlan() {
               </caption>
               <thead className="bg-gray-50">
                 <tr>
-                  <th className="px-4 py-3 text-left text-sm font-semibold text-gray-900 border-r border-gray-300">
+                  <th
+                    scope="col"
+                    className="px-4 py-3 text-left text-sm font-semibold text-gray-900 border-r border-gray-300"
+                  >
                     Product / License
                   </th>
-                  <th className="px-4 py-3 text-left text-sm font-semibold text-gray-900 border-r border-gray-300">
+                  <th
+                    scope="col"
+                    className="px-4 py-3 text-left text-sm font-semibold text-gray-900 border-r border-gray-300"
+                  >
                     Tactical Purpose
                   </th>
-                  <th className="px-4 py-3 text-left text-sm font-semibold text-gray-900 border-r border-gray-300">
+                  <th
+                    scope="col"
+                    className="px-4 py-3 text-left text-sm font-semibold text-gray-900 border-r border-gray-300"
+                  >
                     Standard Price
                   </th>
-                  <th className="px-4 py-3 text-left text-sm font-semibold text-gray-900 border-r border-gray-300">
+                  <th
+                    scope="col"
+                    className="px-4 py-3 text-left text-sm font-semibold text-gray-900 border-r border-gray-300"
+                  >
                     Nonprofit / FFC Price
                   </th>
-                  <th className="px-4 py-3 text-left text-sm font-semibold text-gray-900">
+                  <th
+                    scope="col"
+                    className="px-4 py-3 text-left text-sm font-semibold text-gray-900"
+                  >
                     Operational Notes
                   </th>
                 </tr>

@@ -3,7 +3,6 @@
   "skip": [
     "https://www.guidestar.org/*",
     "https://widgets.guidestar.org/*",
-    "https://facebook.com/*",
     "https://twitter.com/*",
     "https://linkedin.com/*",
     "https://youtube.com/*",
