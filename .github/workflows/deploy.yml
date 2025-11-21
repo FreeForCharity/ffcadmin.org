@@ -143,10 +143,44 @@ jobs:
           path: ./out
           retention-days: 1
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v4
+      - name: Verify .nojekyll file exists
+        run: |
+          if [ ! -f ./out/.nojekyll ]; then
+            echo "Error: .nojekyll file not found in ./out directory"
+            exit 1
+          fi
+          echo "✓ .nojekyll file found in ./out directory"
+
+      - name: Create GitHub Pages artifact with dotfiles
+        run: |
+          # Create artifact directory
+          mkdir -p /tmp/artifact
+          
+          # Create tar archive with all files including dotfiles
+          # Using tar with --dereference to follow symlinks and -czf for compression
+          cd ./out
+          tar \
+            --dereference --hard-dereference \
+            --directory . \
+            -czf /tmp/artifact/artifact.tar.gz \
+            .
+          
+          echo "✓ Created artifact.tar.gz with all files including .nojekyll"
+          
+          # Verify .nojekyll is in the archive
+          if tar -tzf /tmp/artifact/artifact.tar.gz | grep -q "^\.nojekyll$"; then
+            echo "✓ Verified .nojekyll file is included in the artifact"
+          else
+            echo "Error: .nojekyll file not found in artifact"
+            exit 1
+          fi
+
+      - name: Upload GitHub Pages artifact
+        uses: actions/upload-artifact@v5
         with:
-          path: ./out
+          name: github-pages
+          path: /tmp/artifact/artifact.tar.gz
+          retention-days: 1
 
   deploy:
     environment:
