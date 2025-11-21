@@ -27,7 +27,6 @@ jobs:
         uses: dawidd6/action-download-artifact@v6
         with:
           workflow: deploy.yml
-          workflow_conclusion: success
           name: build-output
           path: ./out
           github_token: ${{ secrets.GITHUB_TOKEN }}
@@ -83,7 +82,7 @@ jobs:
 
       - name: Upload Lighthouse results
         uses: actions/upload-artifact@v4
-        if: always() && hashFiles('.lighthouseci/**') != ''
+        if: (success() || failure()) && hashFiles('.lighthouseci/**') != ''
         with:
           name: lighthouse-results
           path: .lighthouseci
