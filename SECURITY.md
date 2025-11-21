@@ -52,7 +52,7 @@ Code cannot be deployed without passing:
 2. ✅ Linting checks (ESLint with security rules)
 3. ✅ TypeScript strict mode compilation
 4. ✅ Build verification
-5. ✅ Comprehensive test suite (218+ tests)
+5. ✅ Comprehensive test suite (all tests must pass)
 6. ✅ CodeQL security analysis
 
 See [.github/workflows/README.md](.github/workflows/README.md) for detailed CI/CD documentation.
