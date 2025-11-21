@@ -301,7 +301,7 @@ const testSuites: TestSuite[] = [
     category: 'Component Tests',
     file: '__tests__/components/Navigation.test.tsx',
     purpose: 'Tests the Navigation component rendering, behavior, and user interactions',
-    testsCount: 12,
+    testsCount: 11,
     whatItTests: [
       'Component renders without crashing',
       'Logo is displayed correctly',
