@@ -97,18 +97,17 @@ jobs:
           steps.bot_check.outputs.is_bot == 'true' &&
           steps.gpg_check.outputs.configured == 'true'
         run: |
-          echo "🔑 GPG key imported:"
+          echo "🔑 GPG key imported successfully:"
           echo "  Key ID: ${{ steps.import_gpg.outputs.keyid }}"
           echo "  Name: ${{ steps.import_gpg.outputs.name }}"
           echo "  Email: ${{ steps.import_gpg.outputs.email }}"
           echo "  Fingerprint: ${{ steps.import_gpg.outputs.fingerprint }}"
           echo ""
-          echo "📋 Available GPG keys:"
-          gpg --list-secret-keys --keyid-format LONG || echo "No keys found"
+          echo "📋 Secret keys available: $(gpg --list-secret-keys --keyid-format LONG | grep -c '^sec' || echo 0)"
           echo ""
           echo "🔧 Git signing configuration:"
-          git config --get user.signingkey || echo "No signing key configured"
-          git config --get commit.gpgsign || echo "GPG signing not enabled"
+          echo "  Signing key: $(git config --get user.signingkey || echo 'Not set')"
+          echo "  GPG signing enabled: $(git config --get commit.gpgsign || echo 'false')"
 
       - name: Check last commit signature
         id: check_signature
