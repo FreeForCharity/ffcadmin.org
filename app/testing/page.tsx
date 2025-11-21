@@ -27,7 +27,7 @@ const testSuites: TestSuite[] = [
     category: 'Configuration & Build',
     file: '__tests__/config-validation.test.js',
     purpose: 'Validates that all project configuration files are correctly set up and consistent',
-    testsCount: 24,
+    testsCount: 21,
     whatItTests: [
       'package.json structure and required fields',
       'Node.js version requirement matches CI environment',
@@ -46,7 +46,7 @@ const testSuites: TestSuite[] = [
     category: 'Configuration & Build',
     file: '__tests__/editorconfig.test.js',
     purpose: 'Ensures EditorConfig file exists and is properly formatted for IDE consistency',
-    testsCount: 6,
+    testsCount: 12,
     whatItTests: [
       '.editorconfig file existence',
       'Basic structure validation',
@@ -64,7 +64,7 @@ const testSuites: TestSuite[] = [
     category: 'Configuration & Build',
     file: '__tests__/commitlint-config.test.js',
     purpose: 'Validates commit message linting configuration for consistent commit history',
-    testsCount: 5,
+    testsCount: 8,
     whatItTests: [
       'commitlint.config.js file existence',
       'Configuration extends conventional commits',
@@ -82,7 +82,7 @@ const testSuites: TestSuite[] = [
     category: 'Configuration & Build',
     file: '__tests__/bundle-analyzer.test.js',
     purpose: 'Validates bundle size analysis configuration for performance monitoring',
-    testsCount: 9,
+    testsCount: 11,
     whatItTests: [
       '@next/bundle-analyzer dependency installation',
       'Analyze script presence in package.json',
@@ -101,7 +101,7 @@ const testSuites: TestSuite[] = [
     category: 'Configuration & Build',
     file: '__tests__/lighthouse-config.test.js',
     purpose: 'Validates Lighthouse CI configuration for automated performance auditing',
-    testsCount: 10,
+    testsCount: 11,
     whatItTests: [
       'lighthouserc.json file existence and validity',
       'Configuration structure (ci.collect, ci.assert)',
@@ -122,7 +122,7 @@ const testSuites: TestSuite[] = [
     file: '__tests__/workflow-dependencies.test.js',
     purpose:
       'Ensures GitHub Actions workflows run in the correct order to prevent premature deployment',
-    testsCount: 6,
+    testsCount: 14,
     whatItTests: [
       'Deploy workflow runs after CI workflow completes',
       'Lighthouse workflow runs after successful deployment',
@@ -142,7 +142,7 @@ const testSuites: TestSuite[] = [
     category: 'Build & Deployment',
     file: '__tests__/build-output.test.js',
     purpose: 'Verifies that the build process produces the correct output structure',
-    testsCount: 6,
+    testsCount: 7,
     whatItTests: [
       'out/ directory creation after build',
       'index.html (home page) existence',
@@ -162,7 +162,7 @@ const testSuites: TestSuite[] = [
     category: 'Build & Deployment',
     file: '__tests__/github-pages-config.test.js',
     purpose: 'Ensures the site is properly configured for GitHub Pages static hosting',
-    testsCount: 4,
+    testsCount: 7,
     whatItTests: [
       '.nojekyll file presence in output directory',
       'Next.js configuration has output: "export"',
@@ -180,7 +180,7 @@ const testSuites: TestSuite[] = [
     category: 'Build & Deployment',
     file: '__tests__/route-generation.test.js',
     purpose: 'Validates that all application routes are generated as static HTML pages',
-    testsCount: 14,
+    testsCount: 10,
     whatItTests: [
       'Home page (index.html) generation',
       'Tech Stack page generation',
@@ -222,7 +222,7 @@ const testSuites: TestSuite[] = [
     category: 'Design & Responsiveness',
     file: '__tests__/responsive-design.test.js',
     purpose: 'Validates Tailwind CSS breakpoints and responsive utility classes',
-    testsCount: 17,
+    testsCount: 11,
     whatItTests: [
       'Tailwind CSS configuration file existence',
       'Responsive breakpoints (sm: 640px, md: 768px, lg: 1024px)',
@@ -303,7 +303,7 @@ const testSuites: TestSuite[] = [
     category: 'Component Tests',
     file: '__tests__/components/Footer.test.tsx',
     purpose: 'Tests the Footer component rendering and link functionality',
-    testsCount: 8,
+    testsCount: 10,
     whatItTests: [
       'Component renders correctly',
       'Copyright text displays with current year',
@@ -324,7 +324,7 @@ const testSuites: TestSuite[] = [
     category: 'Component Tests',
     file: '__tests__/components/HomePage.test.tsx',
     purpose: 'Tests the Home page component rendering and content',
-    testsCount: 5,
+    testsCount: 4,
     whatItTests: [
       'Page renders without errors',
       'Main heading is present and accessible',
