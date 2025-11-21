@@ -665,7 +665,7 @@ export default function CanvaDesignerPath() {
               <span className="bg-green-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 text-sm font-bold">
                 3
               </span>
-              Tertiary Goal: Email and Stationary Templates
+              Tertiary Goal: Email and Stationery Templates
             </h3>
             <div className="ml-11 space-y-4">
               <p className="text-gray-700">
@@ -701,7 +701,7 @@ export default function CanvaDesignerPath() {
                   </li>
                 </ul>
 
-                <p className="text-gray-900 font-semibold mb-3">Stationary Templates:</p>
+                <p className="text-gray-900 font-semibold mb-3">Stationery Templates:</p>
                 <ul className="space-y-3">
                   <li className="text-gray-700">
                     <strong>Letterhead:</strong> 8.5x11" with header and footer (for official
@@ -1022,7 +1022,7 @@ export default function CanvaDesignerPath() {
               </div>
               <div>
                 <h3 className="font-semibold text-gray-900 mb-1">
-                  Design Email and Stationary Templates
+                  Design Email and Stationery Templates
                 </h3>
                 <p className="text-gray-700 text-sm">
                   Create newsletter templates, letterhead, business cards, and presentation decks.
