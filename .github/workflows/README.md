@@ -136,10 +136,15 @@ Runs automated Lighthouse performance, accessibility, best practices, and SEO au
 
 1. Checks out the code
 2. Downloads the build artifact from the deployment workflow (reuses already-built `out/` directory)
-3. Installs Lighthouse CI globally
-4. Runs Lighthouse audits on key pages (home, tech stack, documentation)
-5. Each page is tested 3 times for consistent results
-6. Uploads results as GitHub artifacts (retained for 30 days)
+   - Uses `run_id` to download from the specific workflow run that triggered this workflow
+   - Prevents "no artifacts found" errors by targeting the exact deployment run
+3. Verifies the build output exists before proceeding
+4. Installs Lighthouse CI globally
+5. Runs Lighthouse audits on key pages (home, tech stack, documentation)
+6. Each page is tested 3 times for consistent results
+7. Checks if Lighthouse results were generated
+8. Uploads results as GitHub artifacts (retained for 30 days)
+   - Only uploads if `.lighthouseci` directory contains files
 
 **When manually triggered (`workflow_dispatch`):**
 
@@ -181,6 +186,22 @@ Runs automated Lighthouse performance, accessibility, best practices, and SEO au
 - Historical tracking without blocking deployments
 
 **Note:** This workflow runs in "warn" mode - it provides informational reports but will not fail or block deployments. This ensures continuous monitoring without impeding the deployment process.
+
+### Common Issues and Fixes
+
+**Issue: "no artifacts found" when downloading build artifact**
+
+- **Cause:** The workflow was searching for artifacts from any recent deploy workflow run, not the specific run that triggered this workflow
+- **Fix:** Added `run_id: ${{ github.event.workflow_run.id }}` parameter to download artifacts from the exact workflow run that triggered this audit
+
+**Issue: "No files were found with the provided path: .lighthouseci"**
+
+- **Cause:** The `.lighthouseci` directory wasn't being created (Lighthouse CI didn't run) or was empty, but the workflow tried to upload it anyway
+- **Fix:** Added condition `hashFiles('.lighthouseci/**') != ''` to only upload when the directory contains files
+
+**Issue: Workflow fails silently without clear error message**
+
+- **Fix:** Added verification steps that check if build output exists and if Lighthouse results were generated, providing clear error messages for debugging
 
 ## Workflow Summary
 
