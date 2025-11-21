@@ -335,8 +335,8 @@ export default function CanvaDesignerPath() {
                 </ul>
                 <div className="bg-blue-50 border-l-4 border-blue-600 p-3 rounded mt-4">
                   <p className="text-blue-900 font-semibold">
-                    💡 Pro Tip: Take notes on nonprofit-specific templates and design patterns you
-                    can adapt for your assigned organization.
+                    <span aria-hidden="true">💡</span> Pro Tip: Take notes on nonprofit-specific
+                    templates and design patterns you can adapt for your assigned organization.
                   </p>
                 </div>
               </div>
@@ -393,8 +393,8 @@ export default function CanvaDesignerPath() {
                 </ul>
                 <div className="bg-purple-50 border-l-4 border-purple-600 p-3 rounded mt-4">
                   <p className="text-purple-900 font-semibold">
-                    💡 Pro Tip: The Brand Kit will be your first major deliverable. Pay special
-                    attention to these modules!
+                    <span aria-hidden="true">💡</span> Pro Tip: The Brand Kit will be your first
+                    major deliverable. Pay special attention to these modules!
                   </p>
                 </div>
               </div>
@@ -536,7 +536,9 @@ export default function CanvaDesignerPath() {
 
                 <div className="space-y-4">
                   <div className="border-l-4 border-blue-400 pl-4">
-                    <h4 className="font-semibold text-gray-900 mb-2">📘 Facebook</h4>
+                    <h4 className="font-semibold text-gray-900 mb-2">
+                      <span aria-hidden="true">📘</span> Facebook
+                    </h4>
                     <ul className="text-sm text-gray-700 space-y-1 ml-4 list-disc">
                       <li>
                         <strong>Feed posts:</strong> Square (1080x1080px) and landscape (1200x630px)
@@ -558,7 +560,9 @@ export default function CanvaDesignerPath() {
                   </div>
 
                   <div className="border-l-4 border-sky-400 pl-4">
-                    <h4 className="font-semibold text-gray-900 mb-2">🐦 Twitter/X</h4>
+                    <h4 className="font-semibold text-gray-900 mb-2">
+                      <span aria-hidden="true">🐦</span> Twitter/X
+                    </h4>
                     <ul className="text-sm text-gray-700 space-y-1 ml-4 list-disc">
                       <li>
                         <strong>Post image:</strong> 1200x675px (16:9 ratio)
@@ -574,7 +578,9 @@ export default function CanvaDesignerPath() {
                   </div>
 
                   <div className="border-l-4 border-pink-400 pl-4">
-                    <h4 className="font-semibold text-gray-900 mb-2">📷 Instagram</h4>
+                    <h4 className="font-semibold text-gray-900 mb-2">
+                      <span aria-hidden="true">📷</span> Instagram
+                    </h4>
                     <ul className="text-sm text-gray-700 space-y-1 ml-4 list-disc">
                       <li>
                         <strong>Feed posts:</strong> Square (1080x1080px)
@@ -596,7 +602,9 @@ export default function CanvaDesignerPath() {
                   </div>
 
                   <div className="border-l-4 border-blue-600 pl-4">
-                    <h4 className="font-semibold text-gray-900 mb-2">💼 LinkedIn</h4>
+                    <h4 className="font-semibold text-gray-900 mb-2">
+                      <span aria-hidden="true">💼</span> LinkedIn
+                    </h4>
                     <ul className="text-sm text-gray-700 space-y-1 ml-4 list-disc">
                       <li>
                         <strong>Post image:</strong> 1200x627px (professional tone)
@@ -612,7 +620,9 @@ export default function CanvaDesignerPath() {
                   </div>
 
                   <div className="border-l-4 border-red-400 pl-4">
-                    <h4 className="font-semibold text-gray-900 mb-2">📍 Pinterest</h4>
+                    <h4 className="font-semibold text-gray-900 mb-2">
+                      <span aria-hidden="true">📍</span> Pinterest
+                    </h4>
                     <ul className="text-sm text-gray-700 space-y-1 ml-4 list-disc">
                       <li>
                         <strong>Pin image:</strong> 1000x1500px (2:3 ratio, vertical)
@@ -628,7 +638,9 @@ export default function CanvaDesignerPath() {
                   </div>
 
                   <div className="border-l-4 border-purple-400 pl-4">
-                    <h4 className="font-semibold text-gray-900 mb-2">🎬 YouTube</h4>
+                    <h4 className="font-semibold text-gray-900 mb-2">
+                      <span aria-hidden="true">🎬</span> YouTube
+                    </h4>
                     <ul className="text-sm text-gray-700 space-y-1 ml-4 list-disc">
                       <li>
                         <strong>Thumbnail:</strong> 1280x720px (bold text, high contrast)
@@ -645,7 +657,9 @@ export default function CanvaDesignerPath() {
                 </div>
 
                 <div className="bg-blue-50 border-l-4 border-blue-600 p-3 rounded mt-4">
-                  <p className="text-blue-900 font-semibold mb-2">💡 Template Best Practices:</p>
+                  <p className="text-blue-900 font-semibold mb-2">
+                    <span aria-hidden="true">💡</span> Template Best Practices:
+                  </p>
                   <ul className="text-blue-900 text-sm space-y-1 ml-4 list-disc">
                     <li>Use dynamic text fields that can be easily updated</li>
                     <li>Include placeholder images that can be swapped out</li>
@@ -732,7 +746,9 @@ export default function CanvaDesignerPath() {
                 </ul>
 
                 <div className="bg-purple-50 border-l-4 border-purple-600 p-3 rounded mt-4">
-                  <p className="text-purple-900 font-semibold mb-2">💡 Design Considerations:</p>
+                  <p className="text-purple-900 font-semibold mb-2">
+                    <span aria-hidden="true">💡</span> Design Considerations:
+                  </p>
                   <ul className="text-purple-900 text-sm space-y-1 ml-4 list-disc">
                     <li>Email templates should be simple (many email clients strip complex CSS)</li>
                     <li>Use web-safe fonts for email headers and body text</li>
