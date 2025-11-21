@@ -388,6 +388,10 @@ const categories = [
 ]
 
 export default function Testing() {
+  // Calculate test statistics dynamically from the testSuites array
+  const totalTestSuites = testSuites.length
+  const totalTests = testSuites.reduce((sum, suite) => sum + suite.testsCount, 0)
+
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Page Header */}
@@ -421,9 +425,9 @@ export default function Testing() {
         <div className="bg-white rounded-xl shadow-lg p-6 md:p-8 mb-8">
           <h2 className="text-2xl font-bold text-gray-900 mb-4">About Testing</h2>
           <p className="text-gray-700 mb-4">
-            This project includes <strong>17 comprehensive test suites</strong> with{' '}
-            <strong>179 automated tests</strong> that validate every aspect of the application from
-            configuration to deployment.
+            This project includes <strong>{totalTestSuites} comprehensive test suites</strong> with{' '}
+            <strong>{totalTests} automated tests</strong> that validate every aspect of the
+            application from configuration to deployment.
           </p>
           <p className="text-gray-700 mb-4">
             Testing is integrated into the CI/CD pipeline and runs automatically on every pull
@@ -448,7 +452,7 @@ export default function Testing() {
                 </svg>
                 <h3 className="font-semibold text-gray-900">Test Suites</h3>
               </div>
-              <p className="text-3xl font-bold text-green-600">17</p>
+              <p className="text-3xl font-bold text-green-600">{totalTestSuites}</p>
               <p className="text-sm text-gray-600">Organized by category</p>
             </div>
 
@@ -469,7 +473,7 @@ export default function Testing() {
                 </svg>
                 <h3 className="font-semibold text-gray-900">Total Tests</h3>
               </div>
-              <p className="text-3xl font-bold text-blue-600">179</p>
+              <p className="text-3xl font-bold text-blue-600">{totalTests}</p>
               <p className="text-sm text-gray-600">All passing</p>
             </div>
 
