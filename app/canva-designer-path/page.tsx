@@ -659,7 +659,7 @@ export default function CanvaDesignerPath() {
             </div>
           </div>
 
-          {/* Goal 3: Email and Stationary */}
+          {/* Goal 3: Email and Stationery */}
           <div className="mb-8">
             <h3 className="text-xl font-bold text-gray-900 mb-3 flex items-center">
               <span className="bg-green-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 text-sm font-bold">
