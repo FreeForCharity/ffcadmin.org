@@ -92,8 +92,13 @@ touch public/.nojekyll
 
 ```javascript
 // __tests__/github-pages-config.test.js
-test('.nojekyll file exists in public directory', () => {
-  expect(fs.existsSync('public/.nojekyll')).toBe(true)
+const fs = require('fs')
+const path = require('path')
+const outDir = 'out'
+
+it('should have .nojekyll file in output directory', () => {
+  const nojekyllPath = path.join(outDir, '.nojekyll')
+  expect(fs.existsSync(nojekyllPath)).toBe(true)
 })
 ```
 
