@@ -528,21 +528,6 @@ export default function TechStack() {
                 <strong>OneDrive for Business</strong> — off‑site backup destination
               </li>
             </ul>
-
-            <h3 className="text-xl font-semibold text-gray-900 mb-3">RTO/RPO targets</h3>
-            <ul className="list-disc list-inside space-y-2 text-gray-700 mb-4">
-              <li>
-                <strong>RTO:</strong> ≤ 2 hours (restore time)
-              </li>
-              <li>
-                <strong>RPO:</strong> ≤ 24 hours (maximum data loss window)
-              </li>
-            </ul>
-
-            <h3 className="text-xl font-semibold text-gray-900 mb-3">Restore validation</h3>
-            <p className="text-gray-700">
-              Checksums match; preview build on a temporary branch or URL; GitHub Issue logs results
-            </p>
           </section>
 
           <section id="section-7" className="mb-8">
@@ -572,31 +557,13 @@ export default function TechStack() {
               </li>
             </ul>
 
-            <h3 className="text-xl font-semibold text-gray-900 mb-3">Label taxonomy &amp; SLAs</h3>
+            <h3 className="text-xl font-semibold text-gray-900 mb-3">Label taxonomy</h3>
             <p className="text-gray-700 mb-2">
               <strong>Types:</strong> type/bug, type/feature, type/docs, type/chore
             </p>
-            <p className="text-gray-700 mb-2">
+            <p className="text-gray-700 mb-4">
               <strong>Priority:</strong> prio/p0 (critical), p1, p2, p3
             </p>
-
-            <h4 className="text-lg font-semibold text-gray-900 mb-2">
-              SLA targets (business hours):
-            </h4>
-            <ul className="list-disc list-inside space-y-1 text-gray-700 mb-4">
-              <li>
-                <strong>P0:</strong> acknowledge ≤ 1h, resolve ≤ 4h
-              </li>
-              <li>
-                <strong>P1:</strong> acknowledge ≤ 4h, resolve ≤ 2 days
-              </li>
-              <li>
-                <strong>P2:</strong> acknowledge ≤ 1 day, resolve ≤ 1 week
-              </li>
-              <li>
-                <strong>P3:</strong> acknowledge ≤ 2 days, resolve as scheduled
-              </li>
-            </ul>
 
             <h3 className="text-xl font-semibold text-gray-900 mb-3">Contribution</h3>
             <p className="text-gray-700">
@@ -1078,8 +1045,8 @@ export default function TechStack() {
                 <li>Added version stamp and Changelog</li>
                 <li>
                   Added Repository standards, Lighthouse thresholds, CSP/HSTS plan, Consent
-                  revocation, Monitoring/Observability, RTO/RPO, On/Offboarding checklists, SLAs,
-                  and label taxonomy
+                  revocation, Monitoring/Observability, On/Offboarding checklists, and label
+                  taxonomy
                 </li>
                 <li>
                   Split out Cloudflare edge performance from security, with headers managed at
