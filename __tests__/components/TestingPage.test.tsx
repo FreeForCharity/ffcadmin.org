@@ -33,12 +33,12 @@ describe('Testing Page Component', () => {
   describe('Test Suite Information', () => {
     it('should display test suite count', () => {
       render(<TestingPage />)
-      expect(screen.getByText('16')).toBeInTheDocument()
+      expect(screen.getByText('17')).toBeInTheDocument()
     })
 
     it('should display total test count', () => {
       render(<TestingPage />)
-      expect(screen.getByText('166')).toBeInTheDocument()
+      expect(screen.getByText('179')).toBeInTheDocument()
     })
 
     it('should display all test suite categories', () => {
@@ -123,8 +123,8 @@ describe('Testing Page Component', () => {
   describe('Content Completeness', () => {
     it('should display test count information', () => {
       render(<TestingPage />)
-      expect(screen.getByText(/16 comprehensive test suites/i)).toBeInTheDocument()
-      expect(screen.getByText(/166 automated tests/i)).toBeInTheDocument()
+      expect(screen.getByText(/17 comprehensive test suites/i)).toBeInTheDocument()
+      expect(screen.getByText(/179 automated tests/i)).toBeInTheDocument()
     })
 
     it('should display CI/CD integration information', () => {

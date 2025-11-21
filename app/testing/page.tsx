@@ -275,6 +275,25 @@ const testSuites: TestSuite[] = [
       'Use browser accessibility tools: 1) Chrome DevTools Lighthouse (Accessibility category), 2) WAVE browser extension, 3) Keyboard navigation test (tab through page without mouse), 4) Screen reader test (NVDA on Windows or VoiceOver on Mac).',
     relatedDocs: ['CODE_QUALITY.md', 'LIGHTHOUSE.md'],
   },
+  {
+    name: 'Navigation Coverage',
+    category: 'Design & Responsiveness',
+    file: '__tests__/navigation-coverage.test.js',
+    purpose: 'Ensures all application pages are accessible through at least one navigation area',
+    testsCount: 13,
+    whatItTests: [
+      'All pages (Home, Tech Stack, Documentation, Testing, Training Plan, Privacy, Cookie) accessible via navigation or footer',
+      'No orphaned pages exist that users cannot discover',
+      'Navigation component structure (desktop and mobile menus)',
+      'Footer component structure (Quick Links, Admin Docs, Policy links)',
+      'External links present (GitHub, social media)',
+    ],
+    whyImportant:
+      'Pages that exist but are not linked from any navigation area are effectively invisible to users. This test ensures complete site discoverability and prevents orphaned content.',
+    manualVerification:
+      'For each page in the app, verify it can be reached by: 1) Clicking a link in the top navigation (desktop or mobile), 2) Clicking a link in the footer, or 3) Direct URL entry. No page should be completely unreachable through normal navigation.',
+    relatedDocs: ['app/components/Navigation.tsx', 'app/components/Footer.tsx'],
+  },
 
   // Component Tests
   {
@@ -286,7 +305,8 @@ const testSuites: TestSuite[] = [
     whatItTests: [
       'Component renders without crashing',
       'Logo is displayed correctly',
-      'Desktop navigation links render (Home, Tech Stack, GitHub)',
+      'Desktop navigation links render (Home, Tech Stack, Training Plan, GitHub)',
+      'Mobile navigation includes Testing link (not in desktop)',
       'Hamburger menu button functionality',
       'Mobile menu opens and closes correctly',
       'Links are accessible and clickable',
@@ -295,7 +315,7 @@ const testSuites: TestSuite[] = [
     whyImportant:
       'The navigation is the primary way users move through the site. Broken navigation severely impacts usability and user experience.',
     manualVerification:
-      'Desktop (>768px): Verify logo and inline links (Home, Tech Stack, GitHub) are visible. Mobile (<768px): Verify hamburger menu works - click to open, displays links, click link to close, click X to close.',
+      'Desktop (>768px): Verify logo and inline links (Home, Tech Stack, Training Plan, GitHub) are visible. Mobile (<768px): Verify hamburger menu works - click to open, displays all navigation links including Testing, click link to close, click X to close.',
     relatedDocs: ['app/components/Navigation.tsx', 'RESPONSIVE_DESIGN.md'],
   },
   {
@@ -401,8 +421,8 @@ export default function Testing() {
         <div className="bg-white rounded-xl shadow-lg p-6 md:p-8 mb-8">
           <h2 className="text-2xl font-bold text-gray-900 mb-4">About Testing</h2>
           <p className="text-gray-700 mb-4">
-            This project includes <strong>16 comprehensive test suites</strong> with{' '}
-            <strong>166 automated tests</strong> that validate every aspect of the application from
+            This project includes <strong>17 comprehensive test suites</strong> with{' '}
+            <strong>179 automated tests</strong> that validate every aspect of the application from
             configuration to deployment.
           </p>
           <p className="text-gray-700 mb-4">
@@ -428,7 +448,7 @@ export default function Testing() {
                 </svg>
                 <h3 className="font-semibold text-gray-900">Test Suites</h3>
               </div>
-              <p className="text-3xl font-bold text-green-600">16</p>
+              <p className="text-3xl font-bold text-green-600">17</p>
               <p className="text-sm text-gray-600">Organized by category</p>
             </div>
 
@@ -449,7 +469,7 @@ export default function Testing() {
                 </svg>
                 <h3 className="font-semibold text-gray-900">Total Tests</h3>
               </div>
-              <p className="text-3xl font-bold text-blue-600">166</p>
+              <p className="text-3xl font-bold text-blue-600">179</p>
               <p className="text-sm text-gray-600">All passing</p>
             </div>
 
