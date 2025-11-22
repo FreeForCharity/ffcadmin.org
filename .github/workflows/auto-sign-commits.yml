@@ -78,13 +78,6 @@ jobs:
             echo "⚠️ Or add the secret at the repository level instead"
           fi
 
-      - name: Skip if not a bot commit
-        if: steps.bot_check.outputs.is_bot == 'false'
-        run: |
-          echo "ℹ️ This is not a bot commit, skipping auto-signing."
-          echo "ℹ️ Auto-signing only applies to commits from bots and automated tools."
-          exit 0
-
       - name: Import GPG key (with passphrase)
         if: |
           steps.bot_check.outputs.is_bot == 'true' &&

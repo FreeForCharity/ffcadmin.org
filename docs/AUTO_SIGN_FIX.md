@@ -67,8 +67,7 @@ Replaced the actor-based check with email pattern-based bot detection:
 - ✅ Removed restrictive job-level `if` condition
 - ✅ Added debugging step to output workflow context
 - ✅ Added bot detection step with email pattern matching
-- ✅ Added early exit step for non-bot commits
-- ✅ Updated all conditional steps to check `bot_check.outputs.is_bot`
+- ✅ Updated all conditional steps to check `bot_check.outputs.is_bot` (subsequent steps are skipped via conditionals when not a bot)
 
 ### 2. Documentation (`QUICK_START.md`)
 
@@ -118,7 +117,7 @@ After this fix, when a bot pushes a commit to a non-main branch:
    - Check if commit is already signed
    - Sign commit if unsigned
    - Force push signed commit back to branch
-5. **If not a bot**: Skip remaining steps with informational message
+5. **If not a bot**: Remaining steps are skipped via conditionals
 
 ## Benefits
 
