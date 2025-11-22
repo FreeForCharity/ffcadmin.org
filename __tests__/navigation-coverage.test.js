@@ -82,8 +82,8 @@ describe('Navigation Coverage', () => {
       expect(footerComponent).toContain('Quick Links')
     })
 
-    test('Footer has Admin Documentation section', () => {
-      expect(footerComponent).toContain('Admin Documentation')
+    test('Footer has Learning Paths section', () => {
+      expect(footerComponent).toContain('Learning Paths')
     })
 
     test('Footer has Free For Charity Policy section', () => {

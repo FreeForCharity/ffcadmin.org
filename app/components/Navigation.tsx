@@ -25,7 +25,7 @@ export default function Navigation() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-6">
             <Link href="/" className="hover:text-blue-200 transition-colors font-medium">
               Home
             </Link>
@@ -43,6 +43,15 @@ export default function Navigation() {
               className="hover:text-blue-200 transition-colors font-medium"
             >
               Canva Designer
+            </Link>
+            <Link
+              href="/documentation"
+              className="hover:text-blue-200 transition-colors font-medium"
+            >
+              Documentation
+            </Link>
+            <Link href="/testing" className="hover:text-blue-200 transition-colors font-medium">
+              Testing
             </Link>
             <a
               href="https://github.com/FreeForCharity"
@@ -99,13 +108,6 @@ export default function Navigation() {
               Tech Stack
             </Link>
             <Link
-              href="/testing"
-              className="block px-3 py-2 rounded-md hover:bg-blue-700 transition-colors"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Testing
-            </Link>
-            <Link
               href="/training-plan"
               className="block px-3 py-2 rounded-md hover:bg-blue-700 transition-colors"
               onClick={() => setIsMenuOpen(false)}
@@ -118,6 +120,20 @@ export default function Navigation() {
               onClick={() => setIsMenuOpen(false)}
             >
               Canva Designer
+            </Link>
+            <Link
+              href="/documentation"
+              className="block px-3 py-2 rounded-md hover:bg-blue-700 transition-colors"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Documentation
+            </Link>
+            <Link
+              href="/testing"
+              className="block px-3 py-2 rounded-md hover:bg-blue-700 transition-colors"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Testing
             </Link>
             <a
               href="https://github.com/FreeForCharity"
