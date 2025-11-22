@@ -76,6 +76,19 @@ export default function Footer() {
                   Technology Stack
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/documentation"
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
+                  Documentation
+                </Link>
+              </li>
+              <li>
+                <Link href="/testing" className="text-gray-400 hover:text-white transition-colors">
+                  Testing
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -141,16 +154,24 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Admin Documentation */}
+          {/* Learning Paths */}
           <div>
-            <h3 className="text-white text-lg font-bold mb-4">Admin Documentation</h3>
+            <h3 className="text-white text-lg font-bold mb-4">Learning Paths</h3>
             <ul className="space-y-2 text-sm">
               <li>
                 <Link
-                  href="/documentation"
+                  href="/training-plan"
                   className="text-gray-400 hover:text-white transition-colors"
                 >
-                  Documentation
+                  Global Administrator
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/canva-designer-path"
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
+                  Canva Designer
                 </Link>
               </li>
             </ul>
