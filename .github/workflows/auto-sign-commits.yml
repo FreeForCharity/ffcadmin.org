@@ -63,6 +63,13 @@ jobs:
           if [ -n "${{ secrets.GPG_PRIVATE_KEY }}" ]; then
             echo "configured=true" >> $GITHUB_OUTPUT
             echo "✅ GPG_PRIVATE_KEY secret is available"
+            
+            # Check if passphrase is also available
+            if [ -n "${{ secrets.GPG_PASSPHRASE }}" ]; then
+              echo "✅ GPG_PASSPHRASE secret is also available"
+            else
+              echo "⚠️  GPG_PASSPHRASE secret is NOT set (key might not have a passphrase, or this could cause issues)"
+            fi
           else
             echo "configured=false" >> $GITHUB_OUTPUT
             echo "❌ GPG_PRIVATE_KEY secret is NOT available"
@@ -91,23 +98,35 @@ jobs:
           git_commit_gpgsign: true
           git_config_global: true
           git_tag_gpgsign: true
+          trust_level: 5
 
       - name: Verify GPG import
         if: |
           steps.bot_check.outputs.is_bot == 'true' &&
           steps.gpg_check.outputs.configured == 'true'
         run: |
-          echo "🔑 GPG key imported successfully:"
+          set -x  # Enable debug mode
+
+          echo "🔑 GPG key import results from action:"
           echo "  Key ID: ${{ steps.import_gpg.outputs.keyid }}"
           echo "  Name: ${{ steps.import_gpg.outputs.name }}"
           echo "  Email: ${{ steps.import_gpg.outputs.email }}"
           echo "  Fingerprint: ${{ steps.import_gpg.outputs.fingerprint }}"
           echo ""
-          echo "📋 Secret keys available: $(gpg --list-secret-keys --keyid-format LONG | grep -c '^sec' || echo 0)"
+
+          echo "📋 Listing all GPG secret keys:"
+          gpg --list-secret-keys --keyid-format LONG || echo "No secret keys found"
           echo ""
-          echo "🔧 Git signing configuration:"
-          echo "  Signing key: $(git config --get user.signingkey || echo 'Not set')"
-          echo "  GPG signing enabled: $(git config --get commit.gpgsign || echo 'false')"
+
+          echo "🔧 Git configuration:"
+          echo "  user.signingkey = $(git config --get user.signingkey || echo 'NOT SET')"
+          echo "  commit.gpgsign = $(git config --get commit.gpgsign || echo 'NOT SET')"
+          echo "  user.name = $(git config --get user.name || echo 'NOT SET')"
+          echo "  user.email = $(git config --get user.email || echo 'NOT SET')"
+          echo ""
+
+          echo "🧪 Testing GPG signing capability:"
+          echo "test" | gpg --clear-sign --default-key "${{ steps.import_gpg.outputs.keyid }}" 2>&1 || echo "Failed to test sign"
 
       - name: Check last commit signature
         id: check_signature
