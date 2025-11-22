@@ -85,11 +85,12 @@ jobs:
           echo "ℹ️ Auto-signing only applies to commits from bots and automated tools."
           exit 0
 
-      - name: Import GPG key
+      - name: Import GPG key (with passphrase)
         if: |
           steps.bot_check.outputs.is_bot == 'true' &&
-          steps.gpg_check.outputs.configured == 'true'
-        id: import_gpg
+          steps.gpg_check.outputs.configured == 'true' &&
+          secrets.GPG_PASSPHRASE != ''
+        id: import_gpg_with_pass
         uses: crazy-max/ghaction-import-gpg@v6
         with:
           gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
@@ -99,6 +100,47 @@ jobs:
           git_config_global: true
           git_tag_gpgsign: true
           trust_level: 5
+        continue-on-error: true
+
+      - name: Import GPG key (without passphrase)
+        if: |
+          steps.bot_check.outputs.is_bot == 'true' &&
+          steps.gpg_check.outputs.configured == 'true' &&
+          (secrets.GPG_PASSPHRASE == '' || steps.import_gpg_with_pass.outcome == 'failure')
+        id: import_gpg_no_pass
+        uses: crazy-max/ghaction-import-gpg@v6
+        with:
+          gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
+          git_user_signingkey: true
+          git_commit_gpgsign: true
+          git_config_global: true
+          git_tag_gpgsign: true
+          trust_level: 5
+        continue-on-error: true
+
+      - name: Set GPG import results
+        if: |
+          steps.bot_check.outputs.is_bot == 'true' &&
+          steps.gpg_check.outputs.configured == 'true'
+        id: import_gpg
+        run: |
+          if [ "${{ steps.import_gpg_with_pass.outcome }}" == "success" ]; then
+            echo "keyid=${{ steps.import_gpg_with_pass.outputs.keyid }}" >> $GITHUB_OUTPUT
+            echo "name=${{ steps.import_gpg_with_pass.outputs.name }}" >> $GITHUB_OUTPUT
+            echo "email=${{ steps.import_gpg_with_pass.outputs.email }}" >> $GITHUB_OUTPUT
+            echo "fingerprint=${{ steps.import_gpg_with_pass.outputs.fingerprint }}" >> $GITHUB_OUTPUT
+            echo "✅ GPG key imported with passphrase"
+          elif [ "${{ steps.import_gpg_no_pass.outcome }}" == "success" ]; then
+            echo "keyid=${{ steps.import_gpg_no_pass.outputs.keyid }}" >> $GITHUB_OUTPUT
+            echo "name=${{ steps.import_gpg_no_pass.outputs.name }}" >> $GITHUB_OUTPUT
+            echo "email=${{ steps.import_gpg_no_pass.outputs.email }}" >> $GITHUB_OUTPUT
+            echo "fingerprint=${{ steps.import_gpg_no_pass.outputs.fingerprint }}" >> $GITHUB_OUTPUT
+            echo "✅ GPG key imported without passphrase"
+          else
+            echo "::error::Failed to import GPG key with both passphrase variants"
+            echo "::error::This usually means the key format is invalid or the passphrase is wrong"
+            exit 1
+          fi
 
       - name: Verify GPG import
         if: |
