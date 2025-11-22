@@ -127,10 +127,24 @@ jobs:
           steps.gpg_check.outputs.configured == 'true' &&
           steps.check_signature.outputs.signed == 'false'
         run: |
-          # Amend the last commit with a signature
-          git commit --amend --no-edit -S
+          # Get the GPG key information
+          GPG_KEY_EMAIL="${{ steps.import_gpg.outputs.email }}"
+          GPG_KEY_NAME="${{ steps.import_gpg.outputs.name }}"
+
+          echo "🔧 Configuring Git to use GPG key identity:"
+          echo "  Name: $GPG_KEY_NAME"
+          echo "  Email: $GPG_KEY_EMAIL"
+
+          # Configure Git to use the GPG key's identity for this commit
+          git config user.name "$GPG_KEY_NAME"
+          git config user.email "$GPG_KEY_EMAIL"
+
+          # Amend the last commit with a signature and update author to match GPG key
+          # This changes both the author and committer to match the GPG key
+          git commit --amend --no-edit --reset-author -S
 
           echo "✅ Signed commit: $(git log -1 --pretty=format:'%h - %s')"
+          echo "✅ Author set to: $(git log -1 --pretty=format:'%an <%ae>')"
 
       - name: Push signed commit
         if: |
