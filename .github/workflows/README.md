@@ -23,7 +23,7 @@ Automatically signs commits from bots and automated tools to meet branch protect
 4. Verifies GPG key is configured in repository secrets
 5. Imports GPG key if available
 6. Checks if the last commit is already signed
-7. Signs the commit if unsigned (using `git commit --amend -S`)
+7. Signs the commit if unsigned (using `git commit --amend --no-edit --reset-author -S`)
 8. Force pushes the signed commit back to the branch
 
 **Key Features:**

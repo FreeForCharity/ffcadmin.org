@@ -86,13 +86,13 @@ Replaced the actor-based check with email pattern-based bot detection:
 
 The workflow now detects commits from bots by checking if the email matches:
 
-| Pattern                   | Matches                         | Examples                                     |
-| ------------------------- | ------------------------------- | -------------------------------------------- |
-| `\[bot\]@`                | Accounts with [bot] in username | github-actions[bot]@users.noreply.github.com |
-| `@.*noreply\.github\.com` | GitHub bot email domains        | 198982749+Copilot@users.noreply.github.com   |
-| `Copilot@`                | Copilot-specific accounts       | Copilot@users.noreply.github.com             |
+| Pattern                   | Matches                                      | Examples                                     |
+| ------------------------- | -------------------------------------------- | -------------------------------------------- |
+| `\[bot\]@`                | Accounts with [bot] in username              | github-actions[bot]@users.noreply.github.com |
+| `@.*noreply\.github\.com` | Emails with noreply.github.com in the domain | 198982749+Copilot@users.noreply.github.com   |
+| `Copilot@`                | Copilot-specific accounts                    | Copilot@users.noreply.github.com             |
 
-These patterns are more specific than simple substring matching to avoid false positives.
+These patterns use regular expressions to balance specificity and flexibility. Some patterns (such as `@.*noreply\.github\.com`) are broad and may match more than intended; the goal is to reliably detect bot accounts while minimizing false positives.
 
 ## Testing
 
@@ -169,5 +169,5 @@ If the workflow still doesn't sign commits:
 
 ---
 
-**Last Updated**: 2025-11-21
+**Last Updated**: 2025-11-22
 **Author**: Copilot SWE Agent

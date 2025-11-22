@@ -41,9 +41,9 @@ jobs:
           # Define bot email pattern
           # Pattern explanation:
           # - \[bot\]@ matches accounts ending in [bot] like github-actions[bot]
-          # - @.*noreply\.github\.com matches GitHub bot email domains
+          # - @[^@]*noreply\.github\.com$ matches GitHub noreply domains specifically
           # - Copilot@ matches Copilot bot accounts like 198982749+Copilot@...
-          BOT_EMAIL_PATTERN='(\[bot\]@|@.*noreply\.github\.com|Copilot@)'
+          BOT_EMAIL_PATTERN='(\[bot\]@|@[^@]*noreply\.github\.com$|Copilot@)'
 
           # Check if commit is from a bot (includes Copilot, GitHub Actions, etc.)
           if echo "$AUTHOR_EMAIL" | grep -qE "$BOT_EMAIL_PATTERN"; then
@@ -234,9 +234,9 @@ jobs:
           steps.check_signature.outputs.signed == 'false'
         run: |
           echo "::error::❌ GPG_PRIVATE_KEY secret is not accessible to this workflow"
-          echo "::error::📍 Current configuration:"
-          echo "::error::   - Secret exists at: Organization level"
-          echo "::error::   - Workflow trying to access: Repository secrets"
+          echo "::error::📍 Secret status:"
+          echo "::error::   - GPG_PRIVATE_KEY secret is not configured or not accessible to this workflow"
+          echo "::error::"
           echo "::error::"
           echo "::error::🔧 Solution 1: Enable organization secret for this repository"
           echo "::error::   1. Go to: https://github.com/organizations/FreeForCharity/settings/secrets/actions"
