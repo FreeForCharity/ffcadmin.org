@@ -1,30 +1,71 @@
-<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Free For Charity Logo - Circular design with teal and orange arrows forming a cross -->
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Free For Charity Official Logo -->
+  <!-- Recreated based on official branding guidelines -->
   
-  <!-- Teal/Blue curved segment (top-right) -->
-  <path d="M 100 100 L 100 20 A 80 80 0 0 1 180 100 Z" fill="#1B7FA1"/>
+  <defs>
+    <!-- Gradient for top-right teal segment -->
+    <linearGradient id="tealGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3DA8C8;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1B7FA1;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Gradient for bottom-left teal segment -->
+    <linearGradient id="tealGradient2" x1="100%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" style="stop-color:#3DA8C8;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1B7FA1;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Gradient for top-left orange segment -->
+    <linearGradient id="orangeGradient1" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF9B5A;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#F47933;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Gradient for bottom-right orange segment -->
+    <linearGradient id="orangeGradient2" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#FF9B5A;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#F47933;stop-opacity:1" />
+    </linearGradient>
+  </defs>
   
-  <!-- Orange curved segment (top-left) -->
-  <path d="M 100 100 L 100 20 A 80 80 0 0 0 20 100 Z" fill="#F47933"/>
+  <!-- Background circle for cleaner edges -->
+  <circle cx="256" cy="256" r="240" fill="white"/>
   
-  <!-- Teal/Blue curved segment (bottom-left) -->
-  <path d="M 100 100 L 100 180 A 80 80 0 0 1 20 100 Z" fill="#2A9BB8"/>
+  <!-- Top-right quadrant - Teal -->
+  <path d="M 256 256 L 256 40 A 216 216 0 0 1 472 256 Z" fill="url(#tealGradient1)"/>
   
-  <!-- Orange curved segment (bottom-right) -->
-  <path d="M 100 100 L 100 180 A 80 80 0 0 0 180 100 Z" fill="#FF8C42"/>
+  <!-- Top-left quadrant - Orange -->
+  <path d="M 256 256 L 256 40 A 216 216 0 0 0 40 256 Z" fill="url(#orangeGradient1)"/>
+  
+  <!-- Bottom-left quadrant - Teal -->
+  <path d="M 256 256 L 256 472 A 216 216 0 0 1 40 256 Z" fill="url(#tealGradient2)"/>
+  
+  <!-- Bottom-right quadrant - Orange -->
+  <path d="M 256 256 L 256 472 A 216 216 0 0 0 472 256 Z" fill="url(#orangeGradient2)"/>
   
   <!-- White center circle -->
-  <circle cx="100" cy="100" r="35" fill="white"/>
+  <circle cx="256" cy="256" r="90" fill="white"/>
   
-  <!-- White arrow bars extending from center -->
-  <rect x="92" y="20" width="16" height="45" fill="white"/>
-  <rect x="135" y="92" width="45" height="16" fill="white"/>
-  <rect x="92" y="135" width="16" height="45" fill="white"/>
-  <rect x="20" y="92" width="45" height="16" fill="white"/>
+  <!-- White cross bars connecting to arrows -->
+  <rect x="236" y="40" width="40" height="126" fill="white" rx="2"/>
+  <rect x="346" y="236" width="126" height="40" fill="white" rx="2"/>
+  <rect x="236" y="346" width="40" height="126" fill="white" rx="2"/>
+  <rect x="40" y="236" width="126" height="40" fill="white" rx="2"/>
   
-  <!-- Arrow heads -->
-  <polygon points="100,10 115,25 85,25" fill="white"/>
-  <polygon points="190,100 175,85 175,115" fill="white"/>
-  <polygon points="100,190 85,175 115,175" fill="white"/>
-  <polygon points="10,100 25,115 25,85" fill="white"/>
+  <!-- Arrow heads pointing outward -->
+  <!-- Top arrow -->
+  <path d="M 256 16 L 226 56 L 286 56 Z" fill="white"/>
+  
+  <!-- Right arrow -->
+  <path d="M 496 256 L 456 226 L 456 286 Z" fill="white"/>
+  
+  <!-- Bottom arrow -->
+  <path d="M 256 496 L 286 456 L 226 456 Z" fill="white"/>
+  
+  <!-- Left arrow -->
+  <path d="M 16 256 L 56 286 L 56 226 Z" fill="white"/>
+  
+  <!-- Optional: Add subtle shadow/depth (commented out by default)
+  <circle cx="256" cy="256" r="240" fill="none" stroke="#000" stroke-width="2" opacity="0.1"/>
+  -->
 </svg>
