@@ -140,6 +140,7 @@ jobs:
           steps.bot_check.outputs.is_bot == 'true' &&
           steps.gpg_check.outputs.configured == 'true'
         run: |
+          set -e  # Exit on error
           set -x  # Enable debug mode
 
           echo "🔑 GPG key import results from action:"
@@ -150,7 +151,15 @@ jobs:
           echo ""
 
           echo "📋 Listing all GPG secret keys:"
-          gpg --list-secret-keys --keyid-format LONG || echo "No secret keys found"
+          if ! gpg --list-secret-keys --keyid-format LONG; then
+            echo "::error::❌ No GPG secret keys found in keyring!"
+            echo "::error::The import action reported success but no keys are available."
+            echo "::error::This indicates the GPG_PRIVATE_KEY secret may be:"
+            echo "::error::  1. In the wrong format (should be ASCII-armored)"
+            echo "::error::  2. Corrupted or incomplete"
+            echo "::error::  3. Not a valid GPG private key"
+            exit 1
+          fi
           echo ""
 
           echo "🔧 Git configuration:"
@@ -161,7 +170,13 @@ jobs:
           echo ""
 
           echo "🧪 Testing GPG signing capability:"
-          echo "test" | gpg --clear-sign --default-key "${{ steps.import_gpg.outputs.keyid }}" 2>&1 || echo "Failed to test sign"
+          if ! echo "test" | gpg --clear-sign --default-key "${{ steps.import_gpg.outputs.keyid }}" >/dev/null 2>&1; then
+            echo "::error::❌ GPG signing test failed!"
+            echo "::error::The key was imported but cannot be used for signing."
+            echo "::error::This usually means the passphrase is incorrect or the key requires a passphrase that wasn't provided."
+            exit 1
+          fi
+          echo "✅ GPG signing test successful"
 
       - name: Check last commit signature
         id: check_signature
