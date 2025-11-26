@@ -637,6 +637,18 @@ export default function TrainingPlan() {
                     (Microsoft Learn)
                   </li>
                   <li className="text-gray-700">
+                    <strong>Training:</strong>{' '}
+                    <a
+                      href="https://github.com/skills/introduction-to-github"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-600 hover:text-blue-800 underline"
+                    >
+                      Introduction to GitHub
+                    </a>{' '}
+                    (GitHub Skills)
+                  </li>
+                  <li className="text-gray-700">
                     <strong>Action:</strong> Create the GitHub account, set up 2FA, and create the
                     profile README.md.
                   </li>
