@@ -4,6 +4,7 @@
  * These tests verify the contributor ladder page structure, content, and responsive behavior.
  */
 
+import '@testing-library/jest-dom'
 import { render, screen } from '@testing-library/react'
 import ContributorLadderPage from '../../app/contributor-ladder/page'
 
