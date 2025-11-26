@@ -697,7 +697,7 @@ export default function TechStack() {
                     </td>
                     <td className="border border-gray-300 px-4 py-2">$0</td>
                     <td className="border border-gray-300 px-4 py-2">SEATS_DEV</td>
-                    <td className="border border-gray-300 px-4 py-2">$0</td>
+                    <td className="border border-gray-300 px-4 py-2">= $0 × SEATS_DEV</td>
                   </tr>
                   <tr>
                     <td className="border border-gray-300 px-4 py-2">GitHub Copilot Pro</td>
