@@ -30,6 +30,12 @@ export default function Navigation() {
             <Link href="/tech-stack" className="hover:opacity-80 transition-opacity font-medium">
               Tech Stack
             </Link>
+            <Link
+              href="/contributor-ladder"
+              className="hover:opacity-80 transition-opacity font-medium"
+            >
+              Contributor Ladder
+            </Link>
             <Link href="/training-plan" className="hover:opacity-80 transition-opacity font-medium">
               Global Admin
             </Link>
@@ -98,6 +104,13 @@ export default function Navigation() {
               onClick={() => setIsMenuOpen(false)}
             >
               Tech Stack
+            </Link>
+            <Link
+              href="/contributor-ladder"
+              className="block px-3 py-2 rounded-md hover:bg-white/10 transition-colors"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Contributor Ladder
             </Link>
             <Link
               href="/training-plan"
