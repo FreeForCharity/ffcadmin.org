@@ -22,13 +22,10 @@ interface ContributorLevel {
 
 interface LevelCardProps {
   level: ContributorLevel
-  index: number
-  totalLevels: number
   isDesktop: boolean
 }
 
-function LevelCard({ level, index, totalLevels, isDesktop }: LevelCardProps) {
-
+function LevelCard({ level, isDesktop }: LevelCardProps) {
   if (isDesktop) {
     return (
       <div className="flex items-start mb-6">
@@ -312,12 +309,7 @@ export default function ContributorLadder() {
                   </div>
 
                   <div className="pt-6">
-                    <LevelCard
-                      level={level}
-                      index={index}
-                      totalLevels={levels.length}
-                      isDesktop={false}
-                    />
+                    <LevelCard level={level} isDesktop={false} />
                     <LevelContent level={level} index={index} totalLevels={levels.length} />
                   </div>
                 </div>
@@ -346,12 +338,7 @@ export default function ContributorLadder() {
                     {/* Content Side */}
                     <div className={`w-5/12 ${index % 2 === 0 ? 'pr-12' : 'pl-12'}`}>
                       <div className="bg-white rounded-lg shadow-lg p-8 border-2 border-gray-200 hover:border-blue-400 transition-all hover:shadow-xl">
-                        <LevelCard
-                          level={level}
-                          index={index}
-                          totalLevels={levels.length}
-                          isDesktop={true}
-                        />
+                        <LevelCard level={level} isDesktop={true} />
 
                         <p className="text-gray-700 mb-6 leading-relaxed">{level.description}</p>
 
