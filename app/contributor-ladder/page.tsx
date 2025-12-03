@@ -20,6 +20,87 @@ interface ContributorLevel {
   gradient: string
 }
 
+interface LevelCardProps {
+  level: ContributorLevel
+  index: number
+  totalLevels: number
+  isDesktop: boolean
+}
+
+function LevelCard({ level, index, totalLevels, isDesktop }: LevelCardProps) {
+  const showNextLevel = index < totalLevels - 1
+
+  if (isDesktop) {
+    return (
+      <div className="flex items-start mb-6">
+        <div
+          className={`w-16 h-16 bg-gradient-to-br ${level.gradient} rounded-full flex items-center justify-center flex-shrink-0 mr-4`}
+        >
+          <div className="text-white">{level.icon}</div>
+        </div>
+        <div>
+          <h3 className="text-2xl font-bold text-gray-900 mb-2">{level.title}</h3>
+          {level.timeframe && (
+            <div className="inline-block bg-blue-100 rounded-full px-4 py-1 text-sm text-blue-700 font-medium">
+              {level.timeframe}
+            </div>
+          )}
+        </div>
+      </div>
+    )
+  }
+
+  return (
+    <div className="mb-6">
+      <div
+        className={`inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br ${level.gradient} rounded-full mb-4`}
+      >
+        <div className="text-white">{level.icon}</div>
+      </div>
+      <h3 className="text-2xl font-bold text-gray-900 mb-2">{level.title}</h3>
+      {level.timeframe && (
+        <div className="inline-block bg-blue-100 rounded-full px-4 py-1 text-sm text-blue-700 font-medium mb-3">
+          {level.timeframe}
+        </div>
+      )}
+      <p className="text-gray-700 leading-relaxed">{level.description}</p>
+    </div>
+  )
+}
+
+interface LevelContentProps {
+  level: ContributorLevel
+  index: number
+  totalLevels: number
+}
+
+function LevelContent({ level, index, totalLevels }: LevelContentProps) {
+  const showNextLevel = index < totalLevels - 1
+
+  return (
+    <>
+      <div className="space-y-3">
+        <h4 className="text-lg font-semibold text-gray-900">Requirements</h4>
+        <ul className="space-y-2">
+          {level.requirements.map((req, reqIndex) => (
+            <li key={reqIndex} className="text-gray-700 flex items-start">
+              <span className="text-green-500 mr-3 mt-1 text-lg flex-shrink-0">✓</span>
+              <span className="text-sm leading-relaxed">{req}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      {showNextLevel && (
+        <div className="mt-6 pt-4 border-t border-gray-200">
+          <div className="text-sm text-gray-600">Next Level</div>
+          <div className="text-lg font-semibold text-blue-600">{level.nextLevel}</div>
+        </div>
+      )}
+    </>
+  )
+}
+
 export default function ContributorLadder() {
   const levels: ContributorLevel[] = [
     {
@@ -232,41 +313,13 @@ export default function ContributorLadder() {
                   </div>
 
                   <div className="pt-6">
-                    <div className="mb-6">
-                      <div
-                        className={`inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br ${level.gradient} rounded-full mb-4`}
-                      >
-                        <div className="text-white">{level.icon}</div>
-                      </div>
-                      <h3 className="text-2xl font-bold text-gray-900 mb-2">{level.title}</h3>
-                      {level.timeframe && (
-                        <div className="inline-block bg-blue-100 rounded-full px-4 py-1 text-sm text-blue-700 font-medium mb-3">
-                          {level.timeframe}
-                        </div>
-                      )}
-                      <p className="text-gray-700 leading-relaxed">{level.description}</p>
-                    </div>
-
-                    <div className="space-y-3">
-                      <h4 className="text-lg font-semibold text-gray-900">Requirements</h4>
-                      <ul className="space-y-2">
-                        {level.requirements.map((req, reqIndex) => (
-                          <li key={reqIndex} className="text-gray-700 flex items-start">
-                            <span className="text-green-500 mr-3 mt-1 text-lg flex-shrink-0">
-                              ✓
-                            </span>
-                            <span className="text-sm leading-relaxed">{req}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    {index < levels.length - 1 && (
-                      <div className="mt-6 pt-4 border-t border-gray-200">
-                        <div className="text-sm text-gray-600">Next Level</div>
-                        <div className="text-lg font-semibold text-blue-600">{level.nextLevel}</div>
-                      </div>
-                    )}
+                    <LevelCard
+                      level={level}
+                      index={index}
+                      totalLevels={levels.length}
+                      isDesktop={false}
+                    />
+                    <LevelContent level={level} index={index} totalLevels={levels.length} />
                   </div>
                 </div>
 
@@ -294,46 +347,16 @@ export default function ContributorLadder() {
                     {/* Content Side */}
                     <div className={`w-5/12 ${index % 2 === 0 ? 'pr-12' : 'pl-12'}`}>
                       <div className="bg-white rounded-lg shadow-lg p-8 border-2 border-gray-200 hover:border-blue-400 transition-all hover:shadow-xl">
-                        <div className="flex items-start mb-6">
-                          <div
-                            className={`w-16 h-16 bg-gradient-to-br ${level.gradient} rounded-full flex items-center justify-center flex-shrink-0 mr-4`}
-                          >
-                            <div className="text-white">{level.icon}</div>
-                          </div>
-                          <div>
-                            <h3 className="text-2xl font-bold text-gray-900 mb-2">{level.title}</h3>
-                            {level.timeframe && (
-                              <div className="inline-block bg-blue-100 rounded-full px-4 py-1 text-sm text-blue-700 font-medium">
-                                {level.timeframe}
-                              </div>
-                            )}
-                          </div>
-                        </div>
+                        <LevelCard
+                          level={level}
+                          index={index}
+                          totalLevels={levels.length}
+                          isDesktop={true}
+                        />
 
                         <p className="text-gray-700 mb-6 leading-relaxed">{level.description}</p>
 
-                        <div className="space-y-3">
-                          <h4 className="text-lg font-semibold text-gray-900">Requirements</h4>
-                          <ul className="space-y-2">
-                            {level.requirements.map((req, reqIndex) => (
-                              <li key={reqIndex} className="text-gray-700 flex items-start">
-                                <span className="text-green-500 mr-3 mt-1 text-lg flex-shrink-0">
-                                  ✓
-                                </span>
-                                <span className="text-sm leading-relaxed">{req}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-
-                        {index < levels.length - 1 && (
-                          <div className="mt-6 pt-4 border-t border-gray-200">
-                            <div className="text-sm text-gray-600">Next Level</div>
-                            <div className="text-lg font-semibold text-blue-600">
-                              {level.nextLevel}
-                            </div>
-                          </div>
-                        )}
+                        <LevelContent level={level} index={index} totalLevels={levels.length} />
                       </div>
                     </div>
 
