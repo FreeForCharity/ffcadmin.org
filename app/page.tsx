@@ -68,12 +68,11 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Right Column: Logo */}
             <div className="flex-1 flex justify-center md:justify-end">
-              <div className="relative w-64 h-64 md:w-80 md:h-80 bg-white rounded-full p-4 shadow-2xl animate-fade-in">
+              <div className="relative w-64 h-64 md:w-96 md:h-96 bg-white rounded-full p-6 shadow-2xl animate-fade-in flex items-center justify-center">
                 <img
-                  src="/hero-logo.png"
-                  alt="Free For Charity Logo"
+                  src="/hero-circle.webp"
+                  alt="Free For Charity Icon"
                   className="w-full h-full object-contain"
                 />
               </div>

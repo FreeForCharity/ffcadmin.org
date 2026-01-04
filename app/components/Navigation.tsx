@@ -18,16 +18,15 @@ export default function Navigation() {
             <img
               src="/hero-logo.png"
               alt="Free For Charity Logo"
-              className="w-10 h-10 object-contain"
+              className="h-10 w-auto object-contain"
             />
-            <div className="hidden sm:block">
-              <div className="text-xl font-bold text-gray-900">Free For Charity</div>
-              <div className="text-xs text-gray-500">Admin Portal</div>
+            <div className="hidden lg:block border-l border-gray-200 pl-3">
+              <div className="text-lg font-bold text-gray-900 leading-tight">Admin Portal</div>
             </div>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden xl:flex items-center space-x-5">
             <Link href="/" className="text-blue-600 font-bold hover:text-blue-800 transition-colors">
               Home
             </Link>
@@ -35,10 +34,34 @@ export default function Navigation() {
               Tech Stack
             </Link>
             <Link
-              href="/training-plan"
+              href="/contributor-ladder"
               className="font-medium hover:text-blue-600 transition-colors"
             >
-              Training Plan
+              Contributor Ladder
+            </Link>
+            <Link
+              href="/training-plan"
+              className="font-medium hover:text-blue-600 transition-colors whitespace-nowrap"
+            >
+              Global Admin
+            </Link>
+            <Link
+              href="/canva-designer-path"
+              className="font-medium hover:text-blue-600 transition-colors whitespace-nowrap"
+            >
+              Canva Designer
+            </Link>
+            <Link
+              href="/documentation"
+              className="font-medium hover:text-blue-600 transition-colors"
+            >
+              Docs
+            </Link>
+            <Link href="/testing" className="font-medium hover:text-blue-600 transition-colors">
+              Testing
+            </Link>
+            <Link href="/sites-list" className="font-medium hover:text-blue-600 transition-colors whitespace-nowrap">
+              Sites List
             </Link>
             <a
               href="https://github.com/FreeForCharity"
@@ -53,7 +76,7 @@ export default function Navigation() {
           {/* Mobile menu button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 rounded-md hover:bg-gray-100 text-gray-600 transition-colors"
+            className="xl:hidden p-2 rounded-md hover:bg-gray-100 text-gray-600 transition-colors"
             aria-label="Toggle menu"
             aria-expanded={isMenuOpen}
             aria-controls="mobile-menu"
@@ -79,7 +102,7 @@ export default function Navigation() {
 
         {/* Mobile menu */}
         {isMenuOpen && (
-          <div className="md:hidden pb-4 space-y-1 bg-white border-t border-gray-100" id="mobile-menu">
+          <div className="xl:hidden pb-4 space-y-1 bg-white border-t border-gray-100" id="mobile-menu">
             <Link
               href="/"
               className="block px-3 py-2 rounded-md text-blue-600 font-bold bg-blue-50"
@@ -95,11 +118,46 @@ export default function Navigation() {
               Tech Stack
             </Link>
             <Link
+              href="/contributor-ladder"
+              className="block px-3 py-2 rounded-md hover:bg-gray-50 hover:text-blue-600 transition-colors"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Contributor Ladder
+            </Link>
+            <Link
               href="/training-plan"
               className="block px-3 py-2 rounded-md hover:bg-gray-50 hover:text-blue-600 transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
-              Training Plan
+              Global Admin
+            </Link>
+            <Link
+              href="/canva-designer-path"
+              className="block px-3 py-2 rounded-md hover:bg-gray-50 hover:text-blue-600 transition-colors"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Canva Designer
+            </Link>
+            <Link
+              href="/documentation"
+              className="block px-3 py-2 rounded-md hover:bg-gray-50 hover:text-blue-600 transition-colors"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Documentation
+            </Link>
+            <Link
+              href="/testing"
+              className="block px-3 py-2 rounded-md hover:bg-gray-50 hover:text-blue-600 transition-colors"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Testing
+            </Link>
+            <Link
+              href="/sites-list"
+              className="block px-3 py-2 rounded-md hover:bg-gray-50 hover:text-blue-600 transition-colors"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Sites List
             </Link>
             <a
               href="https://github.com/FreeForCharity"
