@@ -1,6 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 import { Metadata } from 'next'
+import { parse } from 'csv-parse/sync'
 
 export const metadata: Metadata = {
   title: 'Sites List | Free For Charity Admin',
@@ -10,38 +11,50 @@ export const metadata: Metadata = {
 interface SiteData {
   section: string
   domain: string
-  cloudflareIp: string
-  isInCloudflare: string
+  status: string
+  inWhmcs: string
+  inCloudflare: string
+  inWpmudev: string
   serverInUse: string
   oldServerAbandoned: string
-  orgComPairStatus: string
   notes: string
+  cloudflareIp: string
   repoUrl: string
+  priority: string
 }
 
 async function getSitesData(): Promise<SiteData[]> {
   const filePath = path.join(process.cwd(), 'docs', 'sites_list.csv')
   const fileContent = fs.readFileSync(filePath, 'utf8')
 
-  const lines = fileContent.trim().split('\n')
-  // Skip header
-  const dataLines = lines.slice(1)
+  /* 
+    Headers expected from update-sites-data.mjs:
+    Section, Domain, Status, In WHMCS, In Cloudflare, In WPMUDEV, 
+    Server In Use, Old Server Abandoned?, Notes, 
+    Cloudflare IP, Is In Cloudflare, Repo URL, Priority
+  */
 
-  return dataLines.map((line) => {
-    // csv matching the new structure:
-    // Section,Domain,Cloudflare IP,Is In Cloudflare,Server In Use,Old Server Abandoned?,ORG/COM Pair Status,Notes,Repo URL
-    const columns = line.split(',')
+  const records = parse(fileContent, {
+    columns: false,
+    skip_empty_lines: true,
+    from_line: 2 // Skip header
+  })
 
+  return records.map((columns: string[]) => {
     return {
       section: columns[0]?.trim() || '',
       domain: columns[1]?.trim() || '',
-      cloudflareIp: columns[2]?.trim() || '',
-      isInCloudflare: columns[3]?.trim() || '',
-      serverInUse: columns[4]?.trim() || '',
-      oldServerAbandoned: columns[5]?.trim() || '',
-      orgComPairStatus: columns[6]?.trim() || '',
-      notes: columns[7]?.trim() || '',
-      repoUrl: columns[8]?.trim() || '',
+      status: columns[2]?.trim() || '',
+      inWhmcs: columns[3]?.trim() || '',
+      inCloudflare: columns[4]?.trim() || '',
+      inWpmudev: columns[5]?.trim() || '',
+      serverInUse: columns[6]?.trim() || '',
+      oldServerAbandoned: columns[7]?.trim() || '',
+      notes: columns[8]?.trim() || '',
+      cloudflareIp: columns[9]?.trim() || '',
+      // col 10 is 'Is In Cloudflare' (redundant)
+      repoUrl: columns[11]?.trim() || '',
+      priority: columns[12]?.trim() || 'Standard',
     }
   })
 }
@@ -100,7 +113,7 @@ export default async function SitesListPage() {
   // Filter for "Good" sites: Apex domain + In Cloudflare + On GitHub Pages
   const migratedSites = sites.filter((site) => {
     const isApex = site.domain.split('.').length === 2
-    const inCloudflare = site.isInCloudflare.toLowerCase() === 'yes'
+    const inCloudflare = site.inCloudflare.toLowerCase() === 'yes'
     const onGithub = site.serverInUse.toLowerCase() === 'github pages'
     return isApex && inCloudflare && onGithub
   })
@@ -138,6 +151,7 @@ export default async function SitesListPage() {
             These sites are fully migrated: Apex domain + Cloudflare + GitHub Pages.
           </p>
         </div>
+
         <div className="overflow-x-auto">
           <table className="min-w-full divide-y divide-green-200">
             <thead className="bg-green-50">
@@ -146,16 +160,16 @@ export default async function SitesListPage() {
                   Domain
                 </th>
                 <th className="px-6 py-3 text-left text-xs font-medium text-green-800 uppercase tracking-wider">
-                  GitHub Repo
-                </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-green-800 uppercase tracking-wider">
-                  Cloudflare IP
-                </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-green-800 uppercase tracking-wider">
                   Status
                 </th>
                 <th className="px-6 py-3 text-left text-xs font-medium text-green-800 uppercase tracking-wider">
-                  Notes
+                  Repo
+                </th>
+                <th className="px-6 py-3 text-left text-xs font-medium text-green-800 uppercase tracking-wider">
+                  WHMCS
+                </th>
+                <th className="px-6 py-3 text-left text-xs font-medium text-green-800 uppercase tracking-wider">
+                  Cloudflare
                 </th>
               </tr>
             </thead>
@@ -169,6 +183,11 @@ export default async function SitesListPage() {
                       </a>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-xs">
+                      <span className={`px-2 py-1 rounded-full text-xs font-semibold ${getStatusColor(site.status === 'Active' ? 'Yes' : 'No')}`}>
+                        {site.status}
+                      </span>
+                    </td>
+                    <td className="px-6 py-4 whitespace-nowrap text-xs">
                       {site.repoUrl ? (
                         <a
                           href={site.repoUrl}
@@ -176,33 +195,18 @@ export default async function SitesListPage() {
                           rel="noopener noreferrer"
                           className="text-blue-600 hover:text-blue-800 hover:underline font-medium flex items-center"
                         >
-                          <svg
-                            className="w-4 h-4 mr-1"
-                            fill="currentColor"
-                            viewBox="0 0 24 24"
-                            aria-hidden="true"
-                          >
-                            <path
-                              fillRule="evenodd"
-                              d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
-                              clipRule="evenodd"
-                            />
-                          </svg>
                           Repo
                         </a>
                       ) : (
-                        <span className="text-gray-400 text-center block">-</span>
+                        <span className="text-gray-400">-</span>
                       )}
                     </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-xs text-gray-600 font-mono">
-                      {site.cloudflareIp}
+                    <td className="px-6 py-4 whitespace-nowrap text-xs">
+                      {site.inWhmcs}
                     </td>
-                    <td className="px-6 py-4 whitespace-nowrap">
-                      <span className="px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-                        Live
-                      </span>
+                    <td className="px-6 py-4 whitespace-nowrap text-xs">
+                      {site.inCloudflare}
                     </td>
-                    <td className="px-6 py-4 text-sm text-gray-500">{site.notes}</td>
                   </tr>
                 ))
               ) : (
@@ -240,31 +244,31 @@ export default async function SitesListPage() {
                   scope="col"
                   className="px-6 py-3 text-left text-xs font-medium text-ffc-teal-dark uppercase tracking-wider"
                 >
-                  Cloudflare IP
+                  Status
                 </th>
                 <th
                   scope="col"
                   className="px-6 py-3 text-left text-xs font-medium text-ffc-teal-dark uppercase tracking-wider"
                 >
-                  In CF?
+                  WHMCS
                 </th>
                 <th
                   scope="col"
                   className="px-6 py-3 text-left text-xs font-medium text-ffc-teal-dark uppercase tracking-wider"
                 >
-                  Server In Use
+                  Cloudflare
                 </th>
                 <th
                   scope="col"
                   className="px-6 py-3 text-left text-xs font-medium text-ffc-teal-dark uppercase tracking-wider"
                 >
-                  Old Server Abandoned?
+                  WPMUDEV
                 </th>
                 <th
                   scope="col"
                   className="px-6 py-3 text-left text-xs font-medium text-ffc-teal-dark uppercase tracking-wider"
                 >
-                  ORG/COM Status
+                  Server
                 </th>
                 <th
                   scope="col"
@@ -292,26 +296,32 @@ export default async function SitesListPage() {
                       {site.domain}
                     </a>
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-xs font-mono text-gray-600">
-                    {site.cloudflareIp}
+                  <td className="px-6 py-4 whitespace-nowrap text-xs text-gray-700">
+                    {site.status}
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-xs">
                     <span
-                      className={`px-2 py-1 rounded-full text-xs font-semibold ${getStatusColor(site.isInCloudflare)}`}
+                      className={`px-2 py-1 rounded-full text-xs font-semibold ${getStatusColor(site.inWhmcs)}`}
                     >
-                      {site.isInCloudflare}
+                      {site.inWhmcs}
+                    </span>
+                  </td>
+                  <td className="px-6 py-4 whitespace-nowrap text-xs">
+                    <span
+                      className={`px-2 py-1 rounded-full text-xs font-semibold ${getStatusColor(site.inCloudflare)}`}
+                    >
+                      {site.inCloudflare}
+                    </span>
+                  </td>
+                  <td className="px-6 py-4 whitespace-nowrap text-xs">
+                    <span
+                      className={`px-2 py-1 rounded-full text-xs font-semibold ${getStatusColor(site.inWpmudev)}`}
+                    >
+                      {site.inWpmudev}
                     </span>
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700">
                     {site.serverInUse}
-                  </td>
-                  <td
-                    className={`px-6 py-4 whitespace-nowrap text-sm text-center ${getAbandonColor(site.oldServerAbandoned)}`}
-                  >
-                    {site.oldServerAbandoned}
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-xs text-gray-600">
-                    {site.orgComPairStatus}
                   </td>
                   <td
                     className="px-6 py-4 text-xs text-gray-500 max-w-xs truncate"

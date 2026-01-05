@@ -1,111 +1,324 @@
-Section,Domain,Cloudflare IP,Is In Cloudflare,Server In Use,Old Server Abandoned?,ORG/COM Pair Status,Notes,Repo URL
-For-Profit,alltypetowing.com,204.44.192.77,Yes,HostPapa,No,COM only,Matches HostPapa server list,
-For-Profit,aprilhansen.com,204.44.192.77,Yes,HostPapa,No,COM only,Matches HostPapa server list,
-For-Profit,bulldogztowing.com,204.44.192.77,Yes,HostPapa,No,COM only,Matches HostPapa server list,
-For-Profit,canadatokeywestcoastalrun.com,(no A record),Yes,No A Record,Yes,COM only,Domain inactive; .org exists,
-For-Profit,causevay.com,192.64.86.202,Yes,InterServer DA,No,COM only,Matches InterServer DA,
-For-Profit,communitytechsupply.com,192.64.86.202,Yes,InterServer DA,No,COM only,Matches InterServer DA,
-For-Profit,cortesdesignworks.com,192.64.86.202,Yes,InterServer DA,No,COM only,Matches InterServer DA,
-For-Profit,emc-professional.com,192.64.86.202,Yes,InterServer DA,No,COM/ORG mismatch,.org has no A record,
-For-Profit,exceptionalridersprogram.com,185.199.220.110,Yes,Krystal.io,No,COM/ORG mismatch,Moved to Krystal.io,
-For-Profit,foxtrotenterprises.com,204.44.192.77,Yes,HostPapa,No,COM only,Matches HostPapa,
-For-Profit,hardpointconsulting.com,204.44.192.77,Yes,HostPapa,No,COM only,Matches HostPapa,
-For-Profit,hunnewellscottages.com,127.0.0.1,Yes,Cloudflare Proxy,No,COM only,Misconfigured,
-For-Profit,iawea.net,204.44.192.77,Yes,HostPapa,No,N/A,.net not paired,
-For-Profit,ihadrousa.com,153.92.213.212,Yes,Hostinger,No,COM/ORG Correct Pair,.org also on Hostinger,
-For-Profit,letsdanceactivities.com,153.92.213.212,Yes,Hostinger,No,COM/ORG Correct Pair,.org also on Hostinger,
-For-Profit,moyermanagement.com,204.44.192.77,Yes,HostPapa,No,COM only,Matches HostPapa,
-For-Profit,redlionchimneysweep.com,192.64.86.202,Yes,InterServer DA,No,COM only,Matches InterServer,
-For-Profit,shelteraid.us,204.44.192.77,Yes,HostPapa,No,N/A,.us not paired,
-For-Profit,srrn.net,153.92.213.212,Yes,Hostinger,No,N/A,.net not paired,https://github.com/FreeForCharity/FFC-EX-SRRN.net
-For-Profit,thelastchancesanctuary.com,127.0.0.1,Yes,Cloudflare Proxy,No,COM only,Misconfigured,
-For-Profit,thetrendylittlegeek.com,204.44.192.77,Yes,HostPapa,No,COM only,Matches HostPapa,
-For-Profit,trendylittlegeek.com,204.44.192.77,Yes,HostPapa,No,COM only,Matches HostPapa,
-Org-WPAdmin,acharyaapp.org,153.92.213.212,Yes,Hostinger,No,ORG only,.com exists as subdomain,
-Org-WPAdmin,ambofoundation.org,153.92.213.212,Yes,Hostinger,No,ORG only,Matches Hostinger,
-Org-WPAdmin,apollonianfp.org,153.92.213.212,Yes,Hostinger,No,ORG only,Matches Hostinger,
-Org-WPAdmin,brianmustofoundation.org,153.92.213.212,Yes,Hostinger,No,ORG only,Matches Hostinger,
-Org-WPAdmin,canadatokeywestcoastalrun.org,153.92.213.212,Yes,Hostinger,No,ORG only,.com has no A record,
-Org-WPAdmin,educationandempowerment.org,153.92.213.212,Yes,Hostinger,No,ORG only,Matches Hostinger,
-Org-WPAdmin,facinggiantsnc.org,153.92.213.212,Yes,Hostinger,No,ORG only,Duplicate exists on InterServer,
-Org-WPAdmin,ffchosting.org,(no A record),Yes,No A Record,Yes,ORG only,Inactive,
-Org-WPAdmin,ftnfcog.org,153.92.213.212,Yes,Hostinger,No,ORG only,Matches Hostinger,
-Org-WPAdmin,freeforcharity.org,66.45.234.13,Yes,InterServer cPanel,No,ORG only,Duplicate on HostPapa + Hostinger,https://github.com/FreeForCharity/FreeForCharity.org
-Org-WPAdmin,graftonareahistory.org,141.193.213.10,Yes,Cloudflare Proxy,No,ORG only,Proxy origin unknown,
-Org-WPAdmin,homesforchange.org,153.92.213.212,Yes,Hostinger,No,ORG only,Matches Hostinger,
-Org-WPAdmin,jeansnsneaks.org,153.92.213.212,Yes,Hostinger,No,ORG only,Matches Hostinger,
-Org-WPAdmin,kainkaryasri.org,153.92.213.212,Yes,Hostinger,No,ORG only,Matches Hostinger,
-Org-WPAdmin,ksgf.org,153.92.213.212,Yes,Hostinger,No,ORG only,Matches Hostinger,
-Org-WPAdmin,letsdanceactivities.org,153.92.213.212,Yes,Hostinger,No,COM/ORG Correct Pair,.com also on Hostinger,
-Org-WPAdmin,lifelessonslearned.us.org,153.92.213.212,Yes,Hostinger,No,ORG only,Treated as .org family,
-Org-WPAdmin,my-missions.org,153.92.213.212,Yes,Hostinger,No,ORG only,Matches Hostinger,
-Org-WPAdmin,myservicehours.org,153.92.213.212,Yes,Hostinger,No,ORG only,Matches Hostinger,
-Org-WPAdmin,naturaldividends.org,153.92.213.212,Yes,Hostinger,No,ORG only,Matches Hostinger,
-Org-WPAdmin,nestiva.org,153.92.213.212,Yes,Hostinger,No,ORG only,Matches Hostinger,
-Org-WPAdmin,nochaos.org,153.92.213.212,Yes,Hostinger,No,ORG only,Matches Hostinger,
-Org-WPAdmin,onlineimpacts.org,153.92.213.212,Yes,Hostinger,No,ORG only,Matches Hostinger,
-Org-WPAdmin,paaboosterclub.org,153.92.213.212,Yes,Hostinger,No,ORG only,Matches Hostinger,
-Org-WPAdmin,postpartumcarefoundation.org,153.92.213.212,Yes,Hostinger,No,ORG only,.com also exists,
-Org-WPAdmin,ptuganda.org,153.92.213.212,Yes,Hostinger,No,ORG only,Matches Hostinger,
-Org-WPAdmin,rhwcustoms.org,204.44.192.77,Yes,HostPapa,No,ORG only,Duplicate on Hostinger,
-Org-WPAdmin,southamptonfriends.org,192.64.86.202,Yes,InterServer DA,No,ORG only,Duplicate on Hostinger,
-Org-WPAdmin,thebirf.org,153.92.213.212,Yes,Hostinger,No,ORG only,Matches Hostinger,
-Org-WPAdmin,theeverythingproject.org,153.92.213.212,Yes,Hostinger,No,ORG only,Matches Hostinger,
-Org-WPAdmin,transferca.org,153.92.213.212,Yes,Hostinger,No,ORG only,Matches Hostinger,
-Org-WPAdmin,turksotx.org,153.92.213.212,Yes,Hostinger,No,ORG only,Matches Hostinger,
-Org-NoWP,busineighbor.org,153.92.213.212,Yes,Hostinger,No,ORG only,Matches Hostinger,
-Org-NoWP,ctvip.org,153.92.213.212,Yes,Hostinger,No,ORG only,Matches Hostinger,
-Org-NoWP,ffcdomains.org,(no A record),Yes,No A Record,Yes,ORG only,Inactive,
-Org-NoWP,ffcworkingsite2.org,185.199.111.153,Yes,GitHub Pages,Yes,ORG only,Fully migrated,https://github.com/FreeForCharity/FFC_Single_Page_Template
-Org-NoWP,ffchtml.onlineimpacts.org,153.92.213.212,Yes,Hostinger,No,N/A,Subdomain-like structure,
-Org-NoWP,ihadrousa.org,153.92.213.212,Yes,Hostinger,No,COM/ORG Correct Pair,.com also on Hostinger,
-Org-NoWP,stg.graftonareahistory.org,153.92.213.212,Yes,Hostinger,No,N/A,Staging subdomain,
-Org-NoWP,ffcdomains.com,(no A record),Yes,No A Record,Yes,COM only,Paired with ffcdomains.org (inactive),
-InterServer-Org,cvrs-us.org,192.64.86.202,Yes,InterServer DA,No,ORG only,Correct InterServer mapping,
-InterServer-Org,dropletsoflove.org,192.64.86.202,Yes,InterServer DA,No,ORG only,Correct InterServer mapping,
-InterServer-Org,emc-professional.org,(no A record),Yes,No A Record,Yes,ORG/COM mismatch,.com points to InterServer,
-InterServer-Org,exceptionalridersprogram.org,192.64.86.202,Yes,InterServer DA,No,COM/ORG mismatch,.com migrated to GitHub Pages,
-InterServer-Org,harmonycenterfoundation.org,192.64.86.202,Yes,InterServer DA,No,ORG only,Correct InterServer mapping,
-InterServer-Org,legion-in-the-woods.org,216.158.234.18,Yes,InterServer RS1,No,ORG only,Correct InterServer RS1,
-InterServer-Org,nittanypost245.org,192.64.86.202,Yes,InterServer DA,No,ORG only,Correct InterServer mapping,
-InterServer-Org,southamptonfriends.org,192.64.86.202,Yes,InterServer DA,No,ORG only,Duplicate on Hostinger,
-Subdomain,az.acharyaapp.org,153.92.213.212,Yes,Hostinger,No,N/A,Subdomain of acharyaapp.org,
-Subdomain,ffcadmin.org,185.199.108.153,Yes,GitHub Pages,Yes,ORG only,Fully migrated,https://github.com/FreeForCharity/FFC-IN-ffcadmin.org
-Subdomain,ffcworkingsite1.org,185.199.108.153,Yes,GitHub Pages,Yes,ORG only,Fully migrated,https://github.com/FreeForCharity/FFC-IN-Single_Page_Template_HTML
-Subdomain,ffcsites.org,185.199.111.153,Yes,GitHub Pages,Yes,ORG only,Fully migrated,
-Subdomain,stg.graftonareahistory.org,153.92.213.212,Yes,Hostinger,No,N/A,Staging subdomain,
-Subdomain,southamptonfriends.com,(no A record),Yes,No A Record,Yes,COM only,Paired with .org (active on InterServer),
-Cloudflare-Only,3dmc2.org,141.193.213.10,Yes,Cloudflare Proxy,No,ORG only,Proxy origin unknown,
-Cloudflare-Only,bboc4vets.org,52.184.222.116,Yes,FFC-WHM-01,No,ORG only,Not on any known server list,
-Cloudflare-Only,bintobetter.org,185.199.108.153,Yes,GitHub Pages,Yes,ORG only,Fully migrated,https://github.com/FreeForCharity/FFC-EX-bintobetter.org
-Cloudflare-Only,bringingpeople2people.org,141.193.213.10,Yes,Cloudflare Proxy,No,ORG only,Proxy origin unknown,
-Cloudflare-Only,cochiserobotics.org,52.184.222.116,Yes,FFC-WHM-01,No,ORG only,Not on any known server list,
-Cloudflare-Only,coronadonationalforestheritagesociety.org,204.44.192.77,Yes,HostPapa,No,ORG only,Appears only in Cloudflare,
-Cloudflare-Only,fencingtogether.org,185.199.111.153,Yes,GitHub Pages,Yes,ORG only,Fully migrated,https://github.com/FencingTogether/website
-Cloudflare-Only,freedomrisingusa.org,185.199.111.153,Yes,GitHub Pages,Yes,ORG only,Fully migrated,https://github.com/FreeForCharity/freedomrisingusa.org
-Cloudflare-Only,hasbeensandgonnabees.org,141.193.213.10,Yes,Cloudflare Proxy,No,ORG only,Proxy origin unknown,
-Cloudflare-Only,legioninthewoods.org,185.199.111.153,Yes,GitHub Pages,Yes,ORG only,Fully migrated (dashless variant),https://github.com/FreeForCharity/legioninthewoods.org
-Cloudflare-Only,pagbooster.org,185.199.111.153,Yes,GitHub Pages,Yes,ORG only,Fully migrated,https://github.com/FreeForCharity/FFC-EX-PAGboosters.org
-Cloudflare-Only,pantryforadaircounty.org,52.184.222.116,Yes,FFC-WHM-01,No,ORG only,Not on any known server list,
-Cloudflare-Only,roottostem.org,52.184.222.116,Yes,FFC-WHM-01,No,ORG only,Not on any known server list,
-Cloudflare-Only,soulfoodwhangarei.org,52.184.222.116,Yes,FFC-WHM-01,No,ORG only,Not on any known server list,
-Cloudflare-Only,tamkeensports.org,174.138.190.170,Yes,External,No,ORG only,External hosting,
-Cloudflare-Only,technologymonastery.org,216.158.234.18,Yes,InterServer RS1,No,ORG only,Matches InterServer RS1 IP,https://github.com/FreeForCharity/TechnologyMonastery.org
-Cloudflare-Only,technologymonastery.us,192.185.118.32,Yes,External,No,N/A,External hosting,
-Cloudflare-Only,theafghanistanaffairs.org,204.13.238.115,Yes,External,No,ORG only,External hosting,
-Cloudflare-Only,thekccf.org,185.199.111.153,Yes,GitHub Pages,Yes,ORG only,Fully migrated,https://github.com/koenig-childhood-cancer-foundation/KCCF-web
-Cloudflare-Only,wamhelp.org,66.23.226.51,Yes,External,No,ORG only,External hosting,
-Cloudflare-Only,youngfatherscare.org,192.64.86.203,Yes,External,No,ORG only,Adjacent to InterServer but not exact match,
-Krystal-New,e2inc.org,185.199.224.x,Yes,Krystal.io,No,N/A,New Krystal Host,
-Krystal-New,hclwellness.org,185.199.224.x,Yes,Krystal.io,No,N/A,New Krystal Host,
-Krystal-New,letspiritlead.org,74.50.79.163,Yes,Krystal.io,No,N/A,New Krystal Host,
-Krystal-New,movewithcompassion.org,185.199.224.x,Yes,Krystal.io,No,N/A,New Krystal Host,
-Krystal-New,muckfichigan.com,185.199.224.x,Yes,Krystal.io,No,N/A,New Krystal Host,
-Krystal-New,npbandparents.org,185.199.224.x,Yes,Krystal.io,No,N/A,New Krystal Host,
-Krystal-New,nu4children.org,185.199.224.x,Yes,Krystal.io,No,N/A,New Krystal Host,
-Krystal-New,scwcinc.org,185.199.224.x,Yes,Krystal.io,No,N/A,New Krystal Host,
-Krystal-New,teamwrangler.org,185.199.224.x,?,Krystal.io,No,N/A,Inferred from Krystal image (DNS Check failed),
-Krystal-New,thedeviators.org,185.199.224.x,?,Krystal.io,No,N/A,Inferred from Krystal image (DNS Check failed),
-Krystal-New,tribute-aviation.org,185.199.224.x,?,Krystal.io,No,N/A,Inferred from Krystal image (DNS Check failed),
-Krystal-New,viewpointnorth.org,185.199.224.x,?,Krystal.io,No,N/A,Inferred from Krystal image (DNS Check failed),
-Krystal-New,vtyouthchat.org,185.199.224.x,?,Krystal.io,No,N/A,Inferred from Krystal image (DNS Check failed),
+Section,Domain,Status,In WHMCS,In Cloudflare,In WPMUDEV,Server In Use,Old Server Abandoned?,Notes,Cloudflare IP,Is In Cloudflare,Repo URL,Priority
+Unknown,1726nerds.org,Expired,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,1stepfcc.org,Expired,Yes,No,No,,,,(no A record),No,,Standard
+Cloudflare-Only,3dmc2.org,Active,Yes,Yes,No,Cloudflare Proxy,No,Proxy origin unknown,184.182.219.182,Yes,,Standard
+Unknown,3dmc2.com,Active,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,abundances.org,Expired,Yes,No,No,,,,(no A record),No,,Standard
+Org-WPAdmin,acharyaapp.org,Unknown,No,No,No,Hostinger,No,.com exists as subdomain,153.92.213.212,No,,Standard
+Unknown,adrian2018.org,Cancelled,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,alliancesofveteransandfamiliesservices.org,Expired,Yes,No,No,,,,(no A record),No,,Standard
+For-Profit,alltypetowing.com,Active,Yes,Yes,No,HostPapa,No,Matches HostPapa server list,204.44.192.77,Yes,,Standard
+Unknown,alpha1bat1legion.org,Fraud,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,alphaonelegion.com,Fraud,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,amargraves.org,Active,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,amarodhikar.org,Cancelled,Yes,No,No,,,,(no A record),No,,Standard
+Org-WPAdmin,ambofoundation.org,Active,Yes,No,No,Hostinger,No,Matches Hostinger,153.92.213.212,No,,Standard
+Unknown,americanlegionpost64.org,Active,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,americanlegionpost64.com,Active,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,amplifiedaid.org,Active,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,ampwup.org,Fraud,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,ampwupi.org,Fraud,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,andrellharris.org,Cancelled,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,andrellharris.com,Cancelled,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,andrellharris.us,Cancelled,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,annabryant.org,Expired,Yes,No,No,,,,(no A record),No,,Standard
+Org-WPAdmin,apollonianfp.org,Active,Yes,Yes,No,Hostinger,No,Matches Hostinger,153.92.213.212,Yes,,Standard
+For-Profit,aprilhansen.com,Active,Yes,Yes,No,HostPapa,No,Matches HostPapa server list,204.44.192.77,Yes,,Standard
+Unknown,aprilmoyer.com,Active,Yes,Yes,No,,,,(no A record),Yes,,Standard
+Unknown,aprilunlimited.com,Active,Yes,Yes,No,,,,204.44.192.77,Yes,,Standard
+Unknown,armstrongacesbaseball.org,Fraud,Yes,Yes,No,,,,204.44.192.77,Yes,,Standard
+Unknown,avengedfastpitch.org,Active,Yes,No,No,,,,(no A record),No,,Standard
+Subdomain,az.acharyaapp.org,Unknown,No,No,No,Hostinger,No,Subdomain of acharyaapp.org,153.92.213.212,No,,Standard
+Unknown,bat1alpha1legion.com,Fraud,Yes,No,No,,,,(no A record),No,,Standard
+Cloudflare-Only,bboc4vets.org,Expired,Yes,Yes,No,FFC-WHM-01,No,Not on any known server list,52.184.222.116,Yes,,Standard
+Unknown,beauty4myashes.org,Cancelled,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,bhhc-usa.org,Expired,Yes,No,No,,,,(no A record),No,,Standard
+Cloudflare-Only,bintobetter.org,Active,Yes,Yes,No,GitHub Pages,Yes,Fully migrated,185.199.108.153;185.199.111.153;185.199.110.153;185.199.109.153,Yes,https://github.com/FreeForCharity/FFC-EX-bintobetter.org,Standard
+Unknown,birthfree.org,Active,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,bowiesblessings.org,Active,Yes,No,No,,,,(no A record),No,,Standard
+Org-WPAdmin,brianmustofoundation.org,Cancelled,Yes,No,No,Hostinger,No,Matches Hostinger,153.92.213.212,No,,Standard
+Unknown,bringing-people-2-people.com,Cancelled,Yes,No,No,,,,(no A record),No,,Standard
+Cloudflare-Only,bringingpeople2people.org,Active,Yes,Yes,No,Cloudflare Proxy,No,Proxy origin unknown,(no A record),Yes,,Standard
+Unknown,broadcastvoice.net,Expired,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,browncanyonranch.org,Active,Yes,Yes,No,,,,204.44.192.77,Yes,,Standard
+Unknown,btcsv.org,Expired,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,buckeyebullsbaseball.org,Cancelled,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,bucktownbullsbaseball.org,Active,Yes,Yes,No,,,,204.44.192.77,Yes,,Standard
+For-Profit,bulldogztowing.com,Active,Yes,Yes,No,HostPapa,No,Matches HostPapa server list,204.44.192.77,Yes,,Standard
+Unknown,burnsurvivorscharity.org,Active,Yes,No,No,,,,(no A record),No,,Standard
+Org-NoWP,busineighbor.org,Unknown,No,No,No,Hostinger,No,Matches Hostinger,153.92.213.212,No,,Standard
+Org-WPAdmin,canadatokeywestcoastalrun.org,Active,Yes,Yes,No,Hostinger,No,.com has no A record,153.92.213.212,Yes,,Standard
+For-Profit,canadatokeywestcoastalrun.com,Unknown,No,Yes,No,No A Record,Yes,Domain inactive; .org exists,(no A record),Yes,,Standard
+For-Profit,causevay.com,Unknown,No,No,No,InterServer DA,No,Matches InterServer DA,192.64.86.202,No,,Standard
+Unknown,clarkemoyer.com,Active,Yes,Yes,No,,,,204.44.192.77,Yes,,Standard
+Unknown,clarkmoyer.com,Active,Yes,Yes,No,,,,52.184.222.116,Yes,,Standard
+Unknown,cochisedubsaz.org,Expired,Yes,No,No,,,,(no A record),No,,Standard
+Cloudflare-Only,cochiserobotics.org,Active,Yes,Yes,No,FFC-WHM-01,No,Not on any known server list,52.184.222.116,Yes,,Standard
+Unknown,communitychristianpentecostal.org,Active,Yes,No,No,,,,(no A record),No,,Standard
+For-Profit,communitytechsupply.com,Active,Yes,No,No,InterServer DA,No,Matches InterServer DA,192.64.86.202,No,,Standard
+Unknown,completequarters.org,Active,Yes,Yes,No,,,,(no A record),Yes,,Standard
+Unknown,completequarters.com,Active,Yes,Yes,No,,,,(no A record),Yes,,Standard
+Cloudflare-Only,coronadonationalforestheritagesociety.org,Active,Yes,Yes,No,HostPapa,No,Appears only in Cloudflare,204.44.192.77,Yes,,Standard
+For-Profit,cortesdesignworks.com,Active,Yes,No,No,InterServer DA,No,Matches InterServer DA,192.64.86.202,No,,Standard
+Unknown,craftedraise.org,Active,Yes,No,No,,,,(no A record),No,,Standard
+Org-NoWP,ctvip.org,Unknown,No,No,No,Hostinger,No,Matches Hostinger,153.92.213.212,No,,Standard
+Unknown,cucu-il.org,Active,Yes,No,No,,,,(no A record),No,,Standard
+InterServer-Org,cvrs-us.org,Active,Yes,Yes,No,InterServer DA,No,Correct InterServer mapping,192.64.86.202,Yes,,Standard
+Unknown,cysoclabs.com,Expired,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,darbycharlesblackmemorialfund.org,Expired,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,darkclouds.us,Active,Yes,Yes,No,,,,(no A record),Yes,,Standard
+Unknown,dcbmf.org,Expired,Yes,No,No,,,,(no A record),No,,Standard
+InterServer-Org,dropletsoflove.org,Active,Yes,Yes,No,InterServer DA,No,Correct InterServer mapping,192.64.86.202,Yes,,Standard
+Krystal-New,e2inc.org,Unknown,No,No,No,Krystal.io,No,New Krystal Host,185.199.224.x,No,,Standard
+Unknown,ecjeli.org,Fraud,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,ecjelife.org,Fraud,Yes,No,No,,,,(no A record),No,,Standard
+Org-WPAdmin,educationandempowerment.org,Active,Yes,Yes,No,Hostinger,No,Matches Hostinger,153.92.213.212,Yes,,Standard
+InterServer-Org,emc-professional.org,Active,Yes,Yes,No,No A Record,Yes,.com points to InterServer,(no A record),Yes,,Standard
+For-Profit,emc-professional.com,Active,Yes,Yes,No,InterServer DA,No,.org has no A record,192.64.86.202,Yes,,Standard
+Unknown,empowerconnectfoundation.org,Active,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,escdcpac.org,Active,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,etherfrolics.org,Expired,Yes,No,No,,,,(no A record),No,,Standard
+InterServer-Org,exceptionalridersprogram.org,Active,Yes,Yes,No,InterServer DA,No,.com migrated to GitHub Pages,192.64.86.202,Yes,,Standard
+For-Profit,exceptionalridersprogram.com,Active,Yes,Yes,No,Krystal.io,No,Moved to Krystal.io,185.199.220.110,Yes,,Standard
+Org-WPAdmin,facinggiantsnc.org,Active,Yes,Yes,No,Hostinger,No,Duplicate exists on InterServer,153.92.213.212,Yes,,Standard
+Unknown,facinggiantsnc.com,Active,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,faithorgnc.org,Transferred Away,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,falloutshelterecovillage.org,Active,Yes,Yes,No,,,,204.44.192.77,Yes,,Standard
+Cloudflare-Only,fencingtogether.org,Active,Yes,Yes,No,GitHub Pages,Yes,Fully migrated,185.199.111.153;185.199.110.153;185.199.109.153;185.199.108.153,Yes,https://github.com/FencingTogether/website,Standard
+Unknown,ffc.ngo,Unknown,No,Yes,No,,,,(no A record),Yes,,Standard
+Subdomain,ffcadmin.org,Active,Yes,Yes,No,GitHub Pages,Yes,Fully migrated,185.199.110.153;185.199.108.153;185.199.111.153;185.199.109.153,Yes,https://github.com/FreeForCharity/FFC-IN-ffcadmin.org,Standard
+Org-NoWP,ffcdomains.org,Active,Yes,Yes,No,No A Record,Yes,Inactive,(no A record),Yes,,Standard
+Org-NoWP,ffcdomains.com,Active,Yes,Yes,No,No A Record,Yes,Paired with ffcdomains.org (inactive),(no A record),Yes,,Standard
+Org-WPAdmin,ffchosting.org,Active,Yes,Yes,No,No A Record,Yes,Inactive,(no A record),Yes,,Standard
+Unknown,ffchosting.com,Active,Yes,Yes,No,,,,(no A record),Yes,,Standard
+Unknown,ffchostingmultisite.org,Active,Yes,Yes,No,,,,(no A record),Yes,,Standard
+Org-NoWP,ffchtml.onlineimpacts.org,Unknown,No,No,No,Hostinger,No,Subdomain-like structure,153.92.213.212,No,,Standard
+Subdomain,ffcsites.org,Active,Yes,Yes,No,GitHub Pages,Yes,Fully migrated,185.199.111.153;185.199.110.153;185.199.109.153;185.199.108.153,Yes,,Standard
+Subdomain,ffcworkingsite1.org,Active,Yes,Yes,No,GitHub Pages,Yes,Fully migrated,185.199.108.153;185.199.109.153,Yes,https://github.com/FreeForCharity/FFC-IN-Single_Page_Template_HTML,Standard
+Org-NoWP,ffcworkingsite2.org,Active,Yes,Yes,No,GitHub Pages,Yes,Fully migrated,185.199.111.153;185.199.110.153;185.199.109.153;185.199.108.153,Yes,https://github.com/FreeForCharity/FFC_Single_Page_Template,Standard
+Unknown,fhuhbl.com,Expired,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,focus-on-free.com,Active,Yes,Yes,No,,,,204.44.192.77,Yes,,Standard
+Unknown,focusonfree.org,Active,Yes,Yes,No,,,,104.21.52.163;172.67.201.83,Yes,,Standard
+Unknown,focusonfree.us,Active,Yes,Yes,No,,,,172.67.202.82;104.21.76.244,Yes,,Standard
+Unknown,fosterakid.org,Cancelled,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,fosterakids.org,Cancelled,Yes,No,No,,,,(no A record),No,,Standard
+For-Profit,foxtrotenterprises.com,Unknown,No,No,No,HostPapa,No,Matches HostPapa,204.44.192.77,No,,Standard
+Cloudflare-Only,freedomrisingusa.org,Cancelled,Yes,Yes,No,GitHub Pages,Yes,Fully migrated,185.199.111.153;185.199.110.153;185.199.109.153;185.199.108.153,Yes,https://github.com/FreeForCharity/freedomrisingusa.org,Standard
+Unknown,freeforcharity.ngo,Unknown,No,Yes,No,,,,(no A record),Yes,,Standard
+Org-WPAdmin,freeforcharity.org,Transferred Away,Yes,Yes,No,InterServer cPanel,No,Duplicate on HostPapa + Hostinger,66.45.234.13,Yes,https://github.com/FreeForCharity/FreeForCharity.org,Standard
+Unknown,freetoolsfornonprofits.org,Active,Yes,Yes,No,,,,(no A record),Yes,,Standard
+Org-WPAdmin,ftnfcog.org,Active,Yes,No,No,Hostinger,No,Matches Hostinger,153.92.213.212,No,,Standard
+Unknown,glstraining.org,Fraud,Yes,No,No,,,,(no A record),No,,Standard
+Org-WPAdmin,graftonareahistory.org,Active,Yes,Yes,No,Cloudflare Proxy,No,Proxy origin unknown,141.193.213.10;141.193.213.11,Yes,,Standard
+Unknown,greenrecon.org,Active,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,gustolifeskillstraining.org,Fraud,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,h4sd.org,Expired,Yes,No,No,,,,(no A record),No,,Standard
+For-Profit,hardpointconsulting.com,Transferred Away,Yes,No,No,HostPapa,No,Matches HostPapa,204.44.192.77,No,,Standard
+InterServer-Org,harmonycenterfoundation.org,Active,Yes,Yes,No,InterServer DA,No,Correct InterServer mapping,192.64.86.202,Yes,,Standard
+Cloudflare-Only,hasbeensandgonnabees.org,Active,Yes,Yes,No,Cloudflare Proxy,No,Proxy origin unknown,52.184.222.116,Yes,,Standard
+Krystal-New,hclwellness.org,Unknown,No,No,No,Krystal.io,No,New Krystal Host,185.199.224.x,No,,Standard
+Unknown,heroes2others.org,Active,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,historyinplay.org,Transferred Away,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,historyinplay.com,Transferred Away,Yes,No,No,,,,(no A record),No,,Standard
+Org-WPAdmin,homesforchange.org,Unknown,No,No,No,Hostinger,No,Matches Hostinger,153.92.213.212,No,,Standard
+Unknown,huachucashuttle.com,Transferred Away,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,huachucashuttlehbl.com,Expired,Yes,No,No,,,,(no A record),No,,Standard
+For-Profit,hunnewellscottages.com,Active,Yes,Yes,No,Cloudflare Proxy,No,Misconfigured,(no A record),Yes,,Standard
+For-Profit,iawea.net,Unknown,No,No,No,HostPapa,No,.net not paired,204.44.192.77,No,,Standard
+Unknown,ieeeforthuachuca.org,Active,Yes,Yes,No,,,,54.163.236.200,Yes,,Standard
+Org-NoWP,ihadrousa.org,Active,Yes,Yes,No,Hostinger,No,.com also on Hostinger,153.92.213.212,Yes,,Standard
+For-Profit,ihadrousa.com,Active,Yes,Yes,No,Hostinger,No,.org also on Hostinger,153.92.213.212,Yes,,Standard
+Unknown,impactsierravista.org,Expired,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,innovatesphere.org,Cancelled,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,instituteofforgiveness.org,Active,Yes,Yes,No,,,,204.44.192.77,Yes,,Standard
+Unknown,javawockies.org,Transferred Away,Yes,No,No,,,,(no A record),No,,Standard
+Org-WPAdmin,jeansnsneaks.org,Cancelled,Yes,No,No,Hostinger,No,Matches Hostinger,153.92.213.212,No,,Standard
+Unknown,joelhockermemorialfoundation.org,Expired,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,joelhockermemorialfoundation.com,Expired,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,juliannaswishes.com,Cancelled,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,jwvpost619.org,Active,Yes,Yes,No,,,,67.211.214.117,Yes,,Standard
+Org-WPAdmin,kainkaryasri.org,Unknown,No,No,No,Hostinger,No,Matches Hostinger,153.92.213.212,No,,Standard
+Unknown,kansaslenfacccoalitionkl.org,Fraud,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,kieranrunnelsdev.org,Active,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,kingsremnantmessianicministries.org,Fraud,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,kingstoncommunitycenter.org,Active,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,kittencoveinc.org,Active,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,kpmministries.org,Fraud,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,krishnacharity.org,Cancelled,Yes,No,No,,,,(no A record),No,,Standard
+Org-WPAdmin,ksgf.org,Unknown,No,No,No,Hostinger,No,Matches Hostinger,153.92.213.212,No,,Standard
+Unknown,ktdorganization.org,Fraud,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,kydol.org,Fraud,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,ladiesof5280.org,Cancelled,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,ladiesof5280.com,Expired,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,lakebrentwoodresort.com,Expired,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,lastchancesanctuary.com,Expired,Yes,No,No,,,,(no A record),No,,Standard
+InterServer-Org,legion-in-the-woods.org,Active,Yes,Yes,No,InterServer RS1,No,Correct InterServer RS1,216.158.234.18,Yes,,Standard
+Cloudflare-Only,legioninthewoods.org,Unknown,No,Yes,No,GitHub Pages,Yes,Fully migrated (dashless variant),185.199.111.153;185.199.110.153;185.199.109.153;185.199.108.153,Yes,https://github.com/FreeForCharity/legioninthewoods.org,Standard
+Org-WPAdmin,letsdanceactivities.org,Active,Yes,Yes,No,Hostinger,No,.com also on Hostinger,153.92.213.212,Yes,,Standard
+For-Profit,letsdanceactivities.com,Active,Yes,Yes,No,Hostinger,No,.org also on Hostinger,153.92.213.212,Yes,,Standard
+Unknown,letsleadwise.org,Active,Yes,No,No,,,,(no A record),No,,Standard
+Krystal-New,letspiritlead.org,Unknown,No,Yes,No,Krystal.io,No,New Krystal Host,74.50.79.163,Yes,,Standard
+Unknown,lifechangingfaces.org,Expired,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,lifechangingfaces.com,Expired,Yes,No,No,,,,(no A record),No,,Standard
+Org-WPAdmin,lifelessonslearned.us.org,Active,Yes,Yes,No,Hostinger,No,Treated as .org family,153.92.213.212,Yes,,Standard
+Unknown,locali60west.org,Cancelled,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,makeacalendarinvite.org,Active,Yes,Yes,No,,,,204.44.192.77,Yes,,Standard
+Unknown,martinez2018.org,Cancelled,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,mattressfiberglass.net,Fraud,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,mattressfiberglass.org,Fraud,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,medicsofmayhem.com,Expired,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,megan220.com,Fraud,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,melaninmagicfoundation.org,Unknown,No,Yes,No,,,,66.23.226.51,Yes,,Standard
+Unknown,mitchellnchistory.org,Unknown,No,Yes,No,,,,35.212.109.210,Yes,,Standard
+Unknown,mountainboundk9sar.org,Cancelled,Yes,No,No,,,,(no A record),No,,Standard
+Krystal-New,movewithcompassion.org,Unknown,No,No,No,Krystal.io,No,New Krystal Host,185.199.224.x,No,,Standard
+Unknown,moyerinvestments.com,Active,Yes,Yes,No,,,,(no A record),Yes,,Standard
+Unknown,moyermanagement.org,Active,Yes,Yes,No,,,,159.65.76.163,Yes,,Standard
+For-Profit,moyermanagement.com,Active,Yes,Yes,No,HostPapa,No,Matches HostPapa,204.44.192.77,Yes,,Standard
+Unknown,moyermanagementsystems.com,Active,Yes,Yes,No,,,,(no A record),Yes,,Standard
+Krystal-New,muckfichigan.com,Unknown,No,No,No,Krystal.io,No,New Krystal Host,185.199.224.x,No,,Standard
+Org-WPAdmin,my-missions.org,Active,Yes,Yes,No,Hostinger,No,Matches Hostinger,153.92.213.212,Yes,,Standard
+Unknown,mydartmouth-una.us.org,Expired,Yes,No,No,,,,(no A record),No,,Standard
+Org-WPAdmin,myservicehours.org,Unknown,No,No,No,Hostinger,No,Matches Hostinger,153.92.213.212,No,,Standard
+Org-WPAdmin,naturaldividends.org,Unknown,No,No,No,Hostinger,No,Matches Hostinger,153.92.213.212,No,,Standard
+Org-WPAdmin,nestiva.org,Unknown,No,No,No,Hostinger,No,Matches Hostinger,153.92.213.212,No,,Standard
+Unknown,newenglandbattalion.org,Pending,Yes,No,No,,,,(no A record),No,,Standard
+InterServer-Org,nittanypost245.org,Active,Yes,Yes,No,InterServer DA,No,Correct InterServer mapping,192.64.86.202,Yes,,Standard
+Unknown,nj4israel.org,Active,Yes,No,No,,,,(no A record),No,,Standard
+Org-WPAdmin,nochaos.org,Active,Yes,Yes,No,Hostinger,No,Matches Hostinger,153.92.213.212,Yes,,Standard
+Unknown,northeasterntrailridersassociation.org,Expired,Yes,No,No,,,,(no A record),No,,Standard
+Krystal-New,npbandparents.org,Unknown,No,No,No,Krystal.io,No,New Krystal Host,185.199.224.x,No,,Standard
+Unknown,npfan.org,Active,Yes,No,No,,,,(no A record),No,,Standard
+Krystal-New,nu4children.org,Unknown,No,No,No,Krystal.io,No,New Krystal Host,185.199.224.x,No,,Standard
+Unknown,ocydevelopment.org,Fraud,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,ocydi.org,Fraud,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,ohiomtawest.org,Active,Yes,Yes,No,,,,(no A record),Yes,,Standard
+Unknown,oimpacts.org,Active,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,oitemplates.org,Cancelled,Yes,No,No,,,,(no A record),No,,Standard
+Org-WPAdmin,onlineimpacts.org,Unknown,No,No,No,Hostinger,No,Matches Hostinger,153.92.213.212,No,,Standard
+Unknown,operationfullcircle.org,Active,Yes,No,No,,,,(no A record),No,,Standard
+Org-WPAdmin,paaboosterclub.org,Active,Yes,Yes,No,Hostinger,No,Matches Hostinger,153.92.213.212,Yes,,Standard
+Cloudflare-Only,pagbooster.org,Active,Yes,Yes,No,GitHub Pages,Yes,Fully migrated,185.199.111.153;185.199.110.153;185.199.109.153;185.199.108.153,Yes,https://github.com/FreeForCharity/FFC-EX-PAGboosters.org,Standard
+Cloudflare-Only,pantryforadaircounty.org,Active,Yes,Yes,No,FFC-WHM-01,No,Not on any known server list,52.184.222.116,Yes,,Standard
+Unknown,petrcraft.org,Cancelled,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,phoenixartsandadvocacy.org,Active,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,phominhtemple.org,Cancelled,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,physicalinvestor.com,Active,Yes,Yes,No,,,,172.67.142.110;104.21.71.27,Yes,,Standard
+Unknown,platoon1alpha.org,Fraud,Yes,No,No,,,,(no A record),No,,Standard
+Org-WPAdmin,postpartumcarefoundation.org,Cancelled,Yes,Yes,No,Hostinger,No,.com also exists,153.92.213.212,Yes,,Standard
+Unknown,postpartumcarefoundation.com,Cancelled,Yes,Yes,No,,,,153.92.213.212,Yes,,Standard
+Org-WPAdmin,ptuganda.org,Active,Yes,Yes,No,Hostinger,No,Matches Hostinger,153.92.213.212,Yes,,Standard
+Unknown,pydccenter.org,Fraud,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,pydci.org,Fraud,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,qtbb.org,Fraud,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,redeemussocial.org,Expired,Yes,No,No,,,,(no A record),No,,Standard
+For-Profit,redlionchimneysweep.com,Unknown,No,No,No,InterServer DA,No,Matches InterServer,192.64.86.202,No,,Standard
+Unknown,resilient-grace.org,Expired,Yes,No,No,,,,(no A record),No,,Standard
+Org-WPAdmin,rhwcustoms.org,Expired,Yes,No,No,HostPapa,No,Duplicate on Hostinger,204.44.192.77,No,,Standard
+Unknown,rhwcustoms.com,Expired,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,root2stem-edu.org,Expired,Yes,No,No,,,,(no A record),No,,Standard
+Cloudflare-Only,roottostem.org,Active,Yes,Yes,No,FFC-WHM-01,No,Not on any known server list,52.184.222.116,Yes,,Standard
+Unknown,rotchurch.org,Fraud,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,rotci.org,Fraud,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,rougegn.org,Cancelled,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,safemap.org,Active,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,saharacc.org,Expired,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,savewatersaveplanet.org,Active,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,scainc.org,Fraud,Yes,No,No,,,,(no A record),No,,Standard
+Krystal-New,scwcinc.org,Unknown,No,No,No,Krystal.io,No,New Krystal Host,185.199.224.x,No,,Standard
+Unknown,sfcityarts.org,Active,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,sfcoffeeco.net,Cancelled,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,sfcoffeeco.org,Cancelled,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,sfcoffeeco.com,Transferred Away,Yes,No,No,,,,(no A record),No,,Standard
+For-Profit,shelteraid.us,Unknown,No,No,No,HostPapa,No,.us not paired,204.44.192.77,No,,Standard
+Unknown,shopcommunitycenters.org,Transferred Away,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,sierravistadreamcenter.org,Expired,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,sierravistadreamcenter.com,Expired,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,skillsprivateacademy.net,Expired,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,skillsprivateacademy.org,Transferred Away,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,skillsprivateacademy.com,Transferred Away,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,skillsprivatetutoring.net,Expired,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,skillsprivatetutoring.org,Expired,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,skillsprivatetutoring.com,Expired,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,slopestohope.org,Active,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,socialenterprisestudiosinc.org,Expired,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,socialenterprisestudiosinc.com,Expired,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,somact.org,Transferred Away,Yes,No,No,,,,(no A record),No,,Standard
+Cloudflare-Only,soulfoodwhangarei.org,Active,Yes,Yes,No,FFC-WHM-01,No,Not on any known server list,52.184.222.116,Yes,,Standard
+Org-WPAdmin,southamptonfriends.org,Active,Yes,Yes,No,InterServer DA,No,Duplicate on Hostinger,192.64.86.202,Yes,,Standard
+Subdomain,southamptonfriends.com,Active,Yes,Yes,No,No A Record,Yes,Paired with .org (active on InterServer),(no A record),Yes,,Standard
+Unknown,southamptonfriendspa.org,Expired,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,southlakeseniorfunding.org,Expired,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,spiritofthelandcharitabletrust.org,Cancelled,Yes,No,No,,,,(no A record),No,,Standard
+For-Profit,srrn.net,Unknown,No,Yes,No,Hostinger,No,.net not paired,153.92.213.212,Yes,https://github.com/FreeForCharity/FFC-EX-SRRN.net,Standard
+Unknown,srs806.org,Expired,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,ssrn.net,Unknown,No,Yes,No,,,,217.19.248.132,Yes,,Standard
+Unknown,stampedesoftball.org,Expired,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,stepeople.org,Active,Yes,No,No,,,,(no A record),No,,Standard
+Org-NoWP,stg.graftonareahistory.org,Unknown,No,No,No,Hostinger,No,Staging subdomain,153.92.213.212,No,,Standard
+Unknown,sunshinenetworkchicago.org,Cancelled,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,svbuddhisttemple.org,Expired,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,svfreethinkers.org,Cancelled,Yes,No,No,,,,(no A record),No,,Standard
+Cloudflare-Only,tamkeensports.org,Active,Yes,Yes,No,External,No,External hosting,174.138.190.170,Yes,,Standard
+Unknown,tasteandseelocal.org,Active,Yes,No,No,,,,(no A record),No,,Standard
+Krystal-New,teamwrangler.org,Unknown,No,No,No,Krystal.io,No,Inferred from Krystal image (DNS Check failed),185.199.224.x,No,,Standard
+Unknown,tech4security.net,Expired,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,tech4security.org,Expired,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,tech4security.com,Expired,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,tech4thesick.org,Expired,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,techforsecurity.com,Expired,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,technologyadoptionbarriers.org,Active,Yes,Yes,No,,,,184.72.224.80;34.227.238.166;3.91.109.122;100.24.182.117;35.172.73.102;34.199.202.106,Yes,,Standard
+Unknown,technologyforsecurity.org,Expired,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,technologyforsecurity.com,Expired,Yes,No,No,,,,(no A record),No,,Standard
+Cloudflare-Only,technologymonastery.org,Active,Yes,Yes,No,InterServer RS1,No,Matches InterServer RS1 IP,216.158.234.18,Yes,https://github.com/FreeForCharity/TechnologyMonastery.org,Standard
+Cloudflare-Only,technologymonastery.us,Expired,Yes,Yes,No,External,No,External hosting,192.185.118.32,Yes,,Standard
+Cloudflare-Only,theafghanistanaffairs.org,Active,Yes,Yes,No,External,No,External hosting,204.13.238.115,Yes,,Standard
+Org-WPAdmin,thebirf.org,Unknown,No,No,No,Hostinger,No,Matches Hostinger,153.92.213.212,No,,Standard
+Krystal-New,thedeviators.org,Unknown,No,No,No,Krystal.io,No,Inferred from Krystal image (DNS Check failed),185.199.224.x,No,,Standard
+Org-WPAdmin,theeverythingproject.org,Active,Yes,No,No,Hostinger,No,Matches Hostinger,153.92.213.212,No,,Standard
+Unknown,thefederalinvestor.com,Expired,Yes,No,No,,,,(no A record),No,,Standard
+Cloudflare-Only,thekccf.org,Active,Yes,Yes,No,GitHub Pages,Yes,Fully migrated,185.199.111.153;185.199.109.153;185.199.110.153;185.199.108.153,Yes,https://github.com/koenig-childhood-cancer-foundation/KCCF-web,Standard
+For-Profit,thelastchancesanctuary.com,Active,Yes,Yes,No,Cloudflare Proxy,No,Misconfigured,153.92.213.212,Yes,,Standard
+Unknown,themilitaryinvestor.com,Expired,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,thestudiovisit.org,Active,Yes,No,No,,,,(no A record),No,,Standard
+For-Profit,thetrendylittlegeek.com,Active,Yes,Yes,No,HostPapa,No,Matches HostPapa,204.44.192.77,Yes,,Standard
+Unknown,thinkitwice.org,Fraud,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,thirdcoastfiretraining.org,Expired,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,thirdcoastfiretraining.com,Expired,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,thofaith.org,Fraud,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,thrivecollectionagency.org,Active,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,tpainepta.org,Active,Yes,No,No,,,,(no A record),No,,Standard
+Org-WPAdmin,transferca.org,Unknown,No,No,No,Hostinger,No,Matches Hostinger,153.92.213.212,No,,Standard
+Unknown,treehouse-project.org,Cancelled,Yes,No,No,,,,(no A record),No,,Standard
+For-Profit,trendylittlegeek.com,Active,Yes,Yes,No,HostPapa,No,Matches HostPapa,204.44.192.77,Yes,,Standard
+Unknown,trendylittlegeek.net,Cancelled,Yes,No,No,,,,(no A record),No,,Standard
+Krystal-New,tribute-aviation.org,Unknown,No,No,No,Krystal.io,No,Inferred from Krystal image (DNS Check failed),185.199.224.x,No,,Standard
+Unknown,trinitylutheranconcord.org,Active,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,trinityucclewistown.org,Active,Yes,No,No,,,,(no A record),No,,Standard
+Org-WPAdmin,turksotx.org,Unknown,No,No,No,Hostinger,No,Matches Hostinger,153.92.213.212,No,,Standard
+Unknown,unitygreen21.org,Cancelled,Yes,No,No,,,,(no A record),No,,Standard
+Krystal-New,viewpointnorth.org,Unknown,No,No,No,Krystal.io,No,Inferred from Krystal image (DNS Check failed),185.199.224.x,No,,Standard
+Krystal-New,vtyouthchat.org,Unknown,No,No,No,Krystal.io,No,Inferred from Krystal image (DNS Check failed),185.199.224.x,No,,Standard
+Cloudflare-Only,wamhelp.org,Active,Yes,Yes,No,External,No,External hosting,66.23.226.51,Yes,,Standard
+Unknown,wisdomadvisory.org,Cancelled,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,wisdomfinancialministries.org,Active,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,wnwstrategies.com,Expired,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,wonderseed.net,Cancelled,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,wonderseed.org,Expired,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,wonderseedfoundation.net,Cancelled,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,wonderseedfoundation.org,Transferred Away,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,wonderseedstudio.net,Cancelled,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,wonderseedstudio.org,Cancelled,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,wonderseedstudio.com,Cancelled,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,wonderseedstudios.net,Cancelled,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,wonderseedstudios.org,Active,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,wonderseedstudios.com,Expired,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,wonderseedverse.net,Cancelled,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,wonderseedverse.org,Cancelled,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,wonderseedverse.com,Cancelled,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,wonderseedworld.org,Cancelled,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,wonderseedworld.com,Cancelled,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,woundedresponderproject.org,Expired,Yes,No,No,,,,(no A record),No,,Standard
+Cloudflare-Only,youngfatherscare.org,Active,Yes,Yes,No,External,No,Adjacent to InterServer but not exact match,192.64.86.203,Yes,,Standard
+Unknown,youngmothersofamerica.org,Expired,Yes,No,No,,,,(no A record),No,,Standard
+Unknown,ziggymarleygeorgefoundation.org,Expired,Yes,No,No,,,,(no A record),No,,Standard
