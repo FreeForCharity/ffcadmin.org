@@ -887,7 +887,7 @@ module.exports = withBundleAnalyzer(nextConfig)
 
 **Required Secrets (Set in GitHub Settings):**
 
-- ~~`GPG_PRIVATE_KEY`~~ - **NO LONGER NEEDED** (feature abandoned)
+- ~~`GPG_PRIVATE_KEY`~~  - **NO LONGER NEEDED** (feature abandoned)
 - ~~`GPG_PASSPHRASE`~~ - **NO LONGER NEEDED** (feature abandoned)
 
 **Required Settings:**
@@ -983,7 +983,7 @@ module.exports = withBundleAnalyzer(nextConfig)
 
 Building this repository taught us that **comprehensive automation and documentation upfront saves exponential time later**. The most disruptive issues (GPG signing, `.nojekyll`, CI/CD order) could have been avoided with clearer templates and documentation.
 
-### Top 3 Takeaways:
+### Top 4 Takeaways:
 
 1. **Don't Over-Engineer Security:** GPG signing requirements created months of problems. Choose security measures that actually provide value and can be reliably implemented.
 2. **Test Early:** Add tests for deployment requirements (`.nojekyll`, build output) in first commit

@@ -25,7 +25,7 @@ Over multiple months, the following approaches were tried:
 
 2. **Email Pattern-Based Bot Detection**
    - Switched to regex patterns matching bot email addresses
-   - Patterns: `\[bot\]@`, `@[^@]*noreply\.github\.com$`, `Copilot@`
+   - Patterns: `\[bot\]@`, `@.*noreply\.github\.com`, `Copilot@`
    - **Result:** Workflow no longer skipped, but GPG import still failed
 
 3. **GPG Key Import Attempts**
