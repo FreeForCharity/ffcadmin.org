@@ -38,7 +38,7 @@ jobs:
         run: |
           echo "Triggering WHMCS Export..."
           gh workflow run "07. WHMCS - Export Domains (Report)" --repo $REMOTE_REPO
-          
+
           echo "Triggering DNS Summary Export..."
           gh workflow run "06. DNS - Export All Domains (Report)" --repo $REMOTE_REPO
 
@@ -47,21 +47,21 @@ jobs:
 
           # Wait for workflows to start and get their IDs
           sleep 30
-          
+
           # Get the latest run IDs
           WHMCS_RUN_ID=$(gh run list --workflow "07. WHMCS - Export Domains (Report)" --repo $REMOTE_REPO --limit 1 --json databaseId --jq '.[0].databaseId')
           DNS_RUN_ID=$(gh run list --workflow "06. DNS - Export All Domains (Report)" --repo $REMOTE_REPO --limit 1 --json databaseId --jq '.[0].databaseId')
           WPMUDEV_RUN_ID=$(gh run list --workflow "13. WPMUDEV - Export Sites/Domains (Read-only)" --repo $REMOTE_REPO --limit 1 --json databaseId --jq '.[0].databaseId')
-          
+
           echo "Waiting for WHMCS Run ID: $WHMCS_RUN_ID"
           gh run watch $WHMCS_RUN_ID --repo $REMOTE_REPO
-          
+
           echo "Waiting for DNS Run ID: $DNS_RUN_ID"
           gh run watch $DNS_RUN_ID --repo $REMOTE_REPO
 
           echo "Waiting for WPMUDEV Run ID: $WPMUDEV_RUN_ID"
           gh run watch $WPMUDEV_RUN_ID --repo $REMOTE_REPO
-          
+
           echo "Downloading Artifacts..."
           gh run download $WHMCS_RUN_ID --repo $REMOTE_REPO --dir tmp_data/whmcs_domains
           gh run download $DNS_RUN_ID --repo $REMOTE_REPO --dir tmp_data/domain_summary
@@ -74,13 +74,13 @@ jobs:
         uses: peter-evans/create-pull-request@v6
         with:
           token: ${{ secrets.GH_PAT }}
-          commit-message: "feat(data): Automated sites list update"
-          branch: "data/automated-update"
+          commit-message: 'feat(data): Automated sites list update'
+          branch: 'data/automated-update'
           delete-branch: true
-          title: "feat(data): Automated sites list update"
+          title: 'feat(data): Automated sites list update'
           body: |
             Automated update of `sites_list.csv` sourced from WHMCS and Cloudflare via `FFC-Cloudflare-Automation-`.
-            
+
             **Changes:**
             - Synced with latest remote data.
             - Applied sorting and pairing logic.
