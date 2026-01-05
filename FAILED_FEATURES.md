@@ -7,7 +7,7 @@ This document tracks features that were attempted but ultimately abandoned due t
 ## GPG Auto-Signing for Bot Commits
 
 **Status:** ❌ **FAILED** - Abandoned after extensive troubleshooting  
-**Attempted:** November 2025 - January 2026  
+**Attempted:** November 2024 - January 2025  
 **Issue:** [#93](https://github.com/FreeForCharity/ffcadmin.org/issues/93)  
 **Pull Request:** [#94](https://github.com/FreeForCharity/ffcadmin.org/pull/94)
 

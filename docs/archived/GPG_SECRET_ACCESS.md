@@ -1,6 +1,21 @@
 # GPG Secret Access Troubleshooting Guide
 
-## Status: RESOLVED ✅
+> **⚠️ Archived Document – Feature Ultimately Failed**  
+> **Status:** Archived (auto-sign feature removed)  
+>  
+> This document describes a troubleshooting process for the GPG auto-signing workflow.  
+> While this particular issue was resolved (secret access), the overall feature later  
+> failed for other reasons (GPG key import failures) and was ultimately abandoned and  
+> removed from this repository.  
+>  
+> Do not treat this as current guidance. It is retained only to document this past  
+> troubleshooting effort and to provide historical context.  
+>  
+> **See [FAILED_FEATURES.md](../../FAILED_FEATURES.md) for complete details.**
+
+---
+
+## Historical Status Note (When This Was Written)
 
 **Update (2025-11-22):** The workflow is now fully functional!
 
