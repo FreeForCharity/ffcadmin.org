@@ -209,14 +209,12 @@ Runs automated Lighthouse performance, accessibility, best practices, and SEO au
 
 ## Workflow Summary
 
-| Workflow              | Trigger                              | Purpose                           | Dependencies                |
-| --------------------- | ------------------------------------ | --------------------------------- | --------------------------- |
-| auto-sign-commits.yml | Pushes to non-main branches          | Auto-sign bot commits with GPG    | None                        |
-| ci.yml                | PRs and pushes to main               | Run tests and verify builds       | None                        |
-| codeql-analysis.yml   | PRs, pushes to main, and weekly      | Security vulnerability scanning   | None                        |
-| deploy.yml            | After CI and CodeQL complete on main | Deploy to GitHub Pages            | ci.yml, codeql-analysis.yml |
-| lighthouse.yml        | After successful deployment on main  | Performance and quality audits    | deploy.yml                  |
-| sign-commits.yml      | Manual workflow dispatch             | Manually sign commits in a branch | None                        |
+| Workflow            | Trigger                              | Purpose                         | Dependencies                |
+| ------------------- | ------------------------------------ | ------------------------------- | --------------------------- |
+| ci.yml              | PRs and pushes to main               | Run tests and verify builds     | None                        |
+| codeql-analysis.yml | PRs, pushes to main, and weekly      | Security vulnerability scanning | None                        |
+| deploy.yml          | After CI and CodeQL complete on main | Deploy to GitHub Pages          | ci.yml, codeql-analysis.yml |
+| lighthouse.yml      | After successful deployment on main  | Performance and quality audits  | deploy.yml                  |
 
 ### Workflow Execution Order
 

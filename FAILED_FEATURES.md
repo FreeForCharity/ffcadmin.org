@@ -65,7 +65,7 @@ The `GPG_PRIVATE_KEY` organization secret appears to have a format issue:
 
 The `crazy-max/ghaction-import-gpg` action would complete successfully (showing checkmarks) but would not actually import any keys into the GPG keyring, causing the signing step to fail with "gpg: signing failed: No secret key".
 
-###Why It Failed
+### Why It Failed
 
 Despite extensive debugging and multiple approaches over several months:
 
@@ -124,11 +124,11 @@ This is the pragmatic solution that:
 
 The following documents were created during this effort and are preserved for reference:
 
-- `docs/AUTO_SIGN_FIX.md` - Detailed fix documentation
-- `docs/GPG_SECRET_ACCESS.md` - GPG secret troubleshooting guide
-- `.github/workflows/auto-sign-commits.yml` - The failed workflow
-- `GPG_SIGNING.md` - GPG signing requirements documentation
-- `QUICK_START.md` - GPG setup quick start guide
+- `docs/archived/AUTO_SIGN_FIX.md` - Detailed fix documentation
+- `docs/archived/GPG_SECRET_ACCESS.md` - GPG secret troubleshooting guide
+- `.github/workflows/auto-sign-commits.yml` - The failed workflow (deleted)
+- `docs/archived/GPG_SIGNING.md` - GPG signing requirements documentation
+- `QUICK_START.md` - GPG setup quick start guide (marked as archived)
 
 These files document the extensive troubleshooting effort and may be useful if attempting similar features in the future.
 
