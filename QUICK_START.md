@@ -1,6 +1,16 @@
-# GPG Commit Signing: Quick Start Guide
+# GPG Commit Signing: ARCHIVED
 
-This comprehensive guide helps you set up automatic GPG commit signing for the Free For Charity repository.
+**⚠️ THIS GUIDE IS NO LONGER ACTIVE ⚠️**
+
+The GPG auto-signing feature was attempted but ultimately failed due to persistent technical issues. This document has been preserved for historical reference.
+
+**See [FAILED_FEATURES.md](./FAILED_FEATURES.md) for details on why this feature was abandoned.**
+
+---
+
+## Historical Content (For Reference Only)
+
+This comprehensive guide documented the attempted setup of automatic GPG commit signing for the Free For Charity repository.
 
 ## Table of Contents
 

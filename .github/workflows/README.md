@@ -2,45 +2,9 @@
 
 This repository uses multiple GitHub Actions workflows to ensure code quality, security, and automated deployment.
 
-## auto-sign-commits.yml - Automatic GPG Signing
+## ~~auto-sign-commits.yml~~ - REMOVED
 
-Automatically signs commits from bots and automated tools to meet branch protection requirements.
-
-### When it runs:
-
-- On pushes to any branch except `main`
-- Triggered by commits from bots or automated tools
-
-### What it does:
-
-**Check and Sign Job:**
-
-1. Checks out the code with full history
-2. Displays debugging information (actor, commit author, commit details)
-3. Detects if the commit is from a bot by checking email patterns:
-   - Patterns: `bot`, `noreply.github.com`, `copilot`
-   - Checks both author and committer emails
-4. Verifies GPG key is configured in repository secrets
-5. Imports GPG key if available
-6. Checks if the last commit is already signed
-7. Signs the commit if unsigned (using `git commit --amend --no-edit --reset-author -S`)
-8. Force pushes the signed commit back to the branch
-
-**Key Features:**
-
-- **Automatic Bot Detection**: Uses email pattern matching instead of hardcoded actor names, so it works with any bot (Copilot, GitHub Actions, Dependabot, etc.)
-- **Non-Disruptive**: Skips human commits to avoid conflicts
-- **Debugging Support**: Comprehensive logging to diagnose issues
-- **Graceful Degradation**: Warns if GPG key is not configured but doesn't fail the workflow
-
-**Required Secrets:**
-
-- `GPG_PRIVATE_KEY` - Private GPG key for signing (required)
-- `GPG_PASSPHRASE` - Passphrase for GPG key (optional, if key is protected)
-
-### Why this matters:
-
-Branch protection rules require all commits to `main` to be GPG-signed. Bot commits are typically unsigned, which would prevent merging PRs. This workflow automatically signs bot commits, ensuring they can be merged while maintaining security requirements.
+**This workflow has been removed.** The automatic GPG signing feature was attempted but ultimately failed due to persistent technical issues. See [FAILED_FEATURES.md](../../FAILED_FEATURES.md) for details.
 
 ## ci.yml - Continuous Integration
 
