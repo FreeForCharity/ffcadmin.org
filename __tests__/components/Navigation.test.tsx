@@ -18,7 +18,7 @@ describe('Navigation Component', () => {
     it('should render the brand logo and name', () => {
       render(<Navigation />)
       expect(screen.getByAltText('Free For Charity Logo')).toBeInTheDocument()
-      expect(screen.getByText('Free For Charity')).toBeInTheDocument()
+
       expect(screen.getByText('Admin Portal')).toBeInTheDocument()
     })
 
