@@ -10,13 +10,28 @@ The **Sites List** is an automated domain and site inventory management system f
 
 ### 1. Categorized Tables
 
-Sites are automatically organized into seven categories based on their status:
+Sites are organized by hosting provider and status for efficient management:
 
-#### Active / Master List
+#### Active Sites by Hosting Provider
 
-- **Status:** Active, Pending, Unknown
-- **Description:** Primary working inventory of all operational domains
-- **Use Case:** Daily site management and monitoring
+Active, Pending, and Unknown status domains are organized into separate tables by hosting provider. Each table is sorted by priority within the hosting group.
+
+- **Hostinger** - Largest hosting group with 33 sites
+- **Krystal.io** - 14 sites on Krystal hosting
+- **HostPapa** - 10 sites on HostPapa
+- **InterServer DA** - 11 sites on InterServer DirectAdmin
+- **InterServer RS1** - 2 sites on InterServer RS1
+- **InterServer cPanel** - Sites on InterServer cPanel
+- **GitHub Pages** - 9 sites on static GitHub Pages hosting
+- **Cloudflare Proxy** - 6 sites proxied through Cloudflare with unknown origin
+- **External Hosting** - 4 sites on external providers
+- **FFC-WHM-01** - 4 sites on FFC-WHM-01 server
+- **No A Record** - 6 sites without DNS A records
+- **Unknown Server** - 104 sites with unidentified hosting
+- **Kinsta** - Sites on Kinsta hosting (if any)
+
+All active site tables have consistent structure:
+
 - **Columns:** Category, Domain, Health, Status, WHMCS, Cloudflare, WPMUDEV, Server, Notes
 
 #### Transferred Away (TR)
