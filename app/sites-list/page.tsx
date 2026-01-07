@@ -158,7 +158,7 @@ export default async function SitesListPage() {
 
   // Group active sites by hosting provider
   const hostingerSites = activeSites.filter((s) => s.serverInUse === 'Hostinger')
-  const kinstalSites = activeSites.filter((s) => s.serverInUse === 'Kinsta')
+  const kinstaSites = activeSites.filter((s) => s.serverInUse === 'Kinsta')
   const krystalSites = activeSites.filter((s) => s.serverInUse === 'Krystal.io')
   const hostPapaSites = activeSites.filter((s) => s.serverInUse === 'HostPapa')
   const interServerDASites = activeSites.filter((s) => s.serverInUse === 'InterServer DA')
@@ -627,9 +627,9 @@ export default async function SitesListPage() {
         )}
 
       {/* 1m. Kinsta Sites (if any) */}
-      {kinstalSites.length > 0 &&
+      {kinstaSites.length > 0 &&
         renderTable(
-          sortByPriority(kinstalSites),
+          sortByPriority(kinstaSites),
           'Kinsta',
           'bg-fuchsia-100 text-fuchsia-900',
           'Domains hosted on Kinsta. Sites are sorted by priority within this hosting group.'
