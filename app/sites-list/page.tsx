@@ -316,9 +316,10 @@ export default async function SitesListPage() {
     data: SiteData[],
     title: string,
     headerColorClass: string,
-    description?: string
+    description?: string,
+    key?: string
   ) => (
-    <div className={`rounded-lg shadow-lg overflow-hidden border border-gray-200 mb-10`}>
+    <div key={key} className={`rounded-lg shadow-lg overflow-hidden border border-gray-200 mb-10`}>
       <div className={`px-6 py-4 border-b border-gray-200 ${headerColorClass}`}>
         <h2 className="text-xl font-bold flex items-center">{title}</h2>
         {description && <p className="text-sm mt-1 opacity-80">{description}</p>}
@@ -615,7 +616,8 @@ export default async function SitesListPage() {
             sortByPriority(provider.sites),
             provider.name,
             provider.colorClass,
-            `${provider.description} Sites are sorted by health status (healthiest first), then by priority, and finally by domain name.`
+            `${provider.description} Sites are sorted by health status (healthiest first), then by priority, and finally by domain name.`,
+            provider.name
           )
         )}
 
